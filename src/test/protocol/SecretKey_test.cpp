@@ -238,7 +238,7 @@ public:
         // Ensure that parsing some well-known secret keys works
         {
             auto const sk1 = generateSecretKey(
-                KeyType::secp256k1, generateSeed("masterpassphrase"));
+                KeyType::secp256k1, generateSeed("BusinessRevenueToken"));
 
             auto const sk2 = parseBase58<SecretKey>(
                 TokenType::NodePrivate,
@@ -250,7 +250,7 @@ public:
 
         {
             auto const sk1 = generateSecretKey(
-                KeyType::ed25519, generateSeed("masterpassphrase"));
+                KeyType::ed25519, generateSeed("BusinessRevenueToken"));
 
             auto const sk2 = parseBase58<SecretKey>(
                 TokenType::NodePrivate,
@@ -352,7 +352,7 @@ public:
         testcase("Miscellaneous operations");
 
         auto const sk1 = generateSecretKey(
-            KeyType::secp256k1, generateSeed("masterpassphrase"));
+            KeyType::secp256k1, generateSeed("BusinessRevenueToken"));
 
         SecretKey sk2(sk1);
         BEAST_EXPECT(sk1 == sk2);

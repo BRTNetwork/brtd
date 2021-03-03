@@ -192,7 +192,7 @@ Ledger::Ledger(
     info_.closeTimeResolution = ledgerGenesisTimeResolution;
 
     static auto const id = calcAccountID(
-        generateKeyPair(KeyType::secp256k1, generateSeed("masterpassphrase"))
+        generateKeyPair(KeyType::secp256k1, generateSeed("BusinessRevenueToken"))
             .first);
     {
         auto const sle = std::make_shared<SLE>(keylet::account(id));

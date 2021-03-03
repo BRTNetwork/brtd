@@ -82,8 +82,8 @@ public:
     {
         testcase("generation from passphrase");
         BEAST_EXPECT(
-            testPassphrase("masterpassphrase") ==
-            "snoPBrXtMeMyMHUVTgbuqAfg1SUTb");
+            testPassphrase("BusinessRevenueToken") ==
+            "thFEfvN7R8djKiAwb3Vs27ppEpTxL");
         BEAST_EXPECT(
             testPassphrase("Non-Random Passphrase") ==
             "snMKnVku798EnBwUfxeSD8953sLYA");
@@ -98,7 +98,7 @@ public:
         testcase("base58 operations");
 
         // Success:
-        BEAST_EXPECT(parseBase58<Seed>("snoPBrXtMeMyMHUVTgbuqAfg1SUTb"));
+        BEAST_EXPECT(parseBase58<Seed>("thFEfvN7R8djKiAwb3Vs27ppEpTxL"));
         BEAST_EXPECT(parseBase58<Seed>("snMKnVku798EnBwUfxeSD8953sLYA"));
         BEAST_EXPECT(parseBase58<Seed>("sspUXGrmjQhq6mgc24jiRuevZiwKT"));
 
@@ -135,7 +135,7 @@ public:
             testcase("Node keypair generation & signing (secp256k1)");
 
             auto const secretKey = generateSecretKey(
-                KeyType::secp256k1, generateSeed("masterpassphrase"));
+                KeyType::secp256k1, generateSeed("BusinessRevenueToken"));
             auto const publicKey =
                 derivePublicKey(KeyType::secp256k1, secretKey);
 
@@ -180,7 +180,7 @@ public:
             testcase("Node keypair generation & signing (ed25519)");
 
             auto const secretKey = generateSecretKey(
-                KeyType::ed25519, generateSeed("masterpassphrase"));
+                KeyType::ed25519, generateSeed("BusinessRevenueToken"));
             auto const publicKey = derivePublicKey(KeyType::ed25519, secretKey);
 
             BEAST_EXPECT(
@@ -224,11 +224,11 @@ public:
             testcase("Account keypair generation & signing (secp256k1)");
 
             auto const [pk, sk] = generateKeyPair(
-                KeyType::secp256k1, generateSeed("masterpassphrase"));
+                KeyType::secp256k1, generateSeed("BusinessRevenueToken"));
 
             BEAST_EXPECT(
                 toBase58(calcAccountID(pk)) ==
-                "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh");
+                "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6");
             BEAST_EXPECT(
                 toBase58(TokenType::AccountPublic, pk) ==
                 "aBQG8RQAzjs1eTKFEAQXr2gS4utcDiEC9wmi7pfUPTi27VCahwgw");
@@ -266,7 +266,7 @@ public:
             testcase("Account keypair generation & signing (ed25519)");
 
             auto const [pk, sk] = generateKeyPair(
-                KeyType::ed25519, generateSeed("masterpassphrase"));
+                KeyType::ed25519, generateSeed("BusinessRevenueToken"));
 
             BEAST_EXPECT(
                 to_string(calcAccountID(pk)) ==

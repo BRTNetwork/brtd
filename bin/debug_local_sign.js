@@ -1,8 +1,8 @@
 var ripple = require('ripple-lib');
 
 var v = {
-  seed: "snoPBrXtMeMyMHUVTgbuqAfg1SUTb",
-  addr: "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh"
+  seed: "thFEfvN7R8djKiAwb3Vs27ppEpTxL",
+  addr: "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6"
 };
 
 var remote = ripple.Remote.from_config({

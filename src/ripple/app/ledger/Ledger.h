@@ -88,7 +88,7 @@ public:
 
         The Genesis ledger contains a single account whose
         AccountID is generated with a Generator using the seed
-        computed from the string "masterpassphrase" and ordinal
+        computed from the string "BusinessRevenueToken" and ordinal
         zero.
 
         The account has an XRP balance equal to the total amount

@@ -73,9 +73,9 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "secret": "masterpassphrase",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -90,11 +90,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Fee": 10,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -109,11 +109,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Sequence": 0,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -128,12 +128,12 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Sequence": 0,
         "Fee": 10,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -142,19 +142,19 @@ static constexpr TxnTestData txnTestArray[] = {
      {{"",
        "",
        "A Signer may not be the transaction's Account "
-       "(rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh).",
+       "(bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6).",
        "Missing field 'tx_json.SigningPubKey'."}}},
 
     {"Add 'fee_mult_max' field.",
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "fee_mult_max": 7,
     "tx_json": {
         "Sequence": 0,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -169,13 +169,13 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "fee_mult_max": 7,
     "fee_div_max": 4,
     "tx_json": {
         "Sequence": 0,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -190,13 +190,13 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "fee_mult_max": 0,
     "tx_json": {
         "Sequence": 0,
         "Fee": 10,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -205,21 +205,21 @@ static constexpr TxnTestData txnTestArray[] = {
      {{"",
        "",
        "A Signer may not be the transaction's Account "
-       "(rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh).",
+       "(bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6).",
        "Missing field 'tx_json.SigningPubKey'."}}},
 
     {"fee_div_max is ignored if 'Fee' is present.",
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "fee_mult_max": 100,
     "fee_div_max": 1000,
     "tx_json": {
         "Sequence": 0,
         "Fee": 10,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -228,19 +228,19 @@ static constexpr TxnTestData txnTestArray[] = {
      {{"",
        "",
        "A Signer may not be the transaction's Account "
-       "(rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh).",
+       "(bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6).",
        "Missing field 'tx_json.SigningPubKey'."}}},
 
     {"Invalid 'fee_mult_max' field.",
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "fee_mult_max": "NotAFeeMultiplier",
     "tx_json": {
         "Sequence": 0,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -255,13 +255,13 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "fee_mult_max": 5,
     "fee_div_max": "NotAFeeMultiplier",
     "tx_json": {
         "Sequence": 0,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -276,12 +276,12 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "fee_mult_max": 0,
     "tx_json": {
         "Sequence": 0,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -296,13 +296,13 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "fee_mult_max": 4,
     "fee_div_max": 7,
     "tx_json": {
         "Sequence": 0,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -317,13 +317,13 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "fee_mult_max": 4,
     "fee_div_max": 0,
     "tx_json": {
         "Sequence": 0,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -338,10 +338,10 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
     }
@@ -355,10 +355,10 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "NotAnAmount",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -373,10 +373,10 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "TransactionType": "Payment"
     }
@@ -390,10 +390,10 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "NotADestination",
         "TransactionType": "Payment"
@@ -408,11 +408,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "build_path": 1,
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -427,11 +427,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "build_path": 1,
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": {
             "value": "10",
             "currency": "USD",
@@ -450,11 +450,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "build_path": 1,
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": {
             "value": "10",
             "currency": "USD",
@@ -474,11 +474,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "build_path": 1,
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": {
             "value": "10",
             "currency": "USD",
@@ -502,11 +502,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "build_path": 1,
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": {
             "value": "10",
             "currency": "USD",
@@ -526,9 +526,9 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -543,10 +543,10 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
     "secret": "",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -599,10 +599,10 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "rx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -617,10 +617,10 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
     }
@@ -634,10 +634,10 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "tt"
@@ -652,10 +652,10 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": 0
@@ -670,8 +670,8 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
@@ -687,8 +687,8 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Account": "NotAnAccount",
         "Amount": "1000000000",
@@ -705,11 +705,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "offline": 0,
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -724,12 +724,12 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "offline": 1,
     "tx_json": {
         "Fee": 10,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -744,12 +744,12 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "offline": 1,
     "tx_json": {
         "Sequence": 0,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -764,13 +764,13 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "offline": 1,
     "tx_json": {
         "Sequence": 0,
         "Fee": 10,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -779,21 +779,21 @@ static constexpr TxnTestData txnTestArray[] = {
      {{"",
        "",
        "A Signer may not be the transaction's Account "
-       "(rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh).",
+       "(bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6).",
        "Missing field 'tx_json.SigningPubKey'."}}},
 
     {"'offline' and 'build_path' are mutually exclusive.",
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "offline": 1,
     "build_path": 1,
     "tx_json": {
         "Sequence": 0,
         "Fee": 10,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -808,11 +808,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Flags": 0,
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -827,11 +827,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Flags": "NotGoodFlags",
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -846,11 +846,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "debug_signing": 0,
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "TransactionType": "Payment"
@@ -870,13 +870,13 @@ static constexpr TxnTestData txnTestArray[] = {
     "tx_json": {
         "Account" : "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount" : "1000000000",
-        "Destination" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination" : "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee" : "50",
         "Sequence" : 0,
         "Signers" : [
             {
                 "Signer" : {
-                    "Account" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+                    "Account" : "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
                     "SigningPubKey" : "0330E7FC9D56BB25D6893BA3F317AE5BCF33B3291BD63DB32654A313222F7FD020",
                     "TxnSignature" : "304502210080EB23E78A841DDC5E3A4F10DE6EAF052207D6B519BF8954467ADB221B3F349002202CA458E8D4E4DE7176D27A91628545E7B295A5DFC8ADF0B5CD3E279B6FA02998"
                 }
@@ -895,12 +895,12 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Account": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount": "1000000000",
-        "Destination": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee": 50,
         "Sequence": 0,
         "SigningPubKey": "",
@@ -916,13 +916,13 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "offline": 1,
     "tx_json": {
         "Account": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount": "1000000000",
-        "Destination": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee": 50,
         "Sequence": 0,
         "SigningPubKey": "",
@@ -978,11 +978,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Amount": "1000000000",
-        "Destination": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee": 50,
         "Sequence": 0,
         "SigningPubKey": "",
@@ -998,11 +998,11 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Account": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
-        "Destination": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee": 50,
         "Sequence": 0,
         "SigningPubKey": "",
@@ -1018,8 +1018,8 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Account": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount": "1000000000",
@@ -1038,12 +1038,12 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Account": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount": "1000000000",
-        "Destination": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Sequence": 0,
         "SigningPubKey": "",
         "TransactionType": "Payment"
@@ -1058,12 +1058,12 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Account": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount": "1000000000",
-        "Destination": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee": 50,
         "SigningPubKey": "",
         "TransactionType": "Payment"
@@ -1078,12 +1078,12 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Account": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount": "1000000000",
-        "Destination": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee": 50,
         "Sequence": 0,
         "TransactionType": "Payment"
@@ -1103,7 +1103,7 @@ static constexpr TxnTestData txnTestArray[] = {
     "tx_json": {
         "Account": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount": "1000000000",
-        "Destination": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee": 50,
         "Sequence": 0,
         "TransactionType": "Payment"
@@ -1119,18 +1119,18 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Account" : "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount" : "1000000000",
-        "Destination" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination" : "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee" : "50",
         "Sequence" : 0,
         "Signers" : [
             {
                 "Signer" : {
-                    "Account" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+                    "Account" : "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
                     "SigningPubKey" : "0330E7FC9D56BB25D6893BA3F317AE5BCF33B3291BD63DB32654A313222F7FD020",
                     "TxnSignature" : "304502210080EB23E78A841DDC5E3A4F10DE6EAF052207D6B519BF8954467ADB221B3F349002202CA458E8D4E4DE7176D27A91628545E7B295A5DFC8ADF0B5CD3E279B6FA02998"
                 }
@@ -1143,7 +1143,7 @@ static constexpr TxnTestData txnTestArray[] = {
      {{"Already multisigned.",
        "Already multisigned.",
        "Duplicate Signers:Signer:Account entries "
-       "(rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh) are not allowed.",
+       "(bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6) are not allowed.",
        ""}}},
 
     {"Correctly append to pre-established Signers array",
@@ -1155,13 +1155,13 @@ static constexpr TxnTestData txnTestArray[] = {
     "tx_json": {
         "Account" : "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount" : "1000000000",
-        "Destination" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination" : "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee" : "50",
         "Sequence" : 0,
         "Signers" : [
             {
                 "Signer" : {
-                    "Account" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+                    "Account" : "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
                     "SigningPubKey" : "0330E7FC9D56BB25D6893BA3F317AE5BCF33B3291BD63DB32654A313222F7FD020",
                     "TxnSignature" : "304502210080EB23E78A841DDC5E3A4F10DE6EAF052207D6B519BF8954467ADB221B3F349002202CA458E8D4E4DE7176D27A91628545E7B295A5DFC8ADF0B5CD3E279B6FA02998"
                 }
@@ -1182,13 +1182,13 @@ static constexpr TxnTestData txnTestArray[] = {
     "tx_json": {
         "Account" : "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount" : "1000000000",
-        "Destination" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination" : "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee" : "50",
         "Sequence" : 0,
         "Signers" : [
             {
                 "Signer" : {
-                    "Account" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+                    "Account" : "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
                     "SigningPubKey" : "0330E7FC9D56BB25D6893BA3F317AE5BCF33B3291BD63DB32654A313222F7FD020",
                     "TxnSignature" : "304502210080EB23E78A841DDC5E3A4F10DE6EAF052207D6B519BF8954467ACB221B3F349002202CA458E8D4E4DE7176D27A91628545E7B295A5DFC8ADF0B5CD3E279B6FA02998"
                 }
@@ -1207,12 +1207,12 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Account": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount": "1000000000",
-        "Destination": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee": 50,
         "Sequence": 0,
         "SigningPubKey": "1",
@@ -1228,12 +1228,12 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": {
         "Account": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount": "1000000000",
-        "Destination": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee": 50,
         "Sequence": 0,
         "SigningPubKey": "",
@@ -1253,13 +1253,13 @@ static constexpr TxnTestData txnTestArray[] = {
     "tx_json": {
         "Account" : "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Amount" : "1000000000",
-        "Destination" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Destination" : "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Fee" : "50",
         "Sequence" : 0,
         "Signers" : [
             {
                 "Signer" : {
-                    "Account" : "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+                    "Account" : "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
                     "SigningPubKey" : "0330E7FC9D56BB25D6893BA3F317AE5BCF33B3291BD63DB32654A313222F7FD020",
                     "TxnSignature" : "304502210080EB23E78A841DDC5E3A4F10DE6EAF052207D6B519BF8954467ADB221B3F349002202CA458E8D4E4DE7176D27A91628545E7B295A5DFC8ADF0B5CD3E279B6FA02998"
                 }
@@ -1279,8 +1279,8 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": ""
 })",
      {{"Invalid field 'tx_json', not object.",
@@ -1292,8 +1292,8 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": 20160331
 })",
      {{"Invalid field 'tx_json', not object.",
@@ -1305,8 +1305,8 @@ static constexpr TxnTestData txnTestArray[] = {
      __LINE__,
      R"({
     "command": "doesnt_matter",
-    "account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
-    "secret": "masterpassphrase",
+    "account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
+    "secret": "BusinessRevenueToken",
     "tx_json": [ "hello", "world" ]
 })",
      {{"Invalid field 'tx_json', not object.",
@@ -1319,7 +1319,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1347,7 +1347,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1394,7 +1394,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1421,7 +1421,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1448,7 +1448,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1476,7 +1476,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1586,7 +1586,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Sequence": 0,
@@ -1613,7 +1613,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50.1,
@@ -1641,7 +1641,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50000000,
         "Sequence": 0,
@@ -1668,7 +1668,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "NotANumber",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1697,7 +1697,7 @@ static constexpr TxnTestData txnTestArray[] = {
     "command": "submit_multisigned",
     "build_path": 1,
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1725,7 +1725,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Fee": 50,
         "Sequence": 0,
@@ -1752,7 +1752,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "NotADestination",
         "Fee": 50,
@@ -1780,7 +1780,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1799,7 +1799,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1823,7 +1823,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1844,7 +1844,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1880,7 +1880,7 @@ static constexpr TxnTestData txnTestArray[] = {
      R"({
     "command": "submit_multisigned",
     "tx_json": {
-        "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+        "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
         "Amount": "1000000000",
         "Destination": "rnUy2SHTrB9DubsPmkJZUXTf5FcNDGrYEA",
         "Fee": 50,
@@ -1888,7 +1888,7 @@ static constexpr TxnTestData txnTestArray[] = {
         "Signers": [
             {
                 "Signer": {
-                    "Account": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+                    "Account": "bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6",
                     "TxnSignature": "3045022100F9ED357606932697A4FAB2BE7F222C21DD93CA4CFDD90357AADD07465E8457D6022038173193E3DFFFB5D78DD738CC0905395F885DA65B98FDB9793901FE3FD26ECE",
                     "SigningPubKey": "02FE36A690D6973D55F88553F5D2C4202DE75F2CF8A6D0E17C70AC223F044501F8"
                 }
@@ -1902,7 +1902,7 @@ static constexpr TxnTestData txnTestArray[] = {
        "Missing field 'secret'.",
        "Missing field 'account'.",
        "A Signer may not be the transaction's Account "
-       "(rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh)."}}},
+       "(bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6)."}}},
 
 };
 
@@ -2275,7 +2275,7 @@ public:
             // Call "sign" with nothing in the open ledger
             Json::Value toSign;
             toSign[jss::tx_json] = noop(env.master);
-            toSign[jss::secret] = "masterpassphrase";
+            toSign[jss::secret] = "BusinessRevenueToken";
             auto rpcResult = env.rpc("json", "sign", to_string(toSign));
             auto result = rpcResult[jss::result];
 
@@ -2302,7 +2302,7 @@ public:
 
             Json::Value toSign;
             toSign[jss::tx_json] = noop(env.master);
-            toSign[jss::secret] = "masterpassphrase";
+            toSign[jss::secret] = "BusinessRevenueToken";
             toSign[jss::fee_mult_max] = 900;
             auto rpcResult = env.rpc("json", "sign", to_string(toSign));
             auto result = rpcResult[jss::result];
@@ -2331,7 +2331,7 @@ public:
 
             Json::Value toSign;
             toSign[jss::tx_json] = noop(env.master);
-            toSign[jss::secret] = "masterpassphrase";
+            toSign[jss::secret] = "BusinessRevenueToken";
             auto rpcResult = env.rpc("json", "sign", to_string(toSign));
             auto result = rpcResult[jss::result];
 
@@ -2362,7 +2362,7 @@ public:
 
             Json::Value toSign;
             toSign[jss::tx_json] = noop(env.master);
-            toSign[jss::secret] = "masterpassphrase";
+            toSign[jss::secret] = "BusinessRevenueToken";
             // Max fee = 7000 drops
             toSign[jss::fee_mult_max] = 700;
             auto rpcResult = env.rpc("json", "sign", to_string(toSign));
@@ -2402,7 +2402,7 @@ public:
         // Account: rJrxi4Wxev4bnAGVNP9YCdKPdAoKfAmcsi
         // seed:    sh1yJfwoi98zCygwijUzuHmJDeVKd
         test::jtx::Account const ed{"ed", KeyType::ed25519};
-        // master is rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh.
+        // master is bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6.
         // "b" (not in the ledger) is rDg53Haik2475DJx8bjMDSDPj4VX7htaMd.
         // "c" (phantom signer) is rPcNzota6B8YBokhYtcTNqQVCngtbnWfux.
 

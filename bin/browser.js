@@ -39,7 +39,7 @@ var httpd_response = function (res, opts) {
       + "<UL>"
       + "<LI><A HREF=\"/\">home</A>"
       + "<LI>" + html_link('r4EM4gBQfr1QgQLXSPF4r7h84qE9mb6iCC')
-//      + "<LI><A HREF=\""+test+"\">rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh</A>"
+//      + "<LI><A HREF=\""+test+"\">bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6</A>"
       + "<LI><A HREF=\"/ledger\">ledger</A>"
       + "</UL>"
       + (opts.body || '')
@@ -449,7 +449,7 @@ else {
             var test  = build_uri({
                 type: 'account',
                 ledger: 'closed',
-                account: 'rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh',
+                account: 'bJWGpFYJ1oc13kJzhTU2zs1mGo5s3suyy6',
               }, self.base);
 
             httpd_response(res,

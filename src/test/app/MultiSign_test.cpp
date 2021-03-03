@@ -1328,7 +1328,7 @@ public:
         env.close();
 
         // Use sign_for to sign a transaction where alice pays 10 XRP to
-        // masterpassphrase.
+        // BusinessRevenueToken.
         auto const baseFee = env.current()->fees().base;
         Json::Value jvSig1;
         jvSig1[jss::account] = bogie.human();

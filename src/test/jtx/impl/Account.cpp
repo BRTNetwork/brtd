@@ -30,7 +30,7 @@ std::unordered_map<std::pair<std::string, KeyType>, Account, beast::uhash<>>
 
 Account const Account::master(
     "master",
-    generateKeyPair(KeyType::secp256k1, generateSeed("masterpassphrase")),
+    generateKeyPair(KeyType::secp256k1, generateSeed("BusinessRevenueToken")),
     Account::privateCtorTag{});
 
 Account::Account(

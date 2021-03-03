@@ -607,7 +607,7 @@ public:
     STObject st(sfGeneric);
     BEAST_EXPECT(!st[~sf5]);
     auto const kp =
-        generateKeyPair(KeyType::secp256k1, generateSeed("masterpassphrase"));
+        generateKeyPair(KeyType::secp256k1, generateSeed("BusinessRevenueToken"));
     st[sf5] = kp.first;
     BEAST_EXPECT(st[sf5] != PublicKey{});
     st[~sf5] = boost::none;

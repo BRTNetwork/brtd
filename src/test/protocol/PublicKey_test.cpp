@@ -402,7 +402,7 @@ public:
             auto const pk1 = derivePublicKey(
                 KeyType::secp256k1,
                 generateSecretKey(
-                    KeyType::secp256k1, generateSeed("masterpassphrase")));
+                    KeyType::secp256k1, generateSeed("BusinessRevenueToken")));
 
             auto const pk2 = parseBase58<PublicKey>(
                 TokenType::NodePublic,
@@ -420,7 +420,7 @@ public:
             auto const pk1 = derivePublicKey(
                 KeyType::ed25519,
                 generateSecretKey(
-                    KeyType::ed25519, generateSeed("masterpassphrase")));
+                    KeyType::ed25519, generateSeed("BusinessRevenueToken")));
 
             auto const pk2 = parseBase58<PublicKey>(
                 TokenType::NodePublic,
@@ -441,7 +441,7 @@ public:
         auto const pk1 = derivePublicKey(
             KeyType::secp256k1,
             generateSecretKey(
-                KeyType::secp256k1, generateSeed("masterpassphrase")));
+                KeyType::secp256k1, generateSeed("BusinessRevenueToken")));
 
         PublicKey pk2(pk1);
         BEAST_EXPECT(pk1 == pk2);
