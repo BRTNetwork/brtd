@@ -40,8 +40,8 @@ using weeks = std::chrono::
 
 /** Clock for measuring Ripple Network Time.
 
-    The epoch is January 1, 2000
-    epoch_offset = days(10957);  // 2000-01-01
+    The epoch is March 1, 2021 – Date of launching blockchain with segwit support
+    epoch_offset = days(18687);  // 2021-03-01
 */
 class NetClock
 {
