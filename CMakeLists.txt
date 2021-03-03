@@ -23,11 +23,11 @@ if (target)
   message (FATAL_ERROR "The target option has been removed - use native cmake options to control build")
 endif ()
 
-include(brtdSanity)
-include(brtdVersion)
-include(brtdSettings)
-include(brtdNIH)
-include(brtdRelease)
+include(BrtdSanity)
+include(BrtdVersion)
+include(BrtdSettings)
+include(BrtdNIH)
+include(BrtdRelease)
 # this check has to remain in the top-level cmake
 # because of the early return statement
 if (packages_only)
@@ -36,8 +36,8 @@ if (packages_only)
   endif()
   return ()
 endif ()
-include(brtdCompiler)
-include(brtdInterface)
+include(BrtdCompiler)
+include(BrtdInterface)
 
 ###
 
@@ -60,9 +60,9 @@ include(deps/Postgres)
 
 ###
 
-include(brtdCore)
-include(brtdInstall)
-include(brtdCov)
-include(brtdMultiConfig)
-include(brtdDocs)
-include(brtdValidatorKeys)
+include(BrtdCore)
+include(BrtdInstall)
+include(BrtdCov)
+include(BrtdMultiConfig)
+include(BrtdDocs)
+include(BrtdValidatorKeys)
