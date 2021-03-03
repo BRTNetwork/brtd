@@ -87,13 +87,13 @@ else
 fi
 
 # verify installed version
-INSTALLED=$(/opt/ripple/bin/brtd --version | awk '{print $NF}')
+INSTALLED=$(/opt/brt/bin/brtd --version | awk '{print $NF}')
 if [ "${brtd_version}" != "${INSTALLED}" ] ; then
     echo "INSTALLED version ${INSTALLED} does not match ${brtd_version}"
     exit 1
 fi
 # run unit tests
-/opt/ripple/bin/brtd --unittest --unittest-jobs $(nproc)
-/opt/ripple/bin/validator-keys --unittest
+/opt/brt/bin/brtd --unittest --unittest-jobs $(nproc)
+/opt/brt/bin/validator-keys --unittest
 
 

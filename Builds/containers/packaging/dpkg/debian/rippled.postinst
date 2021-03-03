@@ -15,9 +15,9 @@ case "$1" in
         chown -R $USER_NAME:$GROUP_NAME /opt/ripple
         chmod 755 /var/log/brtd/
         chmod 755 /var/lib/brtd/
-        chmod 644 /opt/ripple/etc/update-brtd-cron
+        chmod 644 /opt/brt/etc/update-brtd-cron
         chmod 644 /etc/logrotate.d/brtd
-        chown -R root:$GROUP_NAME /opt/ripple/etc/update-brtd-cron
+        chown -R root:$GROUP_NAME /opt/brt/etc/update-brtd-cron
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

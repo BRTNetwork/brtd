@@ -7,8 +7,8 @@
 # before sharing with any third parties.
 
 
-brtd_exe=/opt/ripple/bin/brtd
-conf_file=/etc/opt/ripple/brtd.cfg
+brtd_exe=/opt/brt/bin/brtd
+conf_file=/etc/opt/brt/brtd.cfg
 
 while getopts ":e:c:" opt; do
     case $opt in

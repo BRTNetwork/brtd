@@ -30,12 +30,12 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	cd bld && DESTDIR=../debian/tmp cmake --build . --target install -- -v
-	install -D bld/validator-keys/validator-keys debian/tmp/opt/ripple/bin/validator-keys
-	install -D Builds/containers/shared/update-brtd.sh debian/tmp/opt/ripple/bin/update-brtd.sh
-	install -D bin/getbrtdInfo debian/tmp/opt/ripple/bin/getbrtdInfo
-	install -D Builds/containers/shared/update-brtd-cron debian/tmp/opt/ripple/etc/update-brtd-cron
+	install -D bld/validator-keys/validator-keys debian/tmp/opt/brt/bin/validator-keys
+	install -D Builds/containers/shared/update-brtd.sh debian/tmp/opt/brt/bin/update-brtd.sh
+	install -D bin/getbrtdInfo debian/tmp/opt/brt/bin/getbrtdInfo
+	install -D Builds/containers/shared/update-brtd-cron debian/tmp/opt/brt/etc/update-brtd-cron
 	install -D Builds/containers/shared/brtd-logrotate debian/tmp/etc/logrotate.d/brtd
-	rm -rf debian/tmp/opt/ripple/lib64/cmake/date
+	rm -rf debian/tmp/opt/brt/lib64/cmake/date
 	rm -rf bld
 	rm -rf bld_vl
 

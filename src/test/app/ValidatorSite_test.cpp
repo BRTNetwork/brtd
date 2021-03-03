@@ -84,7 +84,7 @@ private:
                 "http://207.261.33.37:8080/validators",
                 "https://brt.networkvalidators",
                 "https://brt.network:443/validators",
-                "file:///etc/opt/ripple/validators.txt",
+                "file:///etc/opt/brt/validators.txt",
                 "file:///C:/Lib/validators.txt"
 #if !_MSC_VER
                 ,

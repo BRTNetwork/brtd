@@ -44,8 +44,8 @@ DESTDIR=$RPM_BUILD_ROOT cmake --build brtd/bld.release --target install -- -v
 rm -rf ${RPM_BUILD_ROOT}/%{_prefix}/lib64/cmake/date
 install -d ${RPM_BUILD_ROOT}/etc/opt/ripple
 install -d ${RPM_BUILD_ROOT}/usr/local/bin
-ln -s %{_prefix}/etc/brtd.cfg ${RPM_BUILD_ROOT}/etc/opt/ripple/brtd.cfg
-ln -s %{_prefix}/etc/validators.txt ${RPM_BUILD_ROOT}/etc/opt/ripple/validators.txt
+ln -s %{_prefix}/etc/brtd.cfg ${RPM_BUILD_ROOT}/etc/opt/brt/brtd.cfg
+ln -s %{_prefix}/etc/validators.txt ${RPM_BUILD_ROOT}/etc/opt/brt/validators.txt
 ln -s %{_prefix}/bin/brtd ${RPM_BUILD_ROOT}/usr/local/bin/brtd
 install -D brtd/bld.release/validator-keys/validator-keys ${RPM_BUILD_ROOT}%{_bindir}/validator-keys
 install -D ./brtd/Builds/containers/shared/brtd.service ${RPM_BUILD_ROOT}/usr/lib/systemd/system/brtd.service
@@ -84,9 +84,9 @@ chown -R root:$GROUP_NAME %{_prefix}/etc/update-brtd-cron
 %{_prefix}/etc/update-brtd-cron
 %{_bindir}/validator-keys
 %config(noreplace) %{_prefix}/etc/brtd.cfg
-%config(noreplace) /etc/opt/ripple/brtd.cfg
+%config(noreplace) /etc/opt/brt/brtd.cfg
 %config(noreplace) %{_prefix}/etc/validators.txt
-%config(noreplace) /etc/opt/ripple/validators.txt
+%config(noreplace) /etc/opt/brt/validators.txt
 %config(noreplace) /etc/logrotate.d/brtd
 %config(noreplace) /usr/lib/systemd/system/brtd.service
 %config(noreplace) /usr/lib/systemd/system-preset/50-brtd.preset

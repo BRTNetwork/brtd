@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/opt/ripple/bin/brtd --net --silent --conf /etc/opt/ripple/brtd.cfg
+ExecStart=/opt/brt/bin/brtd --net --silent --conf /etc/opt/brt/brtd.cfg
 Restart=on-failure
 User=brtd
 Group=brtd
