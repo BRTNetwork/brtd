@@ -168,9 +168,9 @@ public:
     boost::optional<std::size_t>
         VALIDATION_QUORUM;  // validations to consider ledger authoritative
 
-    XRPAmount FEE_DEFAULT{10};
-    XRPAmount FEE_ACCOUNT_RESERVE{200 * DROPS_PER_XRP};
-    XRPAmount FEE_OWNER_RESERVE{50 * DROPS_PER_XRP};
+    XRPAmount FEE_DEFAULT{1};
+    XRPAmount FEE_ACCOUNT_RESERVE{1000};
+    XRPAmount FEE_OWNER_RESERVE{250};
 
     // Node storage configuration
     std::uint32_t LEDGER_HISTORY = 256;
@@ -221,10 +221,10 @@ public:
     std::string SERVER_DOMAIN;
 
     // How long can a peer remain in the "unknown" state
-    std::chrono::seconds MAX_UNKNOWN_TIME{600};
+    std::chrono::seconds MAX_UNKNOWN_TIME{900};
 
     // How long can a peer remain in the "diverged" state
-    std::chrono::seconds MAX_DIVERGED_TIME{300};
+    std::chrono::seconds MAX_DIVERGED_TIME{600};
 
 public:
     Config() : j_{beast::Journal::getNullSink()}
