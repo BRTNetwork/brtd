@@ -33,14 +33,14 @@ namespace ripple {
 static inline std::string const&
 systemName()
 {
-    static std::string const name = "ripple";
+    static std::string const name = "brtd";
     return name;
 }
 
 /** Configure the native currency. */
 
 /** Number of drops in the genesis account. */
-constexpr XRPAmount INITIAL_XRP{100'000'000'000 * DROPS_PER_XRP};
+constexpr XRPAmount INITIAL_XRP{21'000'000 * DROPS_PER_XRP};
 
 /** Returns true if the amount does not exceed the initial XRP in existence. */
 inline bool
@@ -53,12 +53,12 @@ isLegalAmount(XRPAmount const& amount)
 static inline std::string const&
 systemCurrencyCode()
 {
-    static std::string const code = "XRP";
+    static std::string const code = "BRT";
     return code;
 }
 
 /** The XRP ledger network's earliest allowed sequence */
-static std::uint32_t constexpr XRP_LEDGER_EARLIEST_SEQ{32570};
+static std::uint32_t constexpr XRP_LEDGER_EARLIEST_SEQ{1};
 
 /** The minimum amount of support an amendment should have.
 
@@ -75,6 +75,6 @@ constexpr std::chrono::seconds const defaultAmendmentMajorityTime = weeks{2};
 }  // namespace ripple
 
 /** Default peer port (IANA registered) */
-inline std::uint16_t constexpr DEFAULT_PEER_PORT{2459};
+inline std::uint16_t constexpr DEFAULT_PEER_PORT{33210};
 
 #endif
