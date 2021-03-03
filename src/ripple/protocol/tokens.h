@@ -28,8 +28,8 @@ namespace ripple {
 
 enum class TokenType : std::uint8_t {
     None = 1,  // unused
-    NodePublic = 28,
-    NodePrivate = 32,
+    NodePublic = 26,
+    NodePrivate = 30,
     AccountID = 0,
     AccountPublic = 35,
     AccountSecret = 34,
