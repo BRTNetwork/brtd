@@ -18,8 +18,8 @@ file (GLOB_RECURSE doxygen_input
   src/ripple/*.h
   src/ripple/*.cpp
   src/ripple/*.md
-  src/test/*.h
-  src/test/*.md
+#  src/test/*.h
+#  src/test/*.md
   Builds/*/README.md)
 list (APPEND doxygen_input
   README.md

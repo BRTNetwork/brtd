@@ -105,7 +105,7 @@ WARN_LOGFILE           =
 INPUT                  = \
     docs \
     src/ripple \
-    src/test \
+  #  src/test \
     src/README.md \
     README.md \
     RELEASENOTES.md \
@@ -124,7 +124,7 @@ EXAMPLE_RECURSIVE      = NO
 IMAGE_PATH             =  \
      docs/images/            \
      docs/images/consensus/  \
-     src/test/csf/     \
+   #  src/test/csf/     \
 
 INPUT_FILTER           =
 FILTER_PATTERNS        =
