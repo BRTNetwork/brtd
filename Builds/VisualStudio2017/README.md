@@ -212,9 +212,9 @@ clone. Assuming you included the cmake executable folder in your path,
 execute the following commands within your `brtd` cloned repository:
 
 ```
-mkdir build\cmake
-cd build\cmake
-cmake ..\.. -G"Visual Studio 15 2017 Win64" -DBOOST_ROOT="C:\lib\boost_1_70_0" -DOPENSSL_ROOT="C:\lib\OpenSSL-Win64" -DCMAKE_GENERATOR_TOOLSET=host=x64
+mkdir build
+cd build
+cmake .. -G"Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Release -DBOOST_ROOT="C:\local\boost_1_72_0"  -DBOOST_LIBRARYDIR="C:\local\boost_1_72_0\stage\x64\lib" -DProtobuf_PROTOC_EXECUTABLE="C:\vcpkg\installed\x64-windows-static\tools\protobuf\protoc.exe" -DProtobuf_LIBRARIES="C:\vcpkg\installed\x64-windows-static\lib" -DOPENSSL_ROOT="C:\OpenSSL-Win64"
 ```
 Now launch Visual Studio 2017 and select **File | Open | Project/Solution**.
 Navigate to the `build\cmake` folder created above and select the `brtd.sln`
