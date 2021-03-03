@@ -31,7 +31,7 @@
 namespace ripple {
 
 static constexpr char const* alphabetForward =
-    "rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz";
+    "brtshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2pcdeCg65jkm8oFqi1uvAxyz";
 
 static constexpr std::array<int, 256> const alphabetReverse = []() {
     std::array<int, 256> map{};
