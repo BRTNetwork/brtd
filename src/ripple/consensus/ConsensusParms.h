@@ -61,10 +61,10 @@ struct ConsensusParms
     std::chrono::seconds validationVALID_EARLY = std::chrono::minutes{3};
 
     //! How long we consider a proposal fresh
-    std::chrono::seconds proposeFRESHNESS = std::chrono::seconds{20};
+    std::chrono::seconds proposeFRESHNESS = std::chrono::seconds{30};
 
     //! How often we force generating a new proposal to keep ours fresh
-    std::chrono::seconds proposeINTERVAL = std::chrono::seconds{12};
+    std::chrono::seconds proposeINTERVAL = std::chrono::seconds{15};
 
     //-------------------------------------------------------------------------
     // Consensus durations are relative to the internal Consensus clock and use
@@ -74,7 +74,8 @@ struct ConsensusParms
     std::size_t minCONSENSUS_PCT = 80;
 
     //! The duration a ledger may remain idle before closing
-    std::chrono::milliseconds ledgerIDLE_INTERVAL = std::chrono::seconds{15};
+    //! We increase this number from 15 to 100 seconds to prevent an enormous empty blockchain
+    std::chrono::milliseconds ledgerIDLE_INTERVAL = std::chrono::seconds{100};
 
     //! The number of seconds we wait minimum to ensure participation
     std::chrono::milliseconds ledgerMIN_CONSENSUS =
