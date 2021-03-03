@@ -72,7 +72,7 @@ public:
             {
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = true;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = Account("alice").human();
             }
@@ -157,7 +157,7 @@ public:
             {
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = true;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = Account("alice").human();
             }
@@ -242,7 +242,7 @@ public:
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = true;
                 j[jss::both] = true;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = Account("alice").human();
             }
@@ -339,7 +339,7 @@ public:
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = true;
                 j[jss::both] = true;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = Account("alice").human();
             }
@@ -442,7 +442,7 @@ public:
             {
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = true;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = Account("alice").human();
             }
@@ -567,7 +567,7 @@ public:
             {
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = true;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = Account("alice").human();
             }
@@ -692,7 +692,7 @@ public:
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = true;
                 j[jss::both] = true;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = Account("alice").human();
             }
@@ -839,7 +839,7 @@ public:
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = true;
                 j[jss::both] = true;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = Account("alice").human();
             }
@@ -997,7 +997,7 @@ public:
             {
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = true;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = gw.human();
             }
@@ -1031,7 +1031,7 @@ public:
 
         Json::Value jvParams;
         jvParams[jss::taker] = env.master.human();
-        jvParams[jss::taker_pays][jss::currency] = "XRP";
+        jvParams[jss::taker_pays][jss::currency] = "BRT";
         jvParams[jss::ledger_index] = "validated";
         jvParams[jss::taker_gets][jss::currency] = "USD";
         jvParams[jss::taker_gets][jss::issuer] = gw.human();
@@ -1206,7 +1206,7 @@ public:
             {
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = false;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = gw.human();
             }
@@ -1282,7 +1282,7 @@ public:
             {
                 auto& j = books[jss::books].append(Json::objectValue);
                 j[jss::snapshot] = false;
-                j[jss::taker_gets][jss::currency] = "XRP";
+                j[jss::taker_gets][jss::currency] = "BRT";
                 j[jss::taker_pays][jss::currency] = "USD";
                 j[jss::taker_pays][jss::issuer] = gw.human();
             }
@@ -1292,7 +1292,7 @@ public:
                 j[jss::snapshot] = false;
                 j[jss::taker_gets][jss::currency] = "EUR";
                 j[jss::taker_gets][jss::issuer] = gw.human();
-                j[jss::taker_pays][jss::currency] = "XRP";
+                j[jss::taker_pays][jss::currency] = "BRT";
             }
 
             auto jv = wsc->invoke("subscribe", books);
@@ -1408,7 +1408,7 @@ public:
         {
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_gets] = Json::objectValue;
             auto const jrr = env.rpc(
                 "json", "book_offers", to_string(jvParams))[jss::result];
@@ -1421,7 +1421,7 @@ public:
         {
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_gets][jss::currency] = 1;
             auto const jrr = env.rpc(
                 "json", "book_offers", to_string(jvParams))[jss::result];
@@ -1435,7 +1435,7 @@ public:
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
             jvParams[jss::taker_pays][jss::currency] = "NOT_VALID";
-            jvParams[jss::taker_gets][jss::currency] = "XRP";
+            jvParams[jss::taker_gets][jss::currency] = "BRT";
             auto const jrr = env.rpc(
                 "json", "book_offers", to_string(jvParams))[jss::result];
             BEAST_EXPECT(jrr[jss::error] == "srcCurMalformed");
@@ -1447,7 +1447,7 @@ public:
         {
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_gets][jss::currency] = "NOT_VALID";
             auto const jrr = env.rpc(
                 "json", "book_offers", to_string(jvParams))[jss::result];
@@ -1460,7 +1460,7 @@ public:
         {
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_gets][jss::currency] = "USD";
             jvParams[jss::taker_gets][jss::issuer] = 1;
             auto const jrr = env.rpc(
@@ -1474,7 +1474,7 @@ public:
         {
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_pays][jss::issuer] = 1;
             jvParams[jss::taker_gets][jss::currency] = "USD";
             auto const jrr = env.rpc(
@@ -1488,7 +1488,7 @@ public:
         {
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_pays][jss::issuer] = gw.human() + "DEAD";
             jvParams[jss::taker_gets][jss::currency] = "USD";
             auto const jrr = env.rpc(
@@ -1502,7 +1502,7 @@ public:
         {
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_pays][jss::issuer] = toBase58(noAccount());
             jvParams[jss::taker_gets][jss::currency] = "USD";
             auto const jrr = env.rpc(
@@ -1516,7 +1516,7 @@ public:
         {
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_gets][jss::currency] = "USD";
             jvParams[jss::taker_gets][jss::issuer] = gw.human() + "DEAD";
             auto const jrr = env.rpc(
@@ -1530,7 +1530,7 @@ public:
         {
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_gets][jss::currency] = "USD";
             jvParams[jss::taker_gets][jss::issuer] = toBase58(noAccount());
             auto const jrr = env.rpc(
@@ -1544,7 +1544,7 @@ public:
         {
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_pays][jss::issuer] = alice.human();
             jvParams[jss::taker_gets][jss::currency] = "USD";
             jvParams[jss::taker_gets][jss::issuer] = gw.human();
@@ -1576,7 +1576,7 @@ public:
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
             jvParams[jss::taker] = 1;
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_gets][jss::currency] = "USD";
             jvParams[jss::taker_gets][jss::issuer] = gw.human();
             auto const jrr = env.rpc(
@@ -1591,7 +1591,7 @@ public:
             Json::Value jvParams;
             jvParams[jss::ledger_index] = "validated";
             jvParams[jss::taker] = env.master.human() + "DEAD";
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_gets][jss::currency] = "USD";
             jvParams[jss::taker_gets][jss::issuer] = gw.human();
             auto const jrr = env.rpc(
@@ -1619,7 +1619,7 @@ public:
             jvParams[jss::ledger_index] = "validated";
             jvParams[jss::taker] = env.master.human();
             jvParams[jss::limit] = "0";  // NOT an integer
-            jvParams[jss::taker_pays][jss::currency] = "XRP";
+            jvParams[jss::taker_pays][jss::currency] = "BRT";
             jvParams[jss::taker_gets][jss::currency] = "USD";
             jvParams[jss::taker_gets][jss::issuer] = gw.human();
             auto const jrr = env.rpc(
@@ -1650,7 +1650,7 @@ public:
             jvParams[jss::ledger_index] = "validated";
             jvParams[jss::taker_pays][jss::currency] = "USD";
             jvParams[jss::taker_pays][jss::issuer] = gw.human();
-            jvParams[jss::taker_gets][jss::currency] = "XRP";
+            jvParams[jss::taker_gets][jss::currency] = "BRT";
             jvParams[jss::taker_gets][jss::issuer] = gw.human();
             auto const jrr = env.rpc(
                 "json", "book_offers", to_string(jvParams))[jss::result];
@@ -1680,7 +1680,7 @@ public:
         Json::Value jvParams;
         jvParams[jss::limit] = 1;
         jvParams[jss::ledger_index] = "validated";
-        jvParams[jss::taker_pays][jss::currency] = "XRP";
+        jvParams[jss::taker_pays][jss::currency] = "BRT";
         jvParams[jss::taker_gets][jss::currency] = "USD";
         jvParams[jss::taker_gets][jss::issuer] = gw.human();
         auto jrr =
