@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -37,8 +37,8 @@ void
 ManagerImp::missing_backend()
 {
     Throw<std::runtime_error>(
-        "Your rippled.cfg is missing a [node_db] entry, "
-        "please see the rippled-example.cfg file!");
+        "Your brtd.cfg is missing a [node_db] entry, "
+        "please see the brtd-example.cfg file!");
 }
 
 std::unique_ptr<Backend>
@@ -55,10 +55,10 @@ ManagerImp::make_Backend(
     auto factory{find(type)};
     if (!factory)
     {
-#ifndef RIPPLED_REPORTING
+#ifndef brtd_REPORTING
         if (boost::iequals(type, "cassandra"))
             Throw<std::runtime_error>(
-                "To use Cassandra as a nodestore, build rippled with "
+                "To use Cassandra as a nodestore, build brtd with "
                 "-Dreporting=ON");
 #endif
         missing_backend();

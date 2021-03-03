@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -606,7 +606,7 @@ PathRequest::findPaths(
 
             if (hasCompletion())
             {
-                // Old ripple_path_find API requires this
+                // Old brt_path_find API requires this
                 jvEntry[jss::paths_canonical] = Json::arrayValue;
             }
 
@@ -647,7 +647,7 @@ PathRequest::doUpdate(std::shared_ptr<RippleLineCache> const& cache, bool fast)
 
     if (hasCompletion())
     {
-        // Old ripple_path_find API gives destination_currencies
+        // Old brt_path_find API gives destination_currencies
         auto& destCurrencies =
             (newStatus[jss::destination_currencies] = Json::arrayValue);
         auto usCurrencies = accountDestCurrencies(*raDstAccount, cache, true);

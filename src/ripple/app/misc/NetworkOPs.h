@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -81,8 +81,8 @@ enum class OperatingMode {
     needed.
 
     A backend application or local client can trust a local instance of
-    rippled / NetworkOPs. However, client software connecting to non-local
-    instances of rippled will need to be hardened to protect against hostile
+    brtd / NetworkOPs. However, client software connecting to non-local
+    instances of brtd will need to be hardened to protect against hostile
     or unreliable servers.
 */
 class NetworkOPs : public InfoSub::Source

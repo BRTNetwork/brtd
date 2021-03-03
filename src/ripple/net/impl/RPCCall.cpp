@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -959,7 +959,7 @@ private:
         return jvRequest;
     }
 
-    // ripple_path_find <json> [<ledger>]
+    // brt_path_find <json> [<ledger>]
     Json::Value
     parseRipplePathFind(Json::Value const& jvParams)
     {
@@ -1274,7 +1274,7 @@ public:
              1,
              1},
             {"peer_reservations_list", &RPCParser::parseAsIs, 0, 0},
-            {"ripple_path_find", &RPCParser::parseRipplePathFind, 1, 2},
+            {"brt_path_find", &RPCParser::parseRipplePathFind, 1, 2},
             {"sign", &RPCParser::parseSignSubmit, 2, 3},
             {"sign_for", &RPCParser::parseSignFor, 3, 4},
             {"submit", &RPCParser::parseSignSubmit, 1, 3},

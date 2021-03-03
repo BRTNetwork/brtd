@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -220,7 +220,7 @@ PathRequests::makePathRequest(
     return std::move(jvRes);
 }
 
-// Make an old-style ripple_path_find request
+// Make an old-style brt_path_find request
 Json::Value
 PathRequests::makeLegacyPathRequest(
     PathRequest::pointer& req,

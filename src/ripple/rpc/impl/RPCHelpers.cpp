@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012-2014 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -631,7 +631,7 @@ boost::optional<Seed>
 parseRippleLibSeed(Json::Value const& value)
 {
     // ripple-lib encodes seed used to generate an Ed25519 wallet in a
-    // non-standard way. While rippled never encode seeds that way, we
+    // non-standard way. While brtd never encode seeds that way, we
     // try to detect such keys to avoid user confusion.
     if (!value.isString())
         return boost::none;

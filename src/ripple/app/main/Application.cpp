@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -166,7 +166,7 @@ public:
     // Required by the SHAMapStore
     TransactionMaster m_txMaster;
 
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     std::shared_ptr<PgPool> pgPool_;
 #endif
     NodeStoreScheduler m_nodeStoreScheduler;
@@ -282,7 +282,7 @@ public:
               [this]() { signalStop(); }))
 
         , m_txMaster(*this)
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
         , pgPool_(
               config_->reporting() ? make_PgPool(
                                          config_->section("ledger_tx_tables"),
@@ -870,7 +870,7 @@ public:
         return *mLedgerDB;
     }
 
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     std::shared_ptr<PgPool> const&
     getPgPool() override
     {
@@ -971,7 +971,7 @@ public:
             }
             else if (!config_->reportingReadOnly())  // use pg
             {
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
                 initSchema(pgPool_);
 #endif
             }
@@ -1260,7 +1260,7 @@ public:
                 {
                     JLOG(m_journal.fatal())
                         << "Free SQLite space for transaction db is less than "
-                           "512MB. To fix this, rippled must be executed with "
+                           "512MB. To fix this, brtd must be executed with "
                            "the "
                            "vacuum parameter before restarting. "
                            "Note that this activity can take multiple days, "
@@ -1289,7 +1289,7 @@ public:
         m_acceptedLedgerCache.sweep();
         cachedSLEs_.expire();
 
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
         if (config().reporting())
             pgPool_->idleSweeper();
 #endif
@@ -1623,7 +1623,7 @@ ApplicationImp::setup()
                                   "implications and have";
         JLOG(m_journal.warn()) << "*** been deprecated. They will be removed "
                                   "in a future release of";
-        JLOG(m_journal.warn()) << "*** rippled.";
+        JLOG(m_journal.warn()) << "*** brtd.";
         JLOG(m_journal.warn()) << "*** If you do not use them to sign "
                                   "transactions please edit your";
         JLOG(m_journal.warn())
@@ -2109,7 +2109,7 @@ ApplicationImp::loadOldLedger(
                 << " UTC.\n"
                    "This replay will not handle your ledger as it was "
                    "originally "
-                   "handled.\nConsider running an earlier version of rippled "
+                   "handled.\nConsider running an earlier version of brtd "
                    "to "
                    "get the older rules.\n*** CONTINUING ***\n";
         }
@@ -2270,7 +2270,7 @@ ApplicationImp::setMaxDisallowedLedger()
 {
     if (config().reporting())
     {
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
         auto seq = PgQuery(pgPool_)("SELECT max_ledger()");
         if (seq && !seq.isNull())
             maxDisallowedLedger_ = seq.asBigInt();

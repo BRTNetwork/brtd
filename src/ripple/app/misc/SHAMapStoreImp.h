@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -80,7 +80,7 @@ private:
     // name of state database
     std::string const dbName_ = "state";
     // prefix of on-disk nodestore backend instances
-    std::string const dbPrefix_ = "rippledb";
+    std::string const dbPrefix_ = "brtdb";
     // check health/stop status as records are copied
     std::uint64_t const checkHealthInterval_ = 1000;
     // minimum # of ledgers to maintain for health of network
@@ -114,7 +114,7 @@ private:
     /// online_delete health check, sleep the thread
     /// for this time and check again so the node can
     /// recover.
-    /// See also: "recovery_wait_seconds" in rippled-example.cfg
+    /// See also: "recovery_wait_seconds" in brtd-example.cfg
     boost::optional<std::chrono::seconds> recoveryWaitTime_;
 
     // these do not exist upon SHAMapStore creation, but do exist
@@ -237,12 +237,12 @@ private:
     void
     clearPrior(LedgerIndex lastRotated);
 
-    // If rippled is not healthy, defer rotate-delete.
+    // If brtd is not healthy, defer rotate-delete.
     // If already unhealthy, do not change state on further check.
     // Assume that, once unhealthy, a necessary step has been
     // aborted, so the online-delete process needs to restart
     // at next ledger.
-    // If recoveryWaitTime_ is set, this may sleep to give rippled
+    // If recoveryWaitTime_ is set, this may sleep to give brtd
     // time to recover, so never call it from any thread other than
     // the main "run()".
     Health

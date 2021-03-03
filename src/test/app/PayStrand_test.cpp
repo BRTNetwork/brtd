@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
     Permission to use, copy, modify, and/or distribute this software for any
     purpose  with  or without fee is hereby granted, provided that the above
@@ -927,7 +927,7 @@ struct PayStrand_test : public beast::unit_test::suite
             env(pay(alice, carol, USD(100)),
                 path(~USD, ~EUR, ~USD),
                 sendmax(XRP(200)),
-                txflags(tfNoRippleDirect),
+                txflags(tfNobrtdirect),
                 ter(temBAD_PATH_LOOP));
         }
 
@@ -1093,7 +1093,7 @@ struct PayStrand_test : public beast::unit_test::suite
             env(pay(alice, alice, EUR(1)),
                 json(paths.json()),
                 sendmax(XRP(10)),
-                txflags(tfNoRippleDirect | tfPartialPayment),
+                txflags(tfNobrtdirect | tfPartialPayment),
                 ter(temBAD_PATH));
         }
 
@@ -1111,7 +1111,7 @@ struct PayStrand_test : public beast::unit_test::suite
             // payment path: XRP -> XRP/USD -> USD/XRP
             env(pay(alice, carol, XRP(100)),
                 path(~USD, ~XRP),
-                txflags(tfNoRippleDirect),
+                txflags(tfNobrtdirect),
                 ter(temBAD_SEND_XRP_PATHS));
         }
 
@@ -1130,7 +1130,7 @@ struct PayStrand_test : public beast::unit_test::suite
             env(pay(alice, carol, XRP(100)),
                 path(~USD, ~XRP),
                 sendmax(XRP(200)),
-                txflags(tfNoRippleDirect),
+                txflags(tfNobrtdirect),
                 ter(temBAD_SEND_XRP_MAX));
         }
     }
@@ -1165,7 +1165,7 @@ struct PayStrand_test : public beast::unit_test::suite
             env(pay(alice, carol, USD(100)),
                 sendmax(USD(100)),
                 path(~XRP, ~USD),
-                txflags(tfNoRippleDirect),
+                txflags(tfNobrtdirect),
                 ter(temBAD_PATH_LOOP));
         }
         {
@@ -1188,7 +1188,7 @@ struct PayStrand_test : public beast::unit_test::suite
             env(pay(alice, carol, CNY(100)),
                 sendmax(XRP(100)),
                 path(~USD, ~EUR, ~USD, ~CNY),
-                txflags(tfNoRippleDirect),
+                txflags(tfNobrtdirect),
                 ter(temBAD_PATH_LOOP));
         }
     }

@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-  This file is part of rippled: https://github.com/ripple/rippled
+  This file is part of brtd: https://github.com/ripple/brtd
   Copyright (c) 2012-2017 Ripple Labs Inc.
 
   Permission to use, copy, modify, and/or distribute this software for any
@@ -347,7 +347,7 @@ public:
         env(pay(alice, bob, USD(1)),
             path(~USD),
             sendmax(XRP(102)),
-            txflags(tfNoRippleDirect | tfPartialPayment));
+            txflags(tfNobrtdirect | tfPartialPayment));
 
         env.require(offers(carol, 0), offers(dan, 1));
 
@@ -396,7 +396,7 @@ public:
             env(pay(alice, carol, USD2(50)),
                 path(~USD1, bob),
                 sendmax(XRP(50)),
-                txflags(tfNoRippleDirect),
+                txflags(tfNobrtdirect),
                 ter(tecPATH_DRY));
         }
         {
@@ -421,7 +421,7 @@ public:
             env(pay(alice, carol, USD2(50)),
                 path(~USD1, bob),
                 sendmax(XRP(50)),
-                txflags(tfNoRippleDirect));
+                txflags(tfNobrtdirect));
 
             env.require(balance(alice, xrpMinusFee(env, 10000 - 50)));
             env.require(balance(bob, USD1(100)));
@@ -4839,7 +4839,7 @@ public:
             jvParams[jss::source_account] = hotUS.human();
 
             Json::Value const jrr{env.rpc(
-                "json", "ripple_path_find", to_string(jvParams))[jss::result]};
+                "json", "brt_path_find", to_string(jvParams))[jss::result]};
 
             BEAST_EXPECT(jrr[jss::status] == "success");
             BEAST_EXPECT(

@@ -5,10 +5,10 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/opt/ripple/bin/rippled --net --silent --conf /etc/opt/ripple/rippled.cfg
+ExecStart=/opt/ripple/bin/brtd --net --silent --conf /etc/opt/ripple/brtd.cfg
 Restart=on-failure
-User=rippled
-Group=rippled
+User=brtd
+Group=brtd
 LimitNOFILE=65536
 
 [Install]

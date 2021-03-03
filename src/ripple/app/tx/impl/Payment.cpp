@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -66,7 +66,7 @@ Payment::preflight(PreflightContext const& ctx)
 
     bool const partialPaymentAllowed = uTxFlags & tfPartialPayment;
     bool const limitQuality = uTxFlags & tfLimitQuality;
-    bool const defaultPathsAllowed = !(uTxFlags & tfNoRippleDirect);
+    bool const defaultPathsAllowed = !(uTxFlags & tfNobrtdirect);
     bool const bPaths = tx.isFieldPresent(sfPaths);
     bool const bMax = tx.isFieldPresent(sfSendMax);
 
@@ -309,7 +309,7 @@ Payment::doApply()
     std::uint32_t const uTxFlags = ctx_.tx.getFlags();
     bool const partialPaymentAllowed = uTxFlags & tfPartialPayment;
     bool const limitQuality = uTxFlags & tfLimitQuality;
-    bool const defaultPathsAllowed = !(uTxFlags & tfNoRippleDirect);
+    bool const defaultPathsAllowed = !(uTxFlags & tfNobrtdirect);
     auto const paths = ctx_.tx.isFieldPresent(sfPaths);
     auto const sendMax = ctx_.tx[~sfSendMax];
 

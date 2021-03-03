@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -163,8 +163,7 @@ printHelp(const po::options_description& desc)
            "     peer_reservations_add <public_key> [<description>]\n"
            "     peer_reservations_del <public_key>\n"
            "     peer_reservations_list\n"
-           "     ripple ...\n"
-           "     ripple_path_find <json> [<ledger>]\n"
+           "     brt_path_find <json> [<ledger>]\n"
            "     server_info [counters]\n"
            "     server_state [counters]\n"
            "     sign <private_key> <tx_json> [offline]\n"
@@ -342,7 +341,7 @@ run(int argc, char** argv)
     using namespace std;
 
     beast::setCurrentThreadName(
-        "rippled: main " + BuildInfo::getVersionString());
+        "brtd: main " + BuildInfo::getVersionString());
 
     po::variables_map vm;
 
@@ -470,8 +469,8 @@ run(int argc, char** argv)
     }
     catch (std::exception const& ex)
     {
-        std::cerr << "rippled: " << ex.what() << std::endl;
-        std::cerr << "Try 'rippled --help' for a list of options." << std::endl;
+        std::cerr << "brtd: " << ex.what() << std::endl;
+        std::cerr << "Try 'brtd --help' for a list of options." << std::endl;
         return 1;
     }
 
@@ -483,7 +482,7 @@ run(int argc, char** argv)
 
     if (vm.count("version"))
     {
-        std::cout << "rippled version " << BuildInfo::getVersionString()
+        std::cout << "brtd version " << BuildInfo::getVersionString()
                   << std::endl;
         return 0;
     }
@@ -520,7 +519,7 @@ run(int argc, char** argv)
         if (vm.count("unittest-jobs"))
         {
             // unittest jobs only makes sense with `unittest`
-            std::cerr << "rippled: '--unittest-jobs' specified without "
+            std::cerr << "brtd: '--unittest-jobs' specified without "
                          "'--unittest'.\n";
             std::cerr << "To run the unit tests the '--unittest' option must "
                          "be present.\n";
@@ -775,7 +774,7 @@ run(int argc, char** argv)
     }
 
     // We have an RPC command to process:
-    beast::setCurrentThreadName("rippled: rpc");
+    beast::setCurrentThreadName("brtd: rpc");
     return RPCCall::fromCommandLine(
         *config, vm["parameters"].as<std::vector<std::string>>(), *logs);
 }

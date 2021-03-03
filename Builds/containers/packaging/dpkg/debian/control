@@ -1,4 +1,4 @@
-Source: rippled
+Source: brtd
 Section: misc
 Priority: extra
 Maintainer: Ripple Labs Inc. <support@ripple.com>
@@ -6,15 +6,15 @@ Build-Depends: cmake, debhelper (>=9), zlib1g-dev, dh-systemd, ninja-build
 Standards-Version: 3.9.7
 Homepage: http://ripple.com/
 
-Package: rippled
+Package: brtd
 Architecture: any
 Multi-Arch: foreign
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: rippled daemon
+Description: brtd daemon
 
-Package: rippled-dev
+Package: brtd-dev
 Section: devel
-Recommends: rippled (= ${binary:Version})
+Recommends: brtd (= ${binary:Version})
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends}, ${shlibs:Depends}, libprotobuf-dev, libssl-dev

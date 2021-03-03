@@ -1,4 +1,4 @@
-/var/log/rippled/*.log {
+/var/log/brtd/*.log {
   daily
   minsize 200M
   rotate 7
@@ -10,6 +10,6 @@
   compressoptions -n19 ionice -c3 gzip
   compressext .gz
   postrotate
-    /opt/ripple/bin/rippled --conf /opt/ripple/etc/rippled.cfg logrotate
+    /opt/ripple/bin/brtd --conf /opt/ripple/etc/brtd.cfg logrotate
   endscript
 }

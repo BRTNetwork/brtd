@@ -318,7 +318,7 @@ install (
   DESTINATION include/beast/unit_test/detail)
 
 #[===================================================================[
-   rippled executable
+   brtd executable
 #]===================================================================]
 
 #[=========================================================[
@@ -326,11 +326,11 @@ install (
    versions of cmake happy. cmake 3.10+ allows
    add_executable with no sources
 #]=========================================================]
-add_executable (rippled src/ripple/app/main/Application.h)
+add_executable (brtd src/ripple/app/main/Application.h)
 if (unity)
-  set_target_properties(rippled PROPERTIES UNITY_BUILD ON)
+  set_target_properties(brtd PROPERTIES UNITY_BUILD ON)
 endif ()
-target_sources (rippled PRIVATE
+target_sources (brtd PRIVATE
   #[===============================[
      main sources:
        subdir: app
@@ -968,21 +968,21 @@ target_sources (rippled PRIVATE
        subdir: unit_test
   #]===============================]
   src/test/unit_test/multi_runner.cpp)
-target_link_libraries (rippled
+target_link_libraries (brtd
   Ripple::boost
   Ripple::opts
   Ripple::libs
   Ripple::xrpl_core
   )
-exclude_if_included (rippled)
+exclude_if_included (brtd)
 # define a macro for tests that might need to
 # be exluded or run differently in CI environment
 if (is_ci)
-  target_compile_definitions(rippled PRIVATE RIPPLED_RUNNING_IN_CI)
+  target_compile_definitions(brtd PRIVATE brtd_RUNNING_IN_CI)
 endif ()
 
 if (reporting)
-    target_compile_definitions(rippled PRIVATE RIPPLED_REPORTING)
+    target_compile_definitions(brtd PRIVATE brtd_REPORTING)
 endif ()
 
 if (CMAKE_VERSION VERSION_GREATER_EQUAL 3.16)

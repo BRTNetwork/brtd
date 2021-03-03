@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-  This file is part of rippled: https://github.com/ripple/rippled
+  This file is part of brtd: https://github.com/ripple/brtd
   Copyright (c) 2012-2015 Ripple Labs Inc.
 
   Permission to use, copy, modify, and/or distribute this software for any
@@ -86,7 +86,7 @@ class PaymentSandbox_test : public beast::unit_test::suite
 
         env(pay(snd, rcv, any(USD_gw1(4))),
             json(paths.json()),
-            txflags(tfNoRippleDirect | tfPartialPayment));
+            txflags(tfNobrtdirect | tfPartialPayment));
 
         env.require(balance("rcv", USD_gw1(0)));
         env.require(balance("rcv", USD_gw2(2)));

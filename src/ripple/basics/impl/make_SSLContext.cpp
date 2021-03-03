@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -31,7 +31,7 @@ namespace detail {
 
 // We limit the ciphers we request and allow to ensure that weak
 // ciphers aren't used. While this isn't strictly necessary for
-// the rippled server-server use case, where we only need MITM
+// the brtd server-server use case, where we only need MITM
 // detection/prevention, we also have websocket and rpc scenarios
 // and want to ensure weak ciphers can't be used.
 std::string const defaultCipherList =

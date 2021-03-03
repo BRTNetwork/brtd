@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2019 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -397,7 +397,7 @@ public:
             RippleCalcTestParams rcp{env.json(
                 pay(accounts.front(), accounts.back(), iou(paymentAmount)),
                 accountsPath,
-                txflags(tfNoRippleDirect))};
+                txflags(tfNobrtdirect))};
 
             testCase(rcp, env.closed());
         }
@@ -484,7 +484,7 @@ public:
                 pay(alice, dan, dstIOU(paymentAmount)),
                 sendmax(srcIOU(100 * paymentAmount)),
                 bookPath,
-                txflags(tfNoRippleDirect))};
+                txflags(tfNobrtdirect))};
 
             testCase(rcp, env.closed());
         }

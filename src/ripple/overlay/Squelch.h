@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2020 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -126,4 +126,4 @@ Squelch<clock_type>::expireSquelch(PublicKey const& validator)
 
 }  // namespace ripple
 
-#endif  // RIPPLED_SQUELCH_H
+#endif  // brtd_SQUELCH_H

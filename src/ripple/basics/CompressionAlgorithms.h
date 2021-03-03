@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2020 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -17,8 +17,8 @@
 */
 //==============================================================================
 
-#ifndef RIPPLED_COMPRESSIONALGORITHMS_H_INCLUDED
-#define RIPPLED_COMPRESSIONALGORITHMS_H_INCLUDED
+#ifndef brtd_COMPRESSIONALGORITHMS_H_INCLUDED
+#define brtd_COMPRESSIONALGORITHMS_H_INCLUDED
 
 #include <ripple/basics/contract.h>
 #include <algorithm>
@@ -156,4 +156,4 @@ lz4Decompress(
 
 }  // namespace ripple
 
-#endif  // RIPPLED_COMPRESSIONALGORITHMS_H_INCLUDED
+#endif  // brtd_COMPRESSIONALGORITHMS_H_INCLUDED

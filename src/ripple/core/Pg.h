@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2020 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -17,7 +17,7 @@
 */
 //==============================================================================
 
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
 #ifndef RIPPLE_CORE_PG_H_INCLUDED
 #define RIPPLE_CORE_PG_H_INCLUDED
 
@@ -520,4 +520,4 @@ initSchema(std::shared_ptr<PgPool> const& pool);
 }  // namespace ripple
 
 #endif  // RIPPLE_CORE_PG_H_INCLUDED
-#endif  // RIPPLED_REPORTING
+#endif  // brtd_REPORTING

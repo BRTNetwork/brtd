@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-USER_NAME=rippled
-GROUP_NAME=rippled
+USER_NAME=brtd
+GROUP_NAME=brtd
 case "$1" in
     configure)
         id -u $USER_NAME >/dev/null 2>&1 || \
@@ -10,14 +10,14 @@ case "$1" in
             --home /nonexistent --no-create-home \
             --disabled-password \
             --group "$GROUP_NAME"
-        chown -R $USER_NAME:$GROUP_NAME /var/log/rippled/
-        chown -R $USER_NAME:$GROUP_NAME /var/lib/rippled/
+        chown -R $USER_NAME:$GROUP_NAME /var/log/brtd/
+        chown -R $USER_NAME:$GROUP_NAME /var/lib/brtd/
         chown -R $USER_NAME:$GROUP_NAME /opt/ripple
-        chmod 755 /var/log/rippled/
-        chmod 755 /var/lib/rippled/
-        chmod 644 /opt/ripple/etc/update-rippled-cron
-        chmod 644 /etc/logrotate.d/rippled
-        chown -R root:$GROUP_NAME /opt/ripple/etc/update-rippled-cron
+        chmod 755 /var/log/brtd/
+        chmod 755 /var/lib/brtd/
+        chmod 644 /opt/ripple/etc/update-brtd-cron
+        chmod 644 /etc/logrotate.d/brtd
+        chown -R root:$GROUP_NAME /opt/ripple/etc/update-brtd-cron
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

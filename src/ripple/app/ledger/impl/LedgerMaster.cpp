@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -273,7 +273,7 @@ LedgerMaster::getValidatedLedgerAge()
 {
     using namespace std::chrono_literals;
 
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     if (app_.config().reporting())
     {
         auto age = PgQuery(app_.getPgPool())("SELECT age()");
@@ -1099,11 +1099,11 @@ LedgerMaster::checkAccept(std::shared_ptr<Ledger const> const& ledger)
 
     if (ledger->seq() % 256 == 0)
     {
-        // Check if the majority of validators run a higher version rippled
+        // Check if the majority of validators run a higher version brtd
         // software. If so print a warning.
         //
         // Once the HardenedValidations amendment is enabled, validators include
-        // their rippled software version in the validation messages of every
+        // their brtd software version in the validation messages of every
         // (flag - 1) ledger. We wait for one ledger time before checking the
         // version information to accumulate more validation messages.
 
@@ -1118,7 +1118,7 @@ LedgerMaster::checkAccept(std::shared_ptr<Ledger const> const& ledger)
             auto const vals = app_.getValidations().getTrustedForLedger(
                 ledger->info().parentHash);
             std::size_t higherVersionCount = 0;
-            std::size_t rippledCount = 0;
+            std::size_t brtdCount = 0;
             for (auto const& v : vals)
             {
                 if (v->isFieldPresent(sfServerVersion))
@@ -1126,15 +1126,15 @@ LedgerMaster::checkAccept(std::shared_ptr<Ledger const> const& ledger)
                     auto version = v->getFieldU64(sfServerVersion);
                     higherVersionCount +=
                         BuildInfo::isNewerVersion(version) ? 1 : 0;
-                    rippledCount +=
-                        BuildInfo::isRippledVersion(version) ? 1 : 0;
+                    brtdCount +=
+                        BuildInfo::isbrtdVersion(version) ? 1 : 0;
                 }
             }
             // We report only if (1) we have accumulated validation messages
             // from 90% validators from the UNL, (2) 60% of validators
-            // running the rippled implementation have higher version numbers,
+            // running the brtd implementation have higher version numbers,
             // and (3) the calculation won't cause divide-by-zero.
-            if (higherVersionCount > 0 && rippledCount > 0)
+            if (higherVersionCount > 0 && brtdCount > 0)
             {
                 constexpr std::size_t reportingPercent = 90;
                 constexpr std::size_t cutoffPercent = 60;
@@ -1143,7 +1143,7 @@ LedgerMaster::checkAccept(std::shared_ptr<Ledger const> const& ledger)
                 needPrint = unlSize > 0 &&
                     calculatePercent(vals.size(), unlSize) >=
                         reportingPercent &&
-                    calculatePercent(higherVersionCount, rippledCount) >=
+                    calculatePercent(higherVersionCount, brtdCount) >=
                         cutoffPercent;
             }
         }
@@ -1621,7 +1621,7 @@ LedgerMaster::getCurrentLedger()
 std::shared_ptr<Ledger const>
 LedgerMaster::getValidatedLedger()
 {
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     if (app_.config().reporting())
     {
         auto seq = PgQuery(app_.getPgPool())("SELECT max_ledger()");
@@ -1658,7 +1658,7 @@ LedgerMaster::getPublishedLedger()
 std::string
 LedgerMaster::getCompleteLedgers()
 {
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     if (app_.config().reporting())
     {
         auto range = PgQuery(app_.getPgPool())("SELECT complete_ledgers()");
@@ -2351,7 +2351,7 @@ LedgerMaster::minSqlSeq()
         *db << "SELECT MIN(LedgerSeq) FROM Ledgers", soci::into(seq);
         return seq;
     }
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     {
         auto seq = PgQuery(app_.getPgPool())("SELECT min_ledger()");
         if (!seq)

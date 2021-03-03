@@ -208,13 +208,13 @@ used instead.
 
 ```dosini
 # This is the persistent datastore for shards. It is important for the health
-# of the ripple network that rippled operators shard as much as practical.
+# of the ripple network that brtd operators shard as much as practical.
 # NuDB requires SSD storage. Helpful information can be found here
 # https://ripple.com/build/history-sharding
 [shard_db]
 type=NuDB
-path=/var/lib/rippled/db/shards/nudb
-download_path=/var/lib/rippled/db/shards/
+path=/var/lib/brtd/db/shards/nudb
+download_path=/var/lib/brtd/db/shards/
 max_historical_shards=50
 ```
 

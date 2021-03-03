@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -1304,7 +1304,7 @@ loadLedgerInfosPostgres(
     Application& app)
 {
     std::vector<LedgerInfo> infos;
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     auto log = app.journal("Ledger");
     assert(app.config().reporting());
     std::stringstream sql;
@@ -1783,7 +1783,7 @@ flatFetchTransactions(ReadView const& ledger, Application& app)
         return {};
     }
     std::vector<uint256> nodestoreHashes;
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
 
     auto log = app.journal("Ledger");
 

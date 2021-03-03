@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2020 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -17,8 +17,8 @@
 */
 //==============================================================================
 
-#ifndef RIPPLED_GRPCTESTCLIENTBASE_H
-#define RIPPLED_GRPCTESTCLIENTBASE_H
+#ifndef brtd_GRPCTESTCLIENTBASE_H
+#define brtd_GRPCTESTCLIENTBASE_H
 
 #include <org/xrpl/rpc/v1/xrp_ledger.grpc.pb.h>
 #include <test/jtx/envconfig.h>
@@ -46,4 +46,4 @@ struct GRPCTestClientBase
 
 }  // namespace test
 }  // namespace ripple
-#endif  // RIPPLED_GRPCTESTCLIENTBASE_H
+#endif  // brtd_GRPCTESTCLIENTBASE_H

@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -132,7 +132,7 @@ Transaction::load(
 Transaction::Locator
 Transaction::locate(uint256 const& id, Application& app)
 {
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     auto baseCmd = boost::format(R"(SELECT tx('%s');)");
 
     std::string txHash = "\\x" + strHex(id);

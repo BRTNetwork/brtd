@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012-2017 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -43,7 +43,7 @@ struct ConsensusParms
         This is a safety to protect against very old validations and the time
         it takes to adjust the close time accuracy window.
     */
-    std::chrono::seconds validationVALID_WALL = std::chrono::minutes{5};
+    std::chrono::seconds validationVALID_WALL = std::chrono::minutes{};
 
     /** Duration a validation remains current after first observed.
 

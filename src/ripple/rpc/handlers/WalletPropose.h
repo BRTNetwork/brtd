@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2015 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -17,8 +17,8 @@
 */
 //==============================================================================
 
-#ifndef RIPPLED_RIPPLE_RPC_HANDLERS_WALLETPROPOSE_H
-#define RIPPLED_RIPPLE_RPC_HANDLERS_WALLETPROPOSE_H
+#ifndef brtd_RIPPLE_RPC_HANDLERS_WALLETPROPOSE_H
+#define brtd_RIPPLE_RPC_HANDLERS_WALLETPROPOSE_H
 
 #include <ripple/json/json_value.h>
 

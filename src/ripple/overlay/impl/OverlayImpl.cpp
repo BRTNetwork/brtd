@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -543,7 +543,7 @@ OverlayImpl::onPrepare()
                 m_peerFinder->addFallbackStrings(base + name, ips);
         });
 
-    // Add the ips_fixed from the rippled.cfg file
+    // Add the ips_fixed from the brtd.cfg file
     if (!app_.config().standalone() && !app_.config().IPS_FIXED.empty())
     {
         m_resolver.resolve(

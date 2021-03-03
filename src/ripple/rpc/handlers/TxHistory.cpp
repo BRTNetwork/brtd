@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012-2014 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -38,7 +38,7 @@ Json::Value
 doTxHistoryReporting(RPC::JsonContext& context)
 {
     Json::Value ret;
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     if (!context.app.config().reporting())
     {
         assert(false);

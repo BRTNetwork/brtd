@@ -35,19 +35,19 @@ if (coverage)
       add_custom_target (coverage_report
         USES_TERMINAL
         COMMAND ${CMAKE_COMMAND} -E echo "Generating coverage - results will be in ${CMAKE_BINARY_DIR}/coverage/index.html."
-        COMMAND ${CMAKE_COMMAND} -E echo "Running rippled tests."
-        COMMAND rippled --unittest$<$<BOOL:${coverage_test}>:=${coverage_test}> --quiet --unittest-log
+        COMMAND ${CMAKE_COMMAND} -E echo "Running brtd tests."
+        COMMAND brtd --unittest$<$<BOOL:${coverage_test}>:=${coverage_test}> --quiet --unittest-log
         COMMAND ${LLVM_PROFDATA}
           merge -sparse default.profraw -o rip.profdata
         COMMAND ${CMAKE_COMMAND} -E echo "Summary of coverage:"
         COMMAND ${LLVM_COV}
           report -instr-profile=rip.profdata
-          $<TARGET_FILE:rippled> ${extract_pattern}
+          $<TARGET_FILE:brtd> ${extract_pattern}
         # generate html report
         COMMAND ${LLVM_COV}
           show -format=html -output-dir=${CMAKE_BINARY_DIR}/coverage
           -instr-profile=rip.profdata
-          $<TARGET_FILE:rippled> ${extract_pattern}
+          $<TARGET_FILE:brtd> ${extract_pattern}
         BYPRODUCTS coverage/index.html)
     endif ()
   elseif (is_gcc)
@@ -75,8 +75,8 @@ if (coverage)
           --no-external -d "${CMAKE_CURRENT_SOURCE_DIR}" -c -d . -i -o baseline.info
           | grep -v "ignoring data for external file"
         # run tests
-        COMMAND ${CMAKE_COMMAND} -E echo "Running rippled tests for coverage report."
-        COMMAND rippled --unittest$<$<BOOL:${coverage_test}>:=${coverage_test}> --quiet --unittest-log
+        COMMAND ${CMAKE_COMMAND} -E echo "Running brtd tests for coverage report."
+        COMMAND brtd --unittest$<$<BOOL:${coverage_test}>:=${coverage_test}> --quiet --unittest-log
         # Create test coverage data file
         COMMAND ${LCOV}
           --no-external -d "${CMAKE_CURRENT_SOURCE_DIR}" -c -d . -o tests.info

@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -81,11 +81,11 @@ const std::uint32_t tfOfferCreateMask =
     ~(tfUniversal | tfPassive | tfImmediateOrCancel | tfFillOrKill | tfSell);
 
 // Payment flags:
-const std::uint32_t tfNoRippleDirect = 0x00010000;
+const std::uint32_t tfNobrtdirect = 0x00010000;
 const std::uint32_t tfPartialPayment = 0x00020000;
 const std::uint32_t tfLimitQuality = 0x00040000;
 const std::uint32_t tfPaymentMask =
-    ~(tfUniversal | tfPartialPayment | tfLimitQuality | tfNoRippleDirect);
+    ~(tfUniversal | tfPartialPayment | tfLimitQuality | tfNobrtdirect);
 
 // TrustSet flags:
 const std::uint32_t tfSetfAuth = 0x00010000;

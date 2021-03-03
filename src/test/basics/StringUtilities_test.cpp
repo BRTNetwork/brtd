@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -47,7 +47,7 @@ public:
     {
         testcase("strUnHex");
 
-        testUnHexSuccess("526970706c6544", "RippleD");
+        testUnHexSuccess("526970706c6544", "brtd");
         testUnHexSuccess("A", "\n");
         testUnHexSuccess("0A", "\n");
         testUnHexSuccess("D0A", "\r\n");

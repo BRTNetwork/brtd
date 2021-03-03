@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
-# This script generates information about your rippled installation
+# This script generates information about your brtd installation
 # and system. It can be used to help debug issues that you may face
 # in your installation. While this script endeavors to not display any 
 # sensitive information, it is recommended that you read the output
 # before sharing with any third parties.
 
 
-rippled_exe=/opt/ripple/bin/rippled
-conf_file=/etc/opt/ripple/rippled.cfg
+brtd_exe=/opt/ripple/bin/brtd
+conf_file=/etc/opt/ripple/brtd.cfg
 
 while getopts ":e:c:" opt; do
     case $opt in
         e)
-            rippled_exe=${OPTARG}
+            brtd_exe=${OPTARG}
             ;;
         c)
             conf_file=${OPTARG}
@@ -27,8 +27,8 @@ done
 tmp_loc=$(mktemp -d --tmpdir ripple_info.XXXXX)
 chmod 751 ${tmp_loc}
 awk_prog=${tmp_loc}/cfg.awk
-summary_out=${tmp_loc}/rippled_info.md
-printf "# rippled report info\n\n> generated at %s\n" "$(date -R)" > ${summary_out}
+summary_out=${tmp_loc}/brtd_info.md
+printf "# brtd report info\n\n> generated at %s\n" "$(date -R)" > ${summary_out}
 
 function log_section {
     printf "\n## %s\n" "$*" >> ${summary_out}
@@ -44,7 +44,7 @@ function join_by {
 
 if [[ -f ${conf_file} ]] ; then
     exclude=( ips ips_fixed node_seed validation_seed validator_token )
-    cleaned_conf=${tmp_loc}/cleaned_rippled_cfg.txt
+    cleaned_conf=${tmp_loc}/cleaned_brtd_cfg.txt
     cat << 'EOP' >> ${awk_prog}
     BEGIN {FS="[[:space:]]*=[[:space:]]*"; skip=0; db_path=""; print > OUT_FILE; split(exl,exa,"|")}
     /^#/ {next}
@@ -86,9 +86,9 @@ exec 3>&1 1>>${log_file} 2>&1
 
 ## Send all stdout files to /tmp
 
-if [[ -x ${rippled_exe} ]] ; then
-    pgrep rippled && \
-    ${rippled_exe} --conf ${conf_file} \
+if [[ -x ${brtd_exe} ]] ; then
+    pgrep brtd && \
+    ${brtd_exe} --conf ${conf_file} \
     -- server_info                  | log_section "server info"
 fi
 
@@ -137,7 +137,7 @@ cat ${log_file} | log_section "script log"
 
 cat << MSG | tee /dev/fd/3
 ####################################################
-  rippled info has been gathered. Please copy the
+  brtd info has been gathered. Please copy the
   contents of ${summary_out}
   to a github gist at https://gist.github.com/
 

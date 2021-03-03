@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -139,7 +139,7 @@ struct Flow_test : public beast::unit_test::suite
             env(pay(alice, dan, USDC(5)),
                 path(bob, carol),
                 sendmax(USDA(6)),
-                txflags(tfNoRippleDirect));
+                txflags(tfNobrtdirect));
             env.require(balance(dan, USDC(5)));
             env.require(balance(alice, USDB(0.5)));
         }
@@ -157,7 +157,7 @@ struct Flow_test : public beast::unit_test::suite
             env(pay(alice, dan, USDC(5)),
                 path(bob, carol),
                 sendmax(USDA(6)),
-                txflags(tfNoRippleDirect));
+                txflags(tfNobrtdirect));
             env.require(balance(dan, USDC(5)));
             env.require(balance(bob, USDA(5)));
         }
@@ -179,7 +179,7 @@ struct Flow_test : public beast::unit_test::suite
             env(pay(alice, erin, USDD(5)),
                 path(carol, dan),
                 path(bob, dan),
-                txflags(tfNoRippleDirect));
+                txflags(tfNobrtdirect));
 
             env.require(balance(erin, USDD(5)));
             env.require(balance(dan, USDB(5)));
@@ -236,7 +236,7 @@ struct Flow_test : public beast::unit_test::suite
                 env(pay(dan, carol, USDA(10)),
                     path(bob),
                     sendmax(USDD(100)),
-                    txflags(tfNoRippleDirect));
+                    txflags(tfNobrtdirect));
                 env.require(balance(bob, USDA(90)));
                 if (bobAliceQOut > bobDanQIn)
                     env.require(balance(
@@ -529,7 +529,7 @@ struct Flow_test : public beast::unit_test::suite
             env(pay(alice, carol, EUR(1)),
                 path(~XRP, ~EUR),
                 sendmax(USD(0.4)),
-                txflags(tfNoRippleDirect | tfPartialPayment));
+                txflags(tfNobrtdirect | tfPartialPayment));
 
             env.require(balance(carol, EUR(1)));
             env.require(balance(bob, USD(0.4)));
@@ -660,7 +660,7 @@ struct Flow_test : public beast::unit_test::suite
             env(pay(alice, carol, EUR(50)),
                 path(bob, gw, ~EUR),
                 sendmax(USDA(60)),
-                txflags(tfNoRippleDirect));
+                txflags(tfNobrtdirect));
             env.require(
                 balance(bob, USD(-10)),
                 balance(bob, USDA(60)),
@@ -735,7 +735,7 @@ struct Flow_test : public beast::unit_test::suite
         env(pay(alice, carol, USD(1000000)),
             path(~XRP, ~USD),
             sendmax(EUR(500)),
-            txflags(tfNoRippleDirect | tfPartialPayment));
+            txflags(tfNobrtdirect | tfPartialPayment));
 
         auto const carolUSD = env.balance(carol, USD).value();
         BEAST_EXPECT(carolUSD > USD(0) && carolUSD < USD(50));
@@ -770,7 +770,7 @@ struct Flow_test : public beast::unit_test::suite
             env(pay(alice, carol, USD(100)),
                 path(~USD),
                 sendmax(XRP(100)),
-                txflags(tfNoRippleDirect | tfPartialPayment | tfLimitQuality));
+                txflags(tfNobrtdirect | tfPartialPayment | tfLimitQuality));
 
             env.require(balance(carol, USD(50)));
         }
@@ -971,7 +971,7 @@ struct Flow_test : public beast::unit_test::suite
         env(pay(alice, alice, toSend),
             path(~USD),
             sendmax(XRP(20000)),
-            txflags(tfPartialPayment | tfNoRippleDirect));
+            txflags(tfPartialPayment | tfNobrtdirect));
     }
 
     void
@@ -1011,7 +1011,7 @@ struct Flow_test : public beast::unit_test::suite
             env(pay(alice, bob, tinyAmt1),
                 path(~USD),
                 sendmax(drops(9000000000)),
-                txflags(tfNoRippleDirect));
+                txflags(tfNobrtdirect));
 
             BEAST_EXPECT(!isOffer(env, gw, XRP(0), USD(0)));
         }
@@ -1048,7 +1048,7 @@ struct Flow_test : public beast::unit_test::suite
             env(pay(alice, bob, drops(9000000000)),
                 path(~XRP),
                 sendmax(USD(1)),
-                txflags(tfNoRippleDirect));
+                txflags(tfNobrtdirect));
 
             BEAST_EXPECT(!isOffer(env, gw, USD(0), XRP(0)));
         }
@@ -1113,7 +1113,7 @@ struct Flow_test : public beast::unit_test::suite
         env(pay(alice, bob, XRP(10000)),
             path(~XRP),
             sendmax(USD(100)),
-            txflags(tfPartialPayment | tfNoRippleDirect));
+            txflags(tfPartialPayment | tfNobrtdirect));
     }
 
     void
@@ -1145,7 +1145,7 @@ struct Flow_test : public beast::unit_test::suite
         env(pay(alice, alice, XRP(1)),
             path(gw, bob, ~XRP),
             sendmax(gw["USD"](1000)),
-            txflags(tfNoRippleDirect),
+            txflags(tfNobrtdirect),
             ter(tecPATH_DRY));
         env.close();
 
@@ -1158,7 +1158,7 @@ struct Flow_test : public beast::unit_test::suite
         env(pay(carol, carol, gw["USD"](1000)),
             path(~bob["USD"], gw),
             sendmax(XRP(100000)),
-            txflags(tfNoRippleDirect),
+            txflags(tfNobrtdirect),
             ter(tecPATH_DRY));
         env.close();
 
@@ -1201,7 +1201,7 @@ struct Flow_test : public beast::unit_test::suite
         env(pay(alice, alice, USD(1000)),
             path(~bob["USD"], bob, gw),
             sendmax(XRP(1)),
-            txflags(tfNoRippleDirect),
+            txflags(tfNobrtdirect),
             ter(tecPATH_DRY));
         env.close();
     }
@@ -1299,7 +1299,7 @@ struct Flow_test : public beast::unit_test::suite
                 env(pay(alice, bob, EUR(1)),
                     path(~USD, ~XRP, ~EUR),
                     sendmax(XRP(1)),
-                    txflags(tfNoRippleDirect),
+                    txflags(tfNobrtdirect),
                     ter(expectedTer));
             }
             pass();
@@ -1321,7 +1321,7 @@ struct Flow_test : public beast::unit_test::suite
             env(pay(alice, bob, XRP(1)),
                 path(~XRP, ~USD, ~XRP),
                 sendmax(EUR(1)),
-                txflags(tfNoRippleDirect),
+                txflags(tfNobrtdirect),
                 ter(temBAD_PATH_LOOP));
         }
         {
@@ -1349,7 +1349,7 @@ struct Flow_test : public beast::unit_test::suite
             env(pay(alice, bob, JPY(1)),
                 path(~XRP, ~EUR, ~XRP, ~JPY),
                 sendmax(USD(1)),
-                txflags(tfNoRippleDirect),
+                txflags(tfNobrtdirect),
                 ter(temBAD_PATH_LOOP));
         }
     }

@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2020 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -780,9 +780,9 @@ GRPCServer::onStart()
     if (running_ = impl_.start(); running_)
     {
         thread_ = std::thread([this]() {
-            beast::setCurrentThreadName("rippled : GRPCServer");
+            beast::setCurrentThreadName("brtd : GRPCServer");
             // Start the event loop and begin handling requests
-            beast::setCurrentThreadName("rippled: grpc");
+            beast::setCurrentThreadName("brtd: grpc");
             this->impl_.handleRpcs();
         });
     }

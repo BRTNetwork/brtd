@@ -2,7 +2,7 @@
 
 ## Important
 
-We don't recommend macos for rippled production use at this time. Currently, the
+We don't recommend macos for brtd production use at this time. Currently, the
 Ubuntu platform has received the highest level of quality assurance and
 testing. That said, macos is suitable for many development/test tasks.
 
@@ -11,7 +11,7 @@ testing. That said, macos is suitable for many development/test tasks.
 You'll need macos 10.8 or later.
 
 To clone the source code repository, create branches for inspection or
-modification, build rippled using clang, and run the system tests you will need
+modification, build brtd using clang, and run the system tests you will need
 these software components:
 
 * [XCode](https://developer.apple.com/xcode/)
@@ -51,7 +51,7 @@ For more info, see "Step 2: Install Homebrew"
 ### Install Dependencies Using Homebrew
 
 `brew` will generally install the latest stable version of any package, which
-should satisfy the the minimum version requirements for rippled.
+should satisfy the the minimum version requirements for brtd.
 
 ```
 brew update
@@ -78,24 +78,24 @@ to the root of the extracted directory.
 
 ### Dependencies for Building Source Documentation
 
-Source code documentation is not required for running/debugging rippled. That
+Source code documentation is not required for running/debugging brtd. That
 said, the documentation contains some helpful information about specific
 components of the application. For more information on how to install and run
 the necessary components, see [this document](../../docs/README.md)
 
 ## Build
 
-### Clone the rippled repository
+### Clone the brtd repository
 
 From a shell:
 
 ```
-git clone git@github.com:ripple/rippled.git
-cd rippled
+git clone git@github.com:ripple/brtd.git
+cd brtd
 ```
 
 For a stable release, choose the `master` branch or one of the tagged releases
-listed on [GitHub](https://github.com/ripple/rippled/releases GitHub). 
+listed on [GitHub](https://github.com/ripple/brtd/releases GitHub). 
 
 ```
 git checkout master
@@ -164,7 +164,7 @@ the `-j` parameter in this example tells the build tool to compile several
 files in parallel. This value should be chosen roughly based on the number of
 cores you have available and/or want to use for building.
 
-When the build completes succesfully, you will have a `rippled` executable in
+When the build completes succesfully, you will have a `brtd` executable in
 the current directory, which can be used to connect to the network (when
 properly configured) or to run unit tests.
 
@@ -224,8 +224,8 @@ Several other infrequently used options are available - run `ccmake` or
 
 ## Unit Tests (Recommended)
 
-`rippled` builds a set of unit tests into the server executable. To run these unit
-tests after building, pass the `--unittest` option to the compiled `rippled`
+`brtd` builds a set of unit tests into the server executable. To run these unit
+tests after building, pass the `--unittest` option to the compiled `brtd`
 executable. The executable will exit with summary info after running the unit tests.
 
 

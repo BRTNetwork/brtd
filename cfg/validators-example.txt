@@ -1,7 +1,7 @@
 #
 # Default validators.txt
 #
-# This file is located in the same folder as your rippled.cfg file
+# This file is located in the same folder as your brtd.cfg file
 # and defines which validators your server trusts not to collude.
 #
 # This file is UTF-8 with DOS, UNIX, or Mac style line endings.
@@ -43,11 +43,11 @@
 #    ED307A760EE34F2D0CAA103377B1969117C38B8AA0AA1E2A24DAC1F32FC97087ED
 #
 
-# The default validator list publishers that the rippled instance
+# The default validator list publishers that the brtd instance
 # trusts.
 #
-# WARNING: Changing these values can cause your rippled instance to see a
-#          validated ledger that contradicts other rippled instances'
+# WARNING: Changing these values can cause your brtd instance to see a
+#          validated ledger that contradicts other brtd instances'
 #          validated ledgers (aka a ledger fork) if your validator list(s)
 #          do not sufficiently overlap with the list(s) used by others.
 #          See: https://arxiv.org/pdf/1802.07242.pdf
@@ -58,7 +58,7 @@ https://vl.ripple.com
 [validator_list_keys]
 ED2677ABFFD1B33AC6FBC3062B71F1E8397C1505E1C42C64D11AD1B28FF73F4734
 
-# To use the test network (see https://xrpl.org/connect-your-rippled-to-the-xrp-test-net.html),
+# To use the test network (see https://xrpl.org/connect-your-brtd-to-the-xrp-test-net.html),
 # use the following configuration instead:
 #
 # [validator_list_sites]

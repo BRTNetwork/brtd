@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -250,7 +250,7 @@ public:
     virtual bool
     serverOkay(std::string& reason) = 0;
 
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     virtual std::shared_ptr<PgPool> const&
     getPgPool() = 0;
 #endif

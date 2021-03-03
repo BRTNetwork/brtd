@@ -79,8 +79,8 @@ if ("${CMAKE_GENERATOR}" MATCHES "Visual Studio" AND
 endif ()
 
 if (NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
-  message (FATAL_ERROR "Rippled requires a 64 bit target architecture.\n"
-    "The most likely cause of this warning is trying to build rippled with a 32-bit OS.")
+  message (FATAL_ERROR "brtd requires a 64 bit target architecture.\n"
+    "The most likely cause of this warning is trying to build brtd with a 32-bit OS.")
 endif ()
 
 if (APPLE AND NOT HOMEBREW)

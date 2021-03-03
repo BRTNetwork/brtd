@@ -3,8 +3,8 @@ set -ex
 # used as a before/setup script for docker steps in gitlab-ci
 # expects to be run in standard alpine/dind image
 echo $(nproc)
-docker login -u rippled \
-    -p ${ARTIFACTORY_DEPLOY_KEY_RIPPLED} ${ARTIFACTORY_HUB}
+docker login -u brtd \
+    -p ${ARTIFACTORY_DEPLOY_KEY_brtd} ${ARTIFACTORY_HUB}
 apk add --update py-pip
 apk add \
     bash util-linux coreutils binutils grep \

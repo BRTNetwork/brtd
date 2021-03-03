@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -128,7 +128,7 @@ Handler const handlerArray[]{
      byRef(&doPeerReservationsList),
      Role::ADMIN,
      NO_CONDITION},
-    {"ripple_path_find", byRef(&doRipplePathFind), Role::USER, NO_CONDITION},
+    {"brt_path_find", byRef(&doRipplePathFind), Role::USER, NO_CONDITION},
     {"sign", byRef(&doSign), Role::USER, NO_CONDITION},
     {"sign_for", byRef(&doSignFor), Role::USER, NO_CONDITION},
     {"submit", byRef(&doSubmit), Role::USER, NEEDS_CURRENT_LEDGER},

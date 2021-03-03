@@ -3,14 +3,14 @@
 set -o xtrace
 set -o errexit
 
-# Set to 'true' to run the known "manual" tests in rippled.
+# Set to 'true' to run the known "manual" tests in brtd.
 MANUAL_TESTS=${MANUAL_TESTS:-false}
 # The maximum number of concurrent tests.
 CONCURRENT_TESTS=${CONCURRENT_TESTS:-$(nproc)}
-# The path to rippled.
-RIPPLED=${RIPPLED:-build/rippled}
-# Additional arguments to rippled.
-RIPPLED_ARGS=${RIPPLED_ARGS:-}
+# The path to brtd.
+brtd=${brtd:-build/brtd}
+# Additional arguments to brtd.
+brtd_ARGS=${brtd_ARGS:-}
 
 function join_by { local IFS="$1"; shift; echo "$*"; }
 
@@ -32,10 +32,10 @@ declare -a manual_tests=(
 )
 
 if [[ ${MANUAL_TESTS} == 'true' ]]; then
-  RIPPLED_ARGS+=" --unittest=$(join_by , "${manual_tests[@]}")"
+  brtd_ARGS+=" --unittest=$(join_by , "${manual_tests[@]}")"
 else
-  RIPPLED_ARGS+=" --unittest --quiet --unittest-log"
+  brtd_ARGS+=" --unittest --quiet --unittest-log"
 fi
-RIPPLED_ARGS+=" --unittest-jobs ${CONCURRENT_TESTS}"
+brtd_ARGS+=" --unittest-jobs ${CONCURRENT_TESTS}"
 
-${RIPPLED} ${RIPPLED_ARGS}
+${brtd} ${brtd_ARGS}

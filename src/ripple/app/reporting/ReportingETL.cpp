@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2020 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -135,7 +135,7 @@ ReportingETL::loadInitialLedger(uint32_t startingSequence)
     ledger->stateMap().clearSynching();
     ledger->txMap().clearSynching();
 
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     std::vector<AccountTransactionsData> accountTxData =
         insertTransactions(ledger, *ledgerData);
 #endif
@@ -164,7 +164,7 @@ ReportingETL::loadInitialLedger(uint32_t startingSequence)
         flushLedger(ledger);
         if (app_.config().reporting())
         {
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
             writeToPostgres(
                 ledger->info(), accountTxData, app_.getPgPool(), journal_);
 #endif
@@ -502,7 +502,7 @@ ReportingETL::runETLPipeline(uint32_t startSequence)
                            &startSequence,
                            &writeConflict,
                            &transformQueue]() {
-        beast::setCurrentThreadName("rippled: ReportingETL extract");
+        beast::setCurrentThreadName("brtd: ReportingETL extract");
         uint32_t currentSequence = startSequence;
 
         // there are two stopping conditions here.
@@ -554,7 +554,7 @@ ReportingETL::runETLPipeline(uint32_t startSequence)
                              &writeConflict,
                              &loadQueue,
                              &transformQueue]() {
-        beast::setCurrentThreadName("rippled: ReportingETL transform");
+        beast::setCurrentThreadName("brtd: ReportingETL transform");
 
         assert(parent);
         parent = std::make_shared<Ledger>(*parent, NetClock::time_point{});
@@ -593,7 +593,7 @@ ReportingETL::runETLPipeline(uint32_t startSequence)
                         &lastPublishedSequence,
                         &loadQueue,
                         &writeConflict]() {
-        beast::setCurrentThreadName("rippled: ReportingETL load");
+        beast::setCurrentThreadName("brtd: ReportingETL load");
         size_t totalTransactions = 0;
         double totalTime = 0;
         while (!writeConflict)
@@ -620,7 +620,7 @@ ReportingETL::runETLPipeline(uint32_t startSequence)
             // write to RDBMS
             // if there is a write conflict, some other process has already
             // written this ledger and has taken over as the ETL writer
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
             if (!writeToPostgres(
                     ledger->info(), accountTxData, app_.getPgPool(), journal_))
                 writeConflict = true;
@@ -817,7 +817,7 @@ void
 ReportingETL::doWork()
 {
     worker_ = std::thread([this]() {
-        beast::setCurrentThreadName("rippled: ReportingETL worker");
+        beast::setCurrentThreadName("brtd: ReportingETL worker");
         if (readOnly_)
             monitorReadOnly();
         else
@@ -835,7 +835,7 @@ ReportingETL::ReportingETL(Application& app, Stoppable& parent)
     // if present, get endpoint from config
     if (app_.config().exists("reporting"))
     {
-#ifndef RIPPLED_REPORTING
+#ifndef brtd_REPORTING
         Throw<std::runtime_error>(
             "Config file specifies reporting, but software was not built with "
             "-Dreporting=1. To use reporting, configure CMake with "

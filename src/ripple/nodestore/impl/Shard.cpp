@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2017 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -588,7 +588,7 @@ Shard::finalize(
         A lock is required when calling the NuDB verify function. Because
         this can be a time consuming process, the server may desync.
         Until this function is modified to work on an open database, we
-        are unable to use it from rippled.
+        are unable to use it from brtd.
 
         // Verify backend integrity
         backend_->verify();

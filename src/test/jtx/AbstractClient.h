@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2016 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -28,7 +28,7 @@ namespace test {
 /* Abstract Ripple Client interface.
 
    This abstracts the transport layer, allowing
-   commands to be submitted to a rippled server.
+   commands to be submitted to a brtd server.
 */
 class AbstractClient
 {

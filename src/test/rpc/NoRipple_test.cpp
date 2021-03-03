@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2016 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -123,7 +123,7 @@ public:
             }();
 
             auto const resp =
-                env.rpc("json", "ripple_path_find", to_string(params));
+                env.rpc("json", "brt_path_find", to_string(params));
             BEAST_EXPECT(resp[jss::result][jss::alternatives].size() == 1);
 
             auto getAccountLines = [&env](Account const& acct) {
@@ -197,7 +197,7 @@ public:
         }();
 
         Json::Value const resp{
-            env.rpc("json", "ripple_path_find", to_string(params))};
+            env.rpc("json", "brt_path_find", to_string(params))};
         BEAST_EXPECT(resp[jss::result][jss::alternatives].size() == 0);
 
         env(pay(alice, carol, bob["USD"](50)), ter(tecPATH_DRY));

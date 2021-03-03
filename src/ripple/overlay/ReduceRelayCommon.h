@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright 2020 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -53,4 +53,4 @@ static constexpr auto WAIT_ON_BOOTUP = std::chrono::minutes{10};
 
 }  // namespace ripple
 
-#endif  // RIPPLED_REDUCERELAYCOMMON_H_INCLUDED
+#endif  // brtd_REDUCERELAYCOMMON_H_INCLUDED

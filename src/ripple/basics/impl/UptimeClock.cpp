@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -24,14 +24,14 @@ namespace ripple {
 std::atomic<UptimeClock::rep> UptimeClock::now_{0};  // seconds since start
 std::atomic<bool> UptimeClock::stop_{false};         // stop update thread
 
-// On rippled shutdown, cancel and wait for the update thread
+// On brtd shutdown, cancel and wait for the update thread
 UptimeClock::update_thread::~update_thread()
 {
     if (joinable())
     {
         stop_ = true;
         // This join() may take up to a 1s, but happens only
-        // once at rippled shutdown.
+        // once at brtd shutdown.
         join();
     }
 }
@@ -55,7 +55,7 @@ UptimeClock::start_clock()
     }};
 }
 
-// This actually measures time since first use, instead of since rippled start.
+// This actually measures time since first use, instead of since brtd start.
 // However the difference between these two epochs is a small fraction of a
 // second and unimportant.
 
@@ -65,7 +65,7 @@ UptimeClock::now()
     // start the update thread on first use
     static const auto init = start_clock();
 
-    // Return the number of seconds since rippled start
+    // Return the number of seconds since brtd start
     return time_point{duration{now_}};
 }
 

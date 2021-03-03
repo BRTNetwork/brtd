@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-#    This file is part of rippled: https://github.com/ripple/rippled
+#    This file is part of brtd: https://github.com/ripple/brtd
 #    Copyright (c) 2012 - 2017 Ripple Labs Inc.
 #
 #    Permission to use, copy, modify, and/or distribute this software for any
@@ -64,8 +64,8 @@ if IS_WINDOWS:
 else:
     CMAKE_UNITY_CONFIGS = []
     CMAKE_NONUNITY_CONFIGS = []
-CMAKE_UNITY_COMBOS = { '' : [['rippled'], CMAKE_UNITY_CONFIGS],
-    '.nounity' : [['rippled'], CMAKE_NONUNITY_CONFIGS] }
+CMAKE_UNITY_COMBOS = { '' : [['brtd'], CMAKE_UNITY_CONFIGS],
+    '.nounity' : [['brtd'], CMAKE_NONUNITY_CONFIGS] }
 
 if IS_WINDOWS:
     CMAKE_DIR_TARGETS = { ('msvc' + unity,) : targets for unity, targets in
@@ -369,7 +369,7 @@ def main():
             if not build_dirs:
                 build_dirs = ('default',)
             if not build_targets:
-                build_targets = ('rippled',)
+                build_targets = ('brtd',)
             if not build_configs:
                 build_configs = ('',)
             for cmake_dir in build_dirs:

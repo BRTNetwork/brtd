@@ -1,9 +1,9 @@
 # Levelization
 
-Levelization is the term used to describe efforts to prevent rippled from
+Levelization is the term used to describe efforts to prevent brtd from
 having or creating cyclic dependencies.
 
-rippled code is organized into directories under `src/rippled` (and
+brtd code is organized into directories under `src/brtd` (and
 `src/test`) representing modules. The modules are intended to be
 organized into "tiers" or "levels" such that a module from one level can
 only include code from lower levels. Additionally, a module
@@ -47,10 +47,10 @@ that `test` code should *never* be included in `ripple` code.)
 
 The [levelization.sh](levelization.sh) script takes no parameters,
 reads no environment variables, and can be run from any directory,
-as long as it is in the expected location in the rippled repo.
+as long as it is in the expected location in the brtd repo.
 It can be run at any time from within a checked out repo, and will
 do an analysis of all the `#include`s in
-the rippled source. The only caveat is that it runs much slower
+the brtd source. The only caveat is that it runs much slower
 under Windows than in Linux. It hasn't yet been tested under MacOS.
 It generates many files of [results](results):
 

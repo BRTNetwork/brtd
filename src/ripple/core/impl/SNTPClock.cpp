@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -193,7 +193,7 @@ public:
     void
     doRun()
     {
-        beast::setCurrentThreadName("rippled: SNTPClock");
+        beast::setCurrentThreadName("brtd: SNTPClock");
         io_service_.run();
     }
 

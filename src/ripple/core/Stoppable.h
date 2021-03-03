@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012-2015 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -172,7 +172,7 @@ class RootStoppable;
 
     @note A Stoppable may not be restarted.
 
-    The form of the Stoppable tree in the rippled application evolves as
+    The form of the Stoppable tree in the brtd application evolves as
     the source code changes and reacts to new demands. As of July in 2020
     the Stoppable tree had this form:
 

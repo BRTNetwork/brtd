@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012-2014 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -415,7 +415,7 @@ processAccountTxStoredProcedureResult(
 std::pair<AccountTxResult, RPC::Status>
 doAccountTxStoredProcedure(AccountTxArgs const& args, RPC::Context& context)
 {
-#ifdef RIPPLED_REPORTING
+#ifdef brtd_REPORTING
     pg_params dbParams;
 
     char const*& command = dbParams.first;

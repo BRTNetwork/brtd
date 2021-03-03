@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2018 Ripple Labs Inc.
     Permission to use, copy, modify, and/or distribute this software for any
     purpose  with  or without fee is hereby granted, provided that the above
@@ -4734,17 +4734,17 @@ static RPCCallTestData const rpcCallTestArray[] = {
     ]
     })"},
 
-    // ripple_path_find
+    // brt_path_find
     // ------------------------------------------------------------
-    {"ripple_path_find: minimal.",
+    {"brt_path_find: minimal.",
      __LINE__,
      {
-         "ripple_path_find",
+         "brt_path_find",
          R"({"json_argument":true})",
      },
      RPCCallTestData::no_exception,
      R"({
-    "method" : "ripple_path_find",
+    "method" : "brt_path_find",
     "params" : [
       {
          "api_version" : %MAX_API_VER%,
@@ -4752,12 +4752,12 @@ static RPCCallTestData const rpcCallTestArray[] = {
       }
     ]
     })"},
-    {"ripple_path_find: ledger index.",
+    {"brt_path_find: ledger index.",
      __LINE__,
-     {"ripple_path_find", R"({"json_argument":true})", "4294967295"},
+     {"brt_path_find", R"({"json_argument":true})", "4294967295"},
      RPCCallTestData::no_exception,
      R"({
-    "method" : "ripple_path_find",
+    "method" : "brt_path_find",
     "params" : [
       {
          "api_version" : %MAX_API_VER%,
@@ -4766,12 +4766,12 @@ static RPCCallTestData const rpcCallTestArray[] = {
       }
     ]
     })"},
-    {"ripple_path_find: text ledger index.",
+    {"brt_path_find: text ledger index.",
      __LINE__,
-     {"ripple_path_find", R"({"json_argument":true})", "closed"},
+     {"brt_path_find", R"({"json_argument":true})", "closed"},
      RPCCallTestData::no_exception,
      R"({
-    "method" : "ripple_path_find",
+    "method" : "brt_path_find",
     "params" : [
       {
          "api_version" : %MAX_API_VER%,
@@ -4780,14 +4780,14 @@ static RPCCallTestData const rpcCallTestArray[] = {
       }
     ]
     })"},
-    {"ripple_path_find: ledger hash.",
+    {"brt_path_find: ledger hash.",
      __LINE__,
-     {"ripple_path_find",
+     {"brt_path_find",
       R"({"json_argument":true})",
       "0123456789ABCDEFGHIJKLMNOPQRSTUV0123456789ABCDEFGHIJKLMNOPQRSTUV"},
      RPCCallTestData::no_exception,
      R"({
-    "method" : "ripple_path_find",
+    "method" : "brt_path_find",
     "params" : [
       {
          "api_version" : %MAX_API_VER%,
@@ -4797,14 +4797,14 @@ static RPCCallTestData const rpcCallTestArray[] = {
     ]
     })"},
 
-    {"ripple_path_find: too few arguments.",
+    {"brt_path_find: too few arguments.",
      __LINE__,
      {
-         "ripple_path_find",
+         "brt_path_find",
      },
      RPCCallTestData::no_exception,
      R"({
-    "method" : "ripple_path_find",
+    "method" : "brt_path_find",
     "params" : [
       {
          "error" : "badSyntax",
@@ -4813,12 +4813,12 @@ static RPCCallTestData const rpcCallTestArray[] = {
       }
     ]
     })"},
-    {"ripple_path_find: too many arguments.",
+    {"brt_path_find: too many arguments.",
      __LINE__,
-     {"ripple_path_find", R"({"json_argument":true})", "current", "extra"},
+     {"brt_path_find", R"({"json_argument":true})", "current", "extra"},
      RPCCallTestData::no_exception,
      R"({
-    "method" : "ripple_path_find",
+    "method" : "brt_path_find",
     "params" : [
       {
          "error" : "badSyntax",
@@ -4827,15 +4827,15 @@ static RPCCallTestData const rpcCallTestArray[] = {
       }
     ]
     })"},
-    {"ripple_path_find: invalid json (note extra comma).",
+    {"brt_path_find: invalid json (note extra comma).",
      __LINE__,
      {
-         "ripple_path_find",
+         "brt_path_find",
          R"({"json_argument":true,})",
      },
      RPCCallTestData::no_exception,
      R"({
-    "method" : "ripple_path_find",
+    "method" : "brt_path_find",
     "params" : [
       {
          "error" : "invalidParams",
@@ -4844,12 +4844,12 @@ static RPCCallTestData const rpcCallTestArray[] = {
       }
     ]
     })"},
-    {"ripple_path_find: ledger index too small.",
+    {"brt_path_find: ledger index too small.",
      __LINE__,
-     {"ripple_path_find", R"({"json_argument":true})", "-1"},
+     {"brt_path_find", R"({"json_argument":true})", "-1"},
      RPCCallTestData::no_exception,
      R"({
-    "method" : "ripple_path_find",
+    "method" : "brt_path_find",
     "params" : [
       {
         "api_version" : %MAX_API_VER%,
@@ -4858,12 +4858,12 @@ static RPCCallTestData const rpcCallTestArray[] = {
       }
     ]
     })"},
-    {"ripple_path_find: ledger index too big.",
+    {"brt_path_find: ledger index too big.",
      __LINE__,
-     {"ripple_path_find", R"({"json_argument":true})", "4294967296"},
+     {"brt_path_find", R"({"json_argument":true})", "4294967296"},
      RPCCallTestData::no_exception,
      R"({
-    "method" : "ripple_path_find",
+    "method" : "brt_path_find",
     "params" : [
       {
          "api_version" : %MAX_API_VER%,
@@ -4872,12 +4872,12 @@ static RPCCallTestData const rpcCallTestArray[] = {
       }
     ]
     })"},
-    {"ripple_path_find: invalid text ledger index.",
+    {"brt_path_find: invalid text ledger index.",
      __LINE__,
-     {"ripple_path_find", R"({"json_argument":true})", "cur"},
+     {"brt_path_find", R"({"json_argument":true})", "cur"},
      RPCCallTestData::no_exception,
      R"({
-    "method" : "ripple_path_find",
+    "method" : "brt_path_find",
     "params" : [
       {
          "api_version" : %MAX_API_VER%,

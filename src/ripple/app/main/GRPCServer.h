@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of rippled: https://github.com/ripple/rippled
+    This file is part of brtd: https://github.com/ripple/brtd
     Copyright (c) 2012, 2013 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -254,14 +254,14 @@ private:
         getClientEndpoint();
 
         // If the request was proxied through
-        // another rippled node, returns the ip of the originating client.
+        // another brtd node, returns the ip of the originating client.
         // Empty optional if request was not proxied or there was an error
         // decoding the client ip
         std::optional<boost::asio::ip::address>
         getProxiedClientIpAddress();
 
         // If the request was proxied through
-        // another rippled node, returns the endpoint of the originating client.
+        // another brtd node, returns the endpoint of the originating client.
         // Empty optional if request was not proxied or there was an error
         // decoding the client endpoint
         std::optional<boost::asio::ip::tcp::endpoint>
@@ -281,7 +281,7 @@ private:
         bool
         clientIsUnlimited();
 
-        // True if the request was proxied through another rippled node prior
+        // True if the request was proxied through another brtd node prior
         // to arriving here
         bool
         wasForwarded();

@@ -34,12 +34,12 @@ install (EXPORT RippleExports
 include (CMakePackageConfigHelpers)
 write_basic_package_version_file (
   RippleConfigVersion.cmake
-  VERSION ${rippled_version}
+  VERSION ${brtd_version}
   COMPATIBILITY SameMajorVersion)
 
 if (is_root_project)
-  install (TARGETS rippled RUNTIME DESTINATION bin)
-  set_target_properties(rippled PROPERTIES INSTALL_RPATH_USE_LINK_PATH ON)
+  install (TARGETS brtd RUNTIME DESTINATION bin)
+  set_target_properties(brtd PROPERTIES INSTALL_RPATH_USE_LINK_PATH ON)
   install (
     FILES
       ${CMAKE_CURRENT_SOURCE_DIR}/Builds/CMake/RippleConfig.cmake
@@ -56,7 +56,7 @@ if (is_root_project)
         message (\"-- Skipping : \$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/\${DEST}/\${NEWNAME}\")
       endif ()
     endmacro()
-    copy_if_not_exists(\"${CMAKE_CURRENT_SOURCE_DIR}/cfg/rippled-example.cfg\" etc rippled.cfg)
+    copy_if_not_exists(\"${CMAKE_CURRENT_SOURCE_DIR}/cfg/brtd-example.cfg\" etc brtd.cfg)
     copy_if_not_exists(\"${CMAKE_CURRENT_SOURCE_DIR}/cfg/validators-example.txt\" etc validators.txt)
   ")
 endif ()
