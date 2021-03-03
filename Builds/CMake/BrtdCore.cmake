@@ -810,7 +810,7 @@ target_sources (brtd PRIVATE
 #  src/test/jtx/impl/check.cpp
 #  src/test/jtx/impl/delivermin.cpp
 #  src/test/jtx/impl/deposit.cpp
-#  src/test/jtx/impl/envconfig.cpp
+ src/test/jtx/impl/envconfig.cpp
 #  src/test/jtx/impl/fee.cpp
 #  src/test/jtx/impl/flags.cpp
 #  src/test/jtx/impl/invoice_id.cpp
@@ -967,7 +967,7 @@ target_sources (brtd PRIVATE
      test sources:
        subdir: unit_test
   #]===============================]
-#  src/test/unit_test/multi_runner.cpp
+ src/test/unit_test/multi_runner.cpp
 )
 target_link_libraries (brtd
   Ripple::boost
