@@ -3,7 +3,7 @@
 This document focuses on building brtd for development purposes under recent
 Ubuntu linux distributions. To build brtd for Redhat, Fedora or Centos
 builds, including docker based builds for those distributions, please consult
-the [brtd-package-builder](https://github.com/ripple/brtd-package-builder)
+the [brtd-package-builder](https://github.com/BRTNetwork/brtd-package-builder)
 repository. 
 
 Note: Ubuntu 16.04 users may need to update their compiler (see the dependencies
@@ -60,7 +60,7 @@ cd brtd
 ```
 
 For a stable release, choose the `master` branch or one of the tagged releases
-listed on [GitHub](https://github.com/ripple/brtd/releases). 
+listed on [GitHub](https://github.com/BRTNetwork/brtd/releases). 
 
 ```
 git checkout master
@@ -203,7 +203,7 @@ target_link_libraries (my-signing-app Ripple::xrpl_core)
 First, add the brtd repo as a submodule to your project repo:
 
 ```
-git submodule add -b master https://github.com/ripple/brtd.git vendor/brtd
+git submodule add -b master https://github.com/BRTNetwork/brtd.git vendor/brtd
 ```
 
 change the `vendor/brtd` path as desired for your repo layout. Furthermore,

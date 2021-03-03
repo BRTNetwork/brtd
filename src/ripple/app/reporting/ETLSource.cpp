@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of brtd: https://github.com/ripple/brtd
+    This file is part of brtd: https://github.com/BRTNetwork/brtd
     Copyright (c) 2020 Ripple Labs Inc.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -803,7 +803,7 @@ ETLSource::forwardToP2p(RPC::JsonContext& context) const
         // Set a decorator to change the User-Agent of the handshake
         // and to tell brtd to charge the client IP for RPC
         // resources. See "secure_gateway" in
-        // https://github.com/ripple/brtd/blob/develop/cfg/brtd-example.cfg
+        // https://github.com/BRTNetwork/brtd/blob/develop/cfg/brtd-example.cfg
         ws->set_option(websocket::stream_base::decorator(
             [&context](websocket::request_type& req) {
                 req.set(

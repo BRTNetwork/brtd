@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of brtd: https://github.com/ripple/brtd
+    This file is part of brtd: https://github.com/BRTNetwork/brtd
     Copyright (c) 2012-2017 Ripple Labs Inc
 
     Permission target use, copy, modify, and/or distribute this software for any

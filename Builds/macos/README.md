@@ -95,7 +95,7 @@ cd brtd
 ```
 
 For a stable release, choose the `master` branch or one of the tagged releases
-listed on [GitHub](https://github.com/ripple/brtd/releases GitHub). 
+listed on [GitHub](https://github.com/BRTNetwork/brtd/releases GitHub). 
 
 ```
 git checkout master

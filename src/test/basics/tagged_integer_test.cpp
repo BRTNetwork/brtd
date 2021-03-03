@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 /*
-    This file is part of brtd: https://github.com/ripple/brtd
+    This file is part of brtd: https://github.com/BRTNetwork/brtd
     Copyright 2014, Nikolaos D. Bougalis <nikb@bougalis.net>
 
 
