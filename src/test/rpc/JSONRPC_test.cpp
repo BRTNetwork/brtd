@@ -404,7 +404,7 @@ static constexpr TxnTestData txnTestArray[] = {
        "Missing field 'tx_json.Sequence'.",
        "Missing field 'tx_json.Sequence'."}}},
 
-    {"Cannot create XRP to XRP paths.",
+    {"Cannot create BRT to BRT paths.",
      __LINE__,
      R"({
     "command": "doesnt_matter",
@@ -418,8 +418,8 @@ static constexpr TxnTestData txnTestArray[] = {
         "TransactionType": "Payment"
     }
 })",
-     {{"Cannot build XRP to XRP paths.",
-       "Cannot build XRP to XRP paths.",
+     {{"Cannot build BRT to BRT paths.",
+       "Cannot build BRT to BRT paths.",
        "Missing field 'tx_json.Sequence'.",
        "Missing field 'tx_json.Sequence'."}}},
 

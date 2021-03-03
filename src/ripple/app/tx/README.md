@@ -39,7 +39,7 @@ being signed by a certain number (a quorum) of pre-authorized accounts.
 
 Some technical details, including tables indicating some of the Ripple
 commands and ledger entries to be used for implementing multi-signature, are
-currently listed on the [wiki](https://ripple.com/wiki/Multisign) but will
+currently listed on the [wiki](https://brt.networkwiki/Multisign) but will
 eventually be migrated into this document as well.
 
 For accounts which are designated as multi-sign, there must be a list which
@@ -83,7 +83,7 @@ Multi-signature transactions impose a heavier load on the network and should
 claim higher fees.
 
 The fee structure is not yet decided, but an escalating fee structure is laid
-out and discussed on the [wiki](https://ripple.com/wiki/Multisign). This
+out and discussed on the [wiki](https://brt.networkwiki/Multisign). This
 might need to be revisited and designed in light of discussions about changing
 how fees are handled.
 

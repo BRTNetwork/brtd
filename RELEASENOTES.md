@@ -452,7 +452,7 @@ Highlights of this release include:
 
 ## Version 0.81.0
 
-The `brtd` 0.81.0 release introduces changes that improve the scalability of the XRP Ledger and transitions the recommended validator configuration to a new hosted site, as described in Ripple's [Decentralization Strategy Update](https://ripple.com/dev-blog/decentralization-strategy-update/) post.
+The `brtd` 0.81.0 release introduces changes that improve the scalability of the XRP Ledger and transitions the recommended validator configuration to a new hosted site, as described in Ripple's [Decentralization Strategy Update](https://brt.network/dev-blog/decentralization-strategy-update/) post.
 
 **New and Updated Features**
 
@@ -635,7 +635,7 @@ The `brtd` 0.60.0 release introduces several enhancements that improve the relia
 
 Highlights of this release include:
 
-- `Escrow` (previously called `SusPay`) which permits users to cryptographically escrow XRP on RCL with an expiration date, and optionally a hashlock crypto-condition. Ripple expects Escrow to be enabled via an Amendment named [`Escrow`](https://ripple.com/build/amendments/#escrow) on Thursday, 2017-03-30. See below for details.
+- `Escrow` (previously called `SusPay`) which permits users to cryptographically escrow XRP on RCL with an expiration date, and optionally a hashlock crypto-condition. Ripple expects Escrow to be enabled via an Amendment named [`Escrow`](https://brt.network/build/amendments/#escrow) on Thursday, 2017-03-30. See below for details.
 - Dynamic UNL Lite, which allows `brtd` to automatically adjust which validators it trusts based on recommended lists from trusted publishers.
 
 **New and Updated Features**
@@ -675,7 +675,7 @@ Highlights of this release include:
 
 ## Version 0.50.3
 
-The `brtd` 0.50.3 release corrects a reported exploit that would allow a combination of trust lines and order books in a payment path to bypass the blocking effect of the [`NoRipple`](https://ripple.com/build/understanding-the-noripple-flag/) flag. Ripple recommends that all server operators immediately upgrade to version 0.50.3.
+The `brtd` 0.50.3 release corrects a reported exploit that would allow a combination of trust lines and order books in a payment path to bypass the blocking effect of the [`NoRipple`](https://brt.network/build/understanding-the-noripple-flag/) flag. Ripple recommends that all server operators immediately upgrade to version 0.50.3.
 
 **New and Updated Features**
 
@@ -703,13 +703,13 @@ Adjust the default cipher list and correct a flaw that would not allow an SSL ha
 
 The `brtd` 0.50.0 release includes TickSize, which allows gateways to set a "tick size" for assets they issue to help promote faster price discovery and deeper liquidity, as well as reduce transaction spam and ledger churn on RCL. Ripple expects TickSize to be enabled via an Amendment called TickSize on Tuesday, 2017-02-21.
 
-You can [update to the new version](https://ripple.com/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions).
+You can [update to the new version](https://brt.network/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions).
 
 **New and Updated Features**
 
 **Tick Size**
 
-Currently, offers on RCL can differ by as little as one part in a quadrillion. This means that there is essentially no value to placing an offer early, as an offer placed later at a microscopically better price gets priority over it. The [TickSize](https://ripple.com/build/amendments/#ticksize) Amendment solves this problem by introducing a minimum tick size that a price must move for an offer to be considered to be at a better price. The tick size is controlled by the issuers of the assets involved.
+Currently, offers on RCL can differ by as little as one part in a quadrillion. This means that there is essentially no value to placing an offer early, as an offer placed later at a microscopically better price gets priority over it. The [TickSize](https://brt.network/build/amendments/#ticksize) Amendment solves this problem by introducing a minimum tick size that a price must move for an offer to be considered to be at a better price. The tick size is controlled by the issuers of the assets involved.
 
 This change lets issuers quantize the exchange rates of offers to use a specified number of significant digits. Gateways must enable a TickSize on their account for this feature to benefit them. A single AccountSet transaction may set a `TickSize` parameter. Legal values are 0 and 3-15 inclusive. Zero removes the setting. 3-15 allow that many decimal digits of precision in the pricing of offers for assets issued by this account. It will still be possible to place an offer to buy or sell any amount of an asset and the offer will still keep that amount as exactly as it does now. If an offer involves two assets that each have a tick size, the smaller number of significant figures (larger ticks) controls.
 
@@ -783,11 +783,11 @@ Validator's manifest not forwarded beyond directly connected peers (#1919)
 
 **Upcoming Features**
 
-We expect the previously announced Suspended Payments feature, which introduces new transaction types to the Ripple protocol that will permit users to cryptographically escrow XRP on RCL, to be enabled via the [SusPay](https://ripple.com/build/amendments/#suspay) Amendment on Tuesday, 2017-02-21.
+We expect the previously announced Suspended Payments feature, which introduces new transaction types to the Ripple protocol that will permit users to cryptographically escrow XRP on RCL, to be enabled via the [SusPay](https://brt.network/build/amendments/#suspay) Amendment on Tuesday, 2017-02-21.
 
 Also, we expect support for crypto-conditions, which are signature-like structures that can be used with suspended payments to support ILP integration, to be included in the next brtd release scheduled for March.
 
-Lastly, we do not have an update on the previously announced changes to the hash tree structure that brtd uses to represent a ledger, called [SHAMapV2](https://ripple.com/build/amendments/#shamapv2). At the time of activation, this amendment will require brief scheduled allowable unavailability while the changes to the hash tree structure are computed by the network. We will keep the community updated as we progress towards this date (TBA).
+Lastly, we do not have an update on the previously announced changes to the hash tree structure that brtd uses to represent a ledger, called [SHAMapV2](https://brt.network/build/amendments/#shamapv2). At the time of activation, this amendment will require brief scheduled allowable unavailability while the changes to the hash tree structure are computed by the network. We will keep the community updated as we progress towards this date (TBA).
 
 
 ## Version 0.40.1
@@ -806,21 +806,21 @@ Increase SQLite database limits to prevent full-history servers from crashing wh
 
 ## Version 0.40.0
 
-The `brtd` 0.40.0 release includes Suspended Payments, a new transaction type on the Ripple network that functions similar to an escrow service, which permits users cryptographically escrow XRP on RCL with an expiration date. Ripple expects Suspended Payments to be enabled via an Amendment named [SusPay](https://ripple.com/build/amendments/#suspay) on Tuesday, 2017-01-17.
+The `brtd` 0.40.0 release includes Suspended Payments, a new transaction type on the Ripple network that functions similar to an escrow service, which permits users cryptographically escrow XRP on RCL with an expiration date. Ripple expects Suspended Payments to be enabled via an Amendment named [SusPay](https://brt.network/build/amendments/#suspay) on Tuesday, 2017-01-17.
 
 You can update to the new version on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please compile the new version from source.
 
 **New and Updated Features**
 
-Previously, Ripple announced the introduction of Payment Channels during the release of brtd version 0.33.0, which permit scalable, off-ledger checkpoints of high volume, low value payments flowing in a single direction. This was the first step in a multi-phase effort to make RCL more scalable and to support Interledger Protocol (ILP). Ripple expects Payment Channels to be enabled via an Amendment called [PayChan](https://ripple.com/build/amendments/#paychan) on a future date to be determined.
+Previously, Ripple announced the introduction of Payment Channels during the release of brtd version 0.33.0, which permit scalable, off-ledger checkpoints of high volume, low value payments flowing in a single direction. This was the first step in a multi-phase effort to make RCL more scalable and to support Interledger Protocol (ILP). Ripple expects Payment Channels to be enabled via an Amendment called [PayChan](https://brt.network/build/amendments/#paychan) on a future date to be determined.
 
-In the second phase towards making RCL more scalable and compatible with ILP, Ripple is introducing Suspended Payments, a new transaction type on the Ripple network that functions similar to an escrow service, which permits users to cryptographically escrow XRP on RCL with an expiration date. Ripple expects Suspended Payments to be enabled via an Amendment named [SusPay](https://ripple.com/build/amendments/#suspay) on Tuesday, 2017-01-17.
+In the second phase towards making RCL more scalable and compatible with ILP, Ripple is introducing Suspended Payments, a new transaction type on the Ripple network that functions similar to an escrow service, which permits users to cryptographically escrow XRP on RCL with an expiration date. Ripple expects Suspended Payments to be enabled via an Amendment named [SusPay](https://brt.network/build/amendments/#suspay) on Tuesday, 2017-01-17.
 
 A Suspended Payment can be created, which deducts the funds from the sending account. It can then be either fulfilled or canceled. It can only be fulfilled if the fulfillment transaction makes it into a ledger with a CloseTime lower than the expiry date of the transaction. It can be canceled with a transaction that makes it into a ledger with a CloseTime greater than the expiry date of the transaction.
 
 In the third phase towards making RCL more scalable and compatible with ILP, Ripple plans to introduce additional library support for crypto-conditions, which are distributable event descriptions written in a standard format that describe how to recognize a fulfillment message without saying exactly what the fulfillment is. Fulfillments are cryptographically verifiable messages that prove an event occurred. If you transmit a fulfillment, then everyone who has the condition can agree that the condition has been met. Fulfillment requires the submission of a signature that matches the condition (message hash and public key). This format supports multiple algorithms, including different hash functions and cryptographic signing schemes. Crypto-conditions can be nested in multiple levels, with each level possibly having multiple signatures.
 
-Lastly, we do not have an update on the previously announced changes to the hash tree structure that brtd uses to represent a ledger, called [SHAMapV2](https://ripple.com/build/amendments/#shamapv2). This will require brief scheduled allowable downtime while the changes to the hash tree structure are propagated by the network. We will keep the community updated as we progress towards this date (TBA).
+Lastly, we do not have an update on the previously announced changes to the hash tree structure that brtd uses to represent a ledger, called [SHAMapV2](https://brt.network/build/amendments/#shamapv2). This will require brief scheduled allowable downtime while the changes to the hash tree structure are propagated by the network. We will keep the community updated as we progress towards this date (TBA).
 
 Consensus refactor (#1874)
 
@@ -835,19 +835,19 @@ Correctly parse multi-buffer JSON messages (#1862)
 
 ## Version 0.33.0
 
-The `brtd` 0.33.0 release includes an improved version of the payment code, which we expect to be activated via Amendment on Wednesday, 2016-10-20 with the name [Flow](https://ripple.com/build/amendments/#flow). We are also introducing XRP Payment Channels, a new structure in the ledger designed to support [Interledger Protocol](https://interledger.org/) trust lines as balances get substantial, which we expect to be activated via Amendment on a future date (TBA) with the name [PayChan](https://ripple.com/build/amendments/#paychan). Lastly, we will be introducing changes to the hash tree structure that brtd uses to represent a ledger, which we expect to be available via Amendment on a future date (TBA) with the name [SHAMapV2](https://ripple.com/build/amendments/#shamapv2).
+The `brtd` 0.33.0 release includes an improved version of the payment code, which we expect to be activated via Amendment on Wednesday, 2016-10-20 with the name [Flow](https://brt.network/build/amendments/#flow). We are also introducing XRP Payment Channels, a new structure in the ledger designed to support [Interledger Protocol](https://interledger.org/) trust lines as balances get substantial, which we expect to be activated via Amendment on a future date (TBA) with the name [PayChan](https://brt.network/build/amendments/#paychan). Lastly, we will be introducing changes to the hash tree structure that brtd uses to represent a ledger, which we expect to be available via Amendment on a future date (TBA) with the name [SHAMapV2](https://brt.network/build/amendments/#shamapv2).
 
-You can [update to the new version](https://ripple.com/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions).
+You can [update to the new version](https://brt.network/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions).
 
 ** New and Updated Features **
 
-A fixed version of the new payment processing engine, which we initially announced on Friday, 2016-07-29, is expected to be available via Amendment on Wednesday, 2016-10-20 with the name [Flow](https://ripple.com/build/amendments/#flow). The new payments code adds no new features, but improves efficiency and robustness in payment handling.
+A fixed version of the new payment processing engine, which we initially announced on Friday, 2016-07-29, is expected to be available via Amendment on Wednesday, 2016-10-20 with the name [Flow](https://brt.network/build/amendments/#flow). The new payments code adds no new features, but improves efficiency and robustness in payment handling.
 
 The Flow code may occasionally produce slightly different results than the old payment processing engine due to the effects of floating point rounding.
 
-We will be introducing changes to the hash tree structure that brtd uses to represent a ledger, which we expect to be activated via Amendment on a future date (TBA) with the name [SHAMapV2](https://ripple.com/build/amendments/#shamapv2). The new structure is more compact and efficient than the previous version. This affects how ledger hashes are calculated, but has no other user-facing consequences. The activation of the SHAMapV2 amendment will require brief scheduled allowable downtime, while the changes to the hash tree structure are propagated by the network. We will keep the community updated as we progress towards this date (TBA).
+We will be introducing changes to the hash tree structure that brtd uses to represent a ledger, which we expect to be activated via Amendment on a future date (TBA) with the name [SHAMapV2](https://brt.network/build/amendments/#shamapv2). The new structure is more compact and efficient than the previous version. This affects how ledger hashes are calculated, but has no other user-facing consequences. The activation of the SHAMapV2 amendment will require brief scheduled allowable downtime, while the changes to the hash tree structure are propagated by the network. We will keep the community updated as we progress towards this date (TBA).
 
-In an effort to make RCL more scalable and to support Interledger Protocol (ILP) trust lines as balances get more substantial, we’re introducing XRP Payment Channels, a new structure in the ledger, which we expect to be available via Amendment on a future date (TBA) with the name [PayChan](https://ripple.com/build/amendments/#paychan).
+In an effort to make RCL more scalable and to support Interledger Protocol (ILP) trust lines as balances get more substantial, we’re introducing XRP Payment Channels, a new structure in the ledger, which we expect to be available via Amendment on a future date (TBA) with the name [PayChan](https://brt.network/build/amendments/#paychan).
 
 XRP Payment Channels permit scalable, intermittent, off-ledger settlement of ILP trust lines for high volume payments flowing in a single direction. For bidirectional channels, an XRP Payment Channel can be used in each direction. The recipient can claim any unpaid balance at any time. The owner can top off the channel as needed. The owner must wait out a delay to close the channel to give the recipient a chance to supply any claims. The total amount paid increases monotonically as newer claims are issued.
 
@@ -886,7 +886,7 @@ Add HTTP status page for new websocket implementation [#1855]
 
 The `brtd` 0.32.1 release includes an improved version of the payment code, which we expect to be available via Amendment on Wednesday, 2016-08-24 with the name FlowV2, and a completely new implementation of the WebSocket protocol for serving clients.
 
-You can [update to the new version](https://ripple.com/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions).
+You can [update to the new version](https://brt.network/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions).
 
 **New and Updated Features**
 
@@ -976,7 +976,7 @@ You can update to the new version on Red Hat Enterprise Linux 7 or CentOS 7 usin
 
 The `brtd` 0.31.2 release corrects issues with the fee escalation algorithm. We advise `brtd` operators to upgrade immediately.
 
-You can [update to the new version](https://ripple.com/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions).
+You can [update to the new version](https://brt.network/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions).
 
 **New and Updated Features**
 
@@ -993,7 +993,7 @@ This release has no new features.
 
 The `brtd` 0.31.1 release contains one important bug fix. We advise `brtd` operators to upgrade immediately.
 
-You can [update to the new version](https://ripple.com/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions).
+You can [update to the new version](https://brt.network/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum. For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions).
 
 **New and Updated Features**
 
@@ -1011,7 +1011,7 @@ This release has no new features.
 
 `brtd` 0.31.0 has been released.
 
-You can [update to the new version](https://ripple.com/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum.
+You can [update to the new version](https://brt.network/build/brtd-setup/#updating-brtd) on Red Hat Enterprise Linux 7 or CentOS 7 using yum.
 
 For other platforms, please [compile the new version from source](https://wiki.ripple.com/brtd_build_instructions). Use the `git log` command to confirm you have the correct source tree. The first log entry should be the change setting the version:
 
@@ -1033,9 +1033,9 @@ Additionally, `brtd` 0.31.0 now checks at start-up time that it has sufficient o
 
 `brtd` 0.31.0 has the following new or updated features:
 
-- (New) [**Amendments**](https://ripple.com/build/amendments/) - A consensus-based system for introducing changes to transaction processing.
-- (New) [**Multi-Signing**](https://ripple.com/build/transactions/#multi-signing) - (To be enabled as an amendment) Allow transactions to be authorized by a list of signatures. (RIPD-182)
-- (New) **Transaction queue and FeeEscalation** - (To be enabled as an amendment) Include or defer transactions based on the [transaction cost](https://ripple.com/build/transaction-cost/) offered, for better behavior in DDoS conditions. (RIPD-598)
+- (New) [**Amendments**](https://brt.network/build/amendments/) - A consensus-based system for introducing changes to transaction processing.
+- (New) [**Multi-Signing**](https://brt.network/build/transactions/#multi-signing) - (To be enabled as an amendment) Allow transactions to be authorized by a list of signatures. (RIPD-182)
+- (New) **Transaction queue and FeeEscalation** - (To be enabled as an amendment) Include or defer transactions based on the [transaction cost](https://brt.network/build/transaction-cost/) offered, for better behavior in DDoS conditions. (RIPD-598)
 - (Updated) Validations subscription stream now includes `ledger_index` field. (DEC-564)
 - (Updated) You can request SignerList information in the `account_info` command (RIPD-1061)
 
@@ -1128,7 +1128,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1195,7 +1195,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1244,8 +1244,8 @@ While it may be possible to compile brtd on (virtual) machines with 4GB of RAM, 
 **Improvements**
 
 -   Add “quality” field to account\_offers API response: quality is defined as the exchange rate, the ratio taker\_pays divided by taker\_gets.
--   Add [full\_reply](https://ripple.com/build/brtd-apis/#path-find-create) field to path\_find API response: full\_reply is defined as true/false value depending on the completed depth of pathfinding search ([RIPD-894](https://ripplelabs.atlassian.net/browse/RIPD-894)).
--   Add [DeliverMin](https://ripple.com/build/transactions/#payment) transaction field ([RIPD-930](https://ripplelabs.atlassian.net/browse/RIPD-930)). **Activates August 17, 2015**.
+-   Add [full\_reply](https://brt.network/build/brtd-apis/#path-find-create) field to path\_find API response: full\_reply is defined as true/false value depending on the completed depth of pathfinding search ([RIPD-894](https://ripplelabs.atlassian.net/browse/RIPD-894)).
+-   Add [DeliverMin](https://brt.network/build/transactions/#payment) transaction field ([RIPD-930](https://ripplelabs.atlassian.net/browse/RIPD-930)). **Activates August 17, 2015**.
 
 **Development-Related Updates**
 
@@ -1262,7 +1262,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1302,7 +1302,7 @@ For \[ips\] stanza, a port must be specified for each listed IP address with the
 
 **New Features**
 
--   New API: [gateway\_balances](https://ripple.com/build/brtd-apis/#gateway-balances) to get a gateway's hot wallet balances and total obligations.
+-   New API: [gateway\_balances](https://brt.network/build/brtd-apis/#gateway-balances) to get a gateway's hot wallet balances and total obligations.
 
 **Deprecated features**
 
@@ -1329,7 +1329,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1395,7 +1395,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1419,7 +1419,7 @@ This release incorporates a number of important features, bugfixes and functiona
 
 **Release Overview**
 
-As part of Ripple Labs’ ongoing commitment toward improving the protocol, the brtd team is excited to announce **autobridging** — a feature that allows XRP to serve as a bridge currency. Autobridging enhances utility and has the potential to expose more of the network to liquidity and improve prices. For more information please refer to the [autobridging blog post](https://ripple.com/uncategorized/introducing-offer-autobridging/).
+As part of Ripple Labs’ ongoing commitment toward improving the protocol, the brtd team is excited to announce **autobridging** — a feature that allows XRP to serve as a bridge currency. Autobridging enhances utility and has the potential to expose more of the network to liquidity and improve prices. For more information please refer to the [autobridging blog post](https://brt.network/uncategorized/introducing-offer-autobridging/).
 
 **Toolchain support**
 
@@ -1441,7 +1441,7 @@ With brtd version 0.28, the brtd.cfg file must be changed according to these ins
 
 **More Strict Requirements on MemoType**
 
-The requirements on the contents of the MemoType field, if present, are more strict than the previous version. Transactions that can successfully be submitted to 0.27.4 and earlier may fail in 0.28.0. For details, please refer to [updated memo documentation](https://ripple.com/build/transactions/#memos) for details. Partners should check their implementation to make sure that their MemoType follows the new rules.
+The requirements on the contents of the MemoType field, if present, are more strict than the previous version. Transactions that can successfully be submitted to 0.27.4 and earlier may fail in 0.28.0. For details, please refer to [updated memo documentation](https://brt.network/build/transactions/#memos) for details. Partners should check their implementation to make sure that their MemoType follows the new rules.
 
 **New Features**
 
@@ -1506,7 +1506,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1548,7 +1548,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1590,7 +1590,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1632,7 +1632,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1672,7 +1672,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1724,7 +1724,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1779,7 +1779,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -1927,7 +1927,7 @@ For assistance, please contact **integration@ripple.com**
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -2009,7 +2009,7 @@ With brtd version 0.26.4, the [brtd.cfg](https://github.com/BRTNetwork/brtd/blob
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -2078,7 +2078,7 @@ The minimum supported version of Boost is v1.55.0. You **must** upgrade to this 
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -2127,7 +2127,7 @@ The offer funding status feature is “experimental” in this version. Develope
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -2164,7 +2164,7 @@ The minimum supported version of Boost is v1.55.0. You **must** upgrade to this 
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -2217,7 +2217,7 @@ The minimum supported version of Boost is v1.55.0. You **must** upgrade to this 
 
 For more information or assistance, the following resources will be of use:
 
--   [Ripple Developer Forums](https://ripple.com/forum/viewforum.php?f=2)
+-   [Ripple Developer Forums](https://brt.network/forum/viewforum.php?f=2)
 -   [IRC](https://webchat.freenode.net/?channels=#ripple)
 
 
@@ -2383,7 +2383,7 @@ The minimum supported version of Boost is v1.55. You **must** upgrade to this re
 **Bug Fixes**
 
 -   Fix AccountSet for canonical transactions.
--   The RPC [sign](https://ripple.com/build/brtd-apis/#sign) command will now sign with either an account's master or regular secret key.
+-   The RPC [sign](https://brt.network/build/brtd-apis/#sign) command will now sign with either an account's master or regular secret key.
 -   Fixed out-of-order network initialization.
 -   Improved efficiency of pathfinding for transactions.
 -   Reworked timing of ledger validation and related operations to fix race condition against the network.

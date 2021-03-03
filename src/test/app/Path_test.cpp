@@ -466,7 +466,7 @@ public:
     xrp_to_xrp()
     {
         using namespace jtx;
-        testcase("XRP to XRP");
+        testcase("BRT to BRT");
         Env env(*this);
         env.fund(XRP(10000), "alice", "bob");
 

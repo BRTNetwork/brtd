@@ -277,7 +277,7 @@ and several paths for historical storage:
 # This is the persistent datastore for shards. It is important for the health
 # of the ripple network that brtd operators shard as much as practical.
 # NuDB requires SSD storage. Helpful information can be found here
-# https://ripple.com/build/history-sharding
+# https://brt.networkbuild/history-sharding
 [shard_db]
 type=NuDB
 

@@ -291,7 +291,7 @@ Result format:
 }
 ```
 
-### [`server_info`](https://ripple.com/build/brtd-apis/#server-info) command
+### [`server_info`](https://brt.networkbuild/brtd-apis/#server-info) command
 
 **The fields listed here are still experimental, and may change
 without warning.**
@@ -313,7 +313,7 @@ need to overcome `load_factor_fee_escalation`, though if it does not, it
 is more likely to be queued than immediately processed into the open
 ledger.
 
-### [`server_state`](https://ripple.com/build/brtd-apis/#server-state) command
+### [`server_state`](https://brt.networkbuild/brtd-apis/#server-state) command
 
 **The fields listed here are still experimental, and may change
 without warning.**

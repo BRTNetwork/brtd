@@ -243,7 +243,7 @@ public:
 
 /**
  * @brief Invariant: offers should be for non-negative amounts and must not
- *                   be XRP to XRP.
+ *                   be BRT to BRT.
  *
  * Examine all offers modified by the transaction and ensure that there are
  * no offers which contain negative amounts or which exchange XRP for XRP.

@@ -808,7 +808,7 @@ public:
 
         // Sell and buy the same asset
         {
-            // Alice tries an XRP to XRP order:
+            // Alice tries an BRT to BRT order:
             env(offer(alice, XRP(1000), XRP(1000)), ter(temBAD_OFFER));
             env.require(owners(alice, 0), offers(alice, 0));
 

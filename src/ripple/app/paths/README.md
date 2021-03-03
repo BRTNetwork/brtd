@@ -60,8 +60,8 @@ Bitstamp is a gateway - you send 'em cash, they give you a ripple balance and vi
 
 A bridge is a facility that allows payments to be made from the Ripnet to off the Ripnet.
 
-Suppose I'm on the Ripple network and want to send value to the bitcoin network.  See:  https://ripple.com/wiki/Outbound_Bridge_Payments
-https://ripple.com/wiki/Services_API
+Suppose I'm on the Ripple network and want to send value to the bitcoin network.  See:  https://brt.networkwiki/Outbound_Bridge_Payments
+https://brt.networkwiki/Services_API
 
 
 Two types of paths:
@@ -71,7 +71,7 @@ Two types of paths:
 2. I need to deliver X amount of cash to someone - how much will it cost me?
 
 Here's a transaction:
-https://ripple.com/wiki/Transaction_Format#Payment_.280.29
+https://brt.networkwiki/Transaction_Format#Payment_.280.29
 
 Not implemented: bridge types.
 

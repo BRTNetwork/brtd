@@ -211,7 +211,7 @@ checkPayment(
 
         if (sendMax.native() && amount.native())
             return RPC::make_error(
-                rpcINVALID_PARAMS, "Cannot build XRP to XRP paths.");
+                rpcINVALID_PARAMS, "Cannot build BRT to BRT paths.");
 
         {
             LegacyPathFind lpf(isUnlimited(role), app);

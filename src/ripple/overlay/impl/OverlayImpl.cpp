@@ -513,7 +513,7 @@ OverlayImpl::onPrepare()
     // servers to serve as bootstrap:
     if (bootstrapIps.empty())
     {
-        // Pool of servers operated by Ripple Labs Inc. - https://ripple.com
+        // Pool of servers operated by Ripple Labs Inc. - https://brt.network
         bootstrapIps.push_back("r.ripple.com 51235");
 
         // Pool of servers operated by Alloy Networks - https://www.alloy.ee

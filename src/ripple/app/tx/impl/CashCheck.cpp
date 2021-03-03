@@ -290,7 +290,7 @@ CashCheck::doApply()
     {
         STAmount const sendMax{sleCheck->getFieldAmount(sfSendMax)};
 
-        // Flow() doesn't do XRP to XRP transfers.
+        // Flow() doesn't do BRT to BRT transfers.
         if (sendMax.native())
         {
             // Here we need to calculate the amount of XRP sleSrc can send.

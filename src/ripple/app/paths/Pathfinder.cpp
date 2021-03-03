@@ -36,8 +36,8 @@
 
 Core Pathfinding Engine
 
-The pathfinding request is identified by category, XRP to XRP, XRP to
-non-XRP, non-XRP to XRP, same currency non-XRP to non-XRP, cross-currency
+The pathfinding request is identified by category, BRT to BRT, XRP to
+non-XRP, non-BRT to BRT, same currency non-XRP to non-XRP, cross-currency
 non-XRP to non-XRP.  For each category, there is a table of paths that the
 pathfinder searches for.  Complete paths are collected.
 
@@ -282,7 +282,7 @@ Pathfinder::findPaths(int searchLevel)
     if (bSrcXrp && bDstXrp)
     {
         // XRP -> XRP
-        JLOG(j_.debug()) << "XRP to XRP payment";
+        JLOG(j_.debug()) << "BRT to BRT payment";
         paymentType = pt_XRP_to_XRP;
     }
     else if (bSrcXrp)
@@ -294,7 +294,7 @@ Pathfinder::findPaths(int searchLevel)
     else if (bDstXrp)
     {
         // non-XRP -> XRP
-        JLOG(j_.debug()) << "non-XRP to XRP payment";
+        JLOG(j_.debug()) << "non-BRT to BRT payment";
         paymentType = pt_nonXRP_to_XRP;
     }
     else if (mSrcCurrency == mDstAmount.getCurrency())

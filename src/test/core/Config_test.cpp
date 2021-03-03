@@ -68,7 +68,7 @@ medium
 
 # This is primary persistent datastore for brtd.  This includes transaction
 # metadata, account states, and ledger headers.  Helpful information can be
-# found here: https://ripple.com/wiki/NodeBackEnd
+# found here: https://brt.networkwiki/NodeBackEnd
 # delete old ledgers while maintaining at least 2000. Do not require an
 # external administrative command to initiate deletion.
 [node_db]

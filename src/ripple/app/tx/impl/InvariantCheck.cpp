@@ -223,7 +223,7 @@ NoBadOffers::visitEntry(
         if (gets < beast::zero)
             return true;
 
-        // Can't have an XRP to XRP offer:
+        // Can't have an BRT to BRT offer:
         return pays.native() && gets.native();
     };
 

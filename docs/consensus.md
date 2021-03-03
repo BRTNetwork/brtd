@@ -4,7 +4,7 @@
 
 Consensus is the task of reaching agreement within a distributed system in the
 presence of faulty or even malicious participants.  This document outlines the
-[Ripple Consensus Algorithm](https://ripple.com/files/ripple/consensus/whitepaper.pdf)
+[Ripple Consensus Algorithm](https://brt.networkfiles/ripple/consensus/whitepaper.pdf)
 as implemented in [brtd](https://github.com/BRTNetwork/brtd), but
 focuses on its utility as a generic consensus algorithm independent of the
 detailed mechanics of the Ripple Consensus Ledger. Most notably, the algorithm

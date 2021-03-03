@@ -340,7 +340,7 @@ class Invariants_test : public beast::unit_test::suite
         doInvariantCheck(
             {{"offer with a bad amount"}},
             [](Account const& A1, Account const&, ApplyContext& ac) {
-                // offer XRP to XRP
+                // offer BRT to BRT
                 auto const sle = ac.view().peek(keylet::account(A1.id()));
                 if (!sle)
                     return false;

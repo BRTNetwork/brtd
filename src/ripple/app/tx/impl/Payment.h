@@ -27,7 +27,7 @@
 
 namespace ripple {
 
-// See https://ripple.com/wiki/Transaction_Format#Payment_.280.29
+// See https://brt.networkwiki/Transaction_Format#Payment_.280.29
 
 class Payment : public Transactor
 {
