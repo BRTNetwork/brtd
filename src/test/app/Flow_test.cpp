@@ -50,11 +50,11 @@ getNoRippleFlag(
 }
 
 jtx::PrettyAmount
-xrpMinusFee(jtx::Env const& env, std::int64_t xrpAmount)
+xrpMinusFee(jtx::Env const& env, std::int64_t brtAmount)
 {
     using namespace jtx;
     auto feeDrops = env.current()->fees().base;
-    return drops(dropsPerXRP * xrpAmount - feeDrops);
+    return drops(dropsPerXRP * brtAmount - feeDrops);
 };
 
 struct Flow_test : public beast::unit_test::suite
@@ -778,7 +778,7 @@ struct Flow_test : public beast::unit_test::suite
 
     // Helper function that returns the reserve on an account based on
     // the passed in number of owners.
-    static XRPAmount
+    static BRTAmount
     reserve(jtx::Env& env, std::uint32_t count)
     {
         return env.current()->fees().accountReserve(count);

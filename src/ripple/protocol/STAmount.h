@@ -22,7 +22,7 @@
 
 #include <ripple/basics/IOUAmount.h>
 #include <ripple/basics/LocalValue.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/protocol/Issue.h>
 #include <ripple/protocol/SField.h>
 #include <ripple/protocol/STBase.h>
@@ -142,7 +142,7 @@ public:
 
     // Legacy support for new-style amounts
     STAmount(IOUAmount const& amount, Issue const& issue);
-    STAmount(XRPAmount const& amount);
+    STAmount(BRTAmount const& amount);
 
     STBase*
     copy(std::size_t n, void* buf) const override
@@ -257,7 +257,7 @@ public:
     }
 
     STAmount&
-    operator=(XRPAmount const& amount)
+    operator=(BRTAmount const& amount)
     {
         *this = STAmount(amount);
         return *this;
@@ -343,7 +343,7 @@ public:
         return (mValue == 0) && mIsNative;
     }
 
-    XRPAmount
+    BRTAmount
     xrp() const;
     IOUAmount
     iou() const;
@@ -368,7 +368,7 @@ amountFromJson(SField const& name, Json::Value const& v);
 bool
 amountFromJsonNoThrow(STAmount& result, Json::Value const& jvSource);
 
-// IOUAmount and XRPAmount define toSTAmount, defining this
+// IOUAmount and BRTAmount define toSTAmount, defining this
 // trivial conversion here makes writing generic code easier
 inline STAmount const&
 toSTAmount(STAmount const& a)

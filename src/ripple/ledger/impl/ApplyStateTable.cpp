@@ -511,7 +511,7 @@ ApplyStateTable::update(ReadView const& base, std::shared_ptr<SLE> const& sle)
 }
 
 void
-ApplyStateTable::destroyXRP(XRPAmount const& fee)
+ApplyStateTable::destroyXRP(BRTAmount const& fee)
 {
     dropsDestroyed_ += fee;
 }

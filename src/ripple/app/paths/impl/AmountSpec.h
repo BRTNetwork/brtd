@@ -21,7 +21,7 @@
 #define RIPPLE_PATH_IMPL_AMOUNTSPEC_H_INCLUDED
 
 #include <ripple/basics/IOUAmount.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/protocol/STAmount.h>
 
 namespace ripple {
@@ -33,7 +33,7 @@ struct AmountSpec
     bool native;
     union
     {
-        XRPAmount xrp;
+        BRTAmount xrp;
         IOUAmount iou;
     };
     boost::optional<AccountID> issuer;
@@ -63,7 +63,7 @@ struct EitherAmount
     union
     {
         IOUAmount iou;
-        XRPAmount xrp;
+        BRTAmount xrp;
     };
 
     EitherAmount() = default;
@@ -77,7 +77,7 @@ struct EitherAmount
     // ignore warning about half of iou amount being uninitialized
 #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
 #endif
-    explicit EitherAmount(XRPAmount const& a) : xrp(a)
+    explicit EitherAmount(BRTAmount const& a) : xrp(a)
     {
 #ifndef NDEBUG
         native = true;
@@ -128,8 +128,8 @@ get<IOUAmount>(EitherAmount& amt)
 }
 
 template <>
-inline XRPAmount&
-get<XRPAmount>(EitherAmount& amt)
+inline BRTAmount&
+get<BRTAmount>(EitherAmount& amt)
 {
     assert(amt.native);
     return amt.xrp;
@@ -152,8 +152,8 @@ get<IOUAmount>(EitherAmount const& amt)
 }
 
 template <>
-inline XRPAmount const&
-get<XRPAmount>(EitherAmount const& amt)
+inline BRTAmount const&
+get<BRTAmount>(EitherAmount const& amt)
 {
     assert(amt.native);
     return amt.xrp;
@@ -171,7 +171,7 @@ toAmountSpec(STAmount const& amt)
     result.native = isXRP(amt);
     if (result.native)
     {
-        result.xrp = XRPAmount(sMant);
+        result.xrp = BRTAmount(sMant);
     }
     else
     {

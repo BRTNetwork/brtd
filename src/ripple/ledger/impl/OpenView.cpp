@@ -248,7 +248,7 @@ OpenView::rawReplace(std::shared_ptr<SLE> const& sle)
 }
 
 void
-OpenView::rawDestroyXRP(XRPAmount const& fee)
+OpenView::rawDestroyXRP(BRTAmount const& fee)
 {
     items_.destroyXRP(fee);
     // VFALCO Deduct from info_.totalDrops ?

@@ -19,7 +19,7 @@
 
 #include <ripple/app/tx/impl/PayChan.h>
 #include <ripple/basics/Log.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/basics/chrono.h>
 #include <ripple/ledger/ApplyView.h>
 #include <ripple/ledger/View.h>
@@ -530,7 +530,7 @@ PayChanClaim::doApply()
         }
 
         (*slep)[sfBalance] = ctx_.tx[sfBalance];
-        XRPAmount const reqDelta = reqBalance - chanBalance;
+        BRTAmount const reqDelta = reqBalance - chanBalance;
         assert(reqDelta >= beast::zero);
         (*sled)[sfBalance] = (*sled)[sfBalance] + reqDelta;
         ctx_.view().update(sled);

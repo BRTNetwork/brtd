@@ -23,7 +23,7 @@
 #include <ripple/app/paths/impl/Steps.h>
 #include <ripple/basics/IOUAmount.h>
 #include <ripple/basics/Log.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/ledger/PaymentSandbox.h>
 #include <ripple/protocol/Feature.h>
 #include <ripple/protocol/Quality.h>
@@ -37,7 +37,7 @@ namespace ripple {
 
 template <class TDerived>
 class XRPEndpointStep
-    : public StepImp<XRPAmount, XRPAmount, XRPEndpointStep<TDerived>>
+    : public StepImp<BRTAmount, BRTAmount, XRPEndpointStep<TDerived>>
 {
 private:
     AccountID acc_;
@@ -47,7 +47,7 @@ private:
     // Since this step will always be an endpoint in a strand
     // (either the first or last step) the same cache is used
     // for cachedIn and cachedOut and only one will ever be used
-    boost::optional<XRPAmount> cache_;
+    boost::optional<BRTAmount> cache_;
 
     boost::optional<EitherAmount>
     cached() const
@@ -99,19 +99,19 @@ public:
     qualityUpperBound(ReadView const& v, DebtDirection prevStepDir)
         const override;
 
-    std::pair<XRPAmount, XRPAmount>
+    std::pair<BRTAmount, BRTAmount>
     revImp(
         PaymentSandbox& sb,
         ApplyView& afView,
         boost::container::flat_set<uint256>& ofrsToRm,
-        XRPAmount const& out);
+        BRTAmount const& out);
 
-    std::pair<XRPAmount, XRPAmount>
+    std::pair<BRTAmount, BRTAmount>
     fwdImp(
         PaymentSandbox& sb,
         ApplyView& afView,
         boost::container::flat_set<uint256>& ofrsToRm,
-        XRPAmount const& in);
+        BRTAmount const& in);
 
     std::pair<bool, EitherAmount>
     validFwd(PaymentSandbox& sb, ApplyView& afView, EitherAmount const& in)
@@ -122,7 +122,7 @@ public:
     check(StrandContext const& ctx) const;
 
 protected:
-    XRPAmount
+    BRTAmount
     xrpLiquidImpl(ReadView& sb, std::int32_t reserveReduction) const
     {
         return ripple::xrpLiquid(sb, acc_, reserveReduction, j_);
@@ -173,7 +173,7 @@ class XRPEndpointPaymentStep : public XRPEndpointStep<XRPEndpointPaymentStep>
 public:
     using XRPEndpointStep<XRPEndpointPaymentStep>::XRPEndpointStep;
 
-    XRPAmount
+    BRTAmount
     xrpLiquid(ReadView& sb) const
     {
         return xrpLiquidImpl(sb, 0);
@@ -214,7 +214,7 @@ public:
     {
     }
 
-    XRPAmount
+    BRTAmount
     xrpLiquid(ReadView& sb) const
     {
         return xrpLiquidImpl(sb, reserveReduction_);
@@ -253,12 +253,12 @@ XRPEndpointStep<TDerived>::qualityUpperBound(
 }
 
 template <class TDerived>
-std::pair<XRPAmount, XRPAmount>
+std::pair<BRTAmount, BRTAmount>
 XRPEndpointStep<TDerived>::revImp(
     PaymentSandbox& sb,
     ApplyView& afView,
     boost::container::flat_set<uint256>& ofrsToRm,
-    XRPAmount const& out)
+    BRTAmount const& out)
 {
     auto const balance = static_cast<TDerived const*>(this)->xrpLiquid(sb);
 
@@ -268,19 +268,19 @@ XRPEndpointStep<TDerived>::revImp(
     auto& receiver = isLast_ ? acc_ : xrpAccount();
     auto ter = accountSend(sb, sender, receiver, toSTAmount(result), j_);
     if (ter != tesSUCCESS)
-        return {XRPAmount{beast::zero}, XRPAmount{beast::zero}};
+        return {BRTAmount{beast::zero}, BRTAmount{beast::zero}};
 
     cache_.emplace(result);
     return {result, result};
 }
 
 template <class TDerived>
-std::pair<XRPAmount, XRPAmount>
+std::pair<BRTAmount, BRTAmount>
 XRPEndpointStep<TDerived>::fwdImp(
     PaymentSandbox& sb,
     ApplyView& afView,
     boost::container::flat_set<uint256>& ofrsToRm,
-    XRPAmount const& in)
+    BRTAmount const& in)
 {
     assert(cache_);
     auto const balance = static_cast<TDerived const*>(this)->xrpLiquid(sb);
@@ -291,7 +291,7 @@ XRPEndpointStep<TDerived>::fwdImp(
     auto& receiver = isLast_ ? acc_ : xrpAccount();
     auto ter = accountSend(sb, sender, receiver, toSTAmount(result), j_);
     if (ter != tesSUCCESS)
-        return {XRPAmount{beast::zero}, XRPAmount{beast::zero}};
+        return {BRTAmount{beast::zero}, BRTAmount{beast::zero}};
 
     cache_.emplace(result);
     return {result, result};
@@ -307,7 +307,7 @@ XRPEndpointStep<TDerived>::validFwd(
     if (!cache_)
     {
         JLOG(j_.error()) << "Expected valid cache in validFwd";
-        return {false, EitherAmount(XRPAmount(beast::zero))};
+        return {false, EitherAmount(BRTAmount(beast::zero))};
     }
 
     assert(in.native);

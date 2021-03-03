@@ -88,7 +88,7 @@ accountFunds(
 // necessary.
 //
 // @param ownerCountAdj positive to add to count, negative to reduce count.
-[[nodiscard]] XRPAmount
+[[nodiscard]] BRTAmount
 xrpLiquid(
     ReadView const& view,
     AccountID const& id,

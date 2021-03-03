@@ -19,7 +19,7 @@
 
 #include <ripple/app/paths/impl/Steps.h>
 #include <ripple/basics/IOUAmount.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/basics/contract.h>
 #include <ripple/json/json_writer.h>
 #include <ripple/ledger/ReadView.h>
@@ -57,7 +57,7 @@ checkNear(IOUAmount const& expected, IOUAmount const& actual)
 };
 
 bool
-checkNear(XRPAmount const& expected, XRPAmount const& actual)
+checkNear(BRTAmount const& expected, BRTAmount const& actual)
 {
     return expected == actual;
 };
@@ -615,15 +615,15 @@ isDirectXrpToXrp(Strand const& strand)
 
 template <>
 bool
-isDirectXrpToXrp<XRPAmount, XRPAmount>(Strand const& strand)
+isDirectXrpToXrp<BRTAmount, BRTAmount>(Strand const& strand)
 {
     return (strand.size() == 2);
 }
 
 template bool
-isDirectXrpToXrp<XRPAmount, IOUAmount>(Strand const& strand);
+isDirectXrpToXrp<BRTAmount, IOUAmount>(Strand const& strand);
 template bool
-isDirectXrpToXrp<IOUAmount, XRPAmount>(Strand const& strand);
+isDirectXrpToXrp<IOUAmount, BRTAmount>(Strand const& strand);
 template bool
 isDirectXrpToXrp<IOUAmount, IOUAmount>(Strand const& strand);
 

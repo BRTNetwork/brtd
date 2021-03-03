@@ -33,7 +33,7 @@ struct CashSummary
     explicit CashSummary() = default;
 
     // Sorted vectors.  All of the vectors fill in for std::maps.
-    std::vector<std::pair<AccountID, XRPAmount>> xrpChanges;
+    std::vector<std::pair<AccountID, BRTAmount>> xrpChanges;
 
     std::vector<std::pair<std::tuple<AccountID, AccountID, Currency>, STAmount>>
         trustChanges;
@@ -171,7 +171,7 @@ getBasicCashFlow(
         {
             case ltACCOUNT_ROOT:
                 result.xrpChanges.push_back(
-                    std::make_pair(prev[sfAccount], XRPAmount{0}));
+                    std::make_pair(prev[sfAccount], BRTAmount{0}));
                 return true;
 
             case ltRIPPLE_STATE:
@@ -290,8 +290,8 @@ private:
     // Note differences in destroyed XRP between two ApplyStateTables.
     struct DropsGone
     {
-        XRPAmount lhs;
-        XRPAmount rhs;
+        BRTAmount lhs;
+        BRTAmount rhs;
     };
 
     ReadView const& view_;
@@ -561,7 +561,7 @@ CashDiff::Impl::rmDust()
     removedDust |= rmVecDust(
         lhsDiffs_.xrpChanges,
         rhsDiffs_.xrpChanges,
-        [](XRPAmount const& lhs, XRPAmount const& rhs) {
+        [](BRTAmount const& lhs, BRTAmount const& rhs) {
             return diffIsDust(lhs, rhs);
         });
 

@@ -388,7 +388,7 @@ PaymentSandbox::balanceChanges(ReadView const& view) const
     return result;
 }
 
-XRPAmount
+BRTAmount
 PaymentSandbox::xrpDestroyed() const
 {
     return items_.dropsDestroyed();

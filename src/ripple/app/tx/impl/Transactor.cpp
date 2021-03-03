@@ -154,7 +154,7 @@ Transactor::calculateBaseFee(ReadView const& view, STTx const& tx)
     return baseFee + (signerCount * baseFee);
 }
 
-XRPAmount
+BRTAmount
 Transactor::minimumFee(
     Application& app,
     FeeUnit64 baseFee,
@@ -713,8 +713,8 @@ removeUnfundedOffers(
 }
 
 /** Reset the context, discarding any changes made and adjust the fee */
-std::pair<TER, XRPAmount>
-Transactor::reset(XRPAmount fee)
+std::pair<TER, BRTAmount>
+Transactor::reset(BRTAmount fee)
 {
     ctx_.discard();
 

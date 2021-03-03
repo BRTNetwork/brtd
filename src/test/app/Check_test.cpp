@@ -284,7 +284,7 @@ class Check_test : public beast::unit_test::suite
         BEAST_EXPECT(checksOnAccount(env, bob).size() == bobCount + 6);
 
         // alice uses multisigning to create a check.
-        XRPAmount const baseFeeDrops{env.current()->fees().base};
+        BRTAmount const baseFeeDrops{env.current()->fees().base};
         env(check::create(alice, bob, USD(50)),
             msig(bogie, demon),
             fee(3 * baseFeeDrops));
@@ -490,7 +490,7 @@ class Check_test : public beast::unit_test::suite
 
         Env env{*this};
 
-        XRPAmount const baseFeeDrops{env.current()->fees().base};
+        BRTAmount const baseFeeDrops{env.current()->fees().base};
         STAmount const startBalance{XRP(300).value()};
         env.fund(startBalance, alice, bob);
         {
@@ -914,7 +914,7 @@ class Check_test : public beast::unit_test::suite
             BEAST_EXPECT(ownerCount(env, bob) == signersCount + 1);
 
             // bob uses multisigning to cash a check.
-            XRPAmount const baseFeeDrops{env.current()->fees().base};
+            BRTAmount const baseFeeDrops{env.current()->fees().base};
             env(check::cash(bob, chkId2, (USD(2))),
                 msig(bogie, demon),
                 fee(3 * baseFeeDrops));
@@ -1646,7 +1646,7 @@ class Check_test : public beast::unit_test::suite
             BEAST_EXPECT(ownerCount(env, alice) == signersCount + 3);
 
             // alice uses multisigning to cancel a check.
-            XRPAmount const baseFeeDrops{env.current()->fees().base};
+            BRTAmount const baseFeeDrops{env.current()->fees().base};
             env(check::cancel(alice, chkIdMSig),
                 msig(bogie, demon),
                 fee(3 * baseFeeDrops));

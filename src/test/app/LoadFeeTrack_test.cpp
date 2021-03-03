@@ -43,12 +43,12 @@ public:
             }();
 
             BEAST_EXPECT(
-                scaleFeeLoad(FeeUnit64{0}, l, fees, false) == XRPAmount{0});
+                scaleFeeLoad(FeeUnit64{0}, l, fees, false) == BRTAmount{0});
             BEAST_EXPECT(
                 scaleFeeLoad(FeeUnit64{10000}, l, fees, false) ==
-                XRPAmount{10000});
+                BRTAmount{10000});
             BEAST_EXPECT(
-                scaleFeeLoad(FeeUnit64{1}, l, fees, false) == XRPAmount{1});
+                scaleFeeLoad(FeeUnit64{1}, l, fees, false) == BRTAmount{1});
         }
         {
             Fees const fees = [&]() {
@@ -61,12 +61,12 @@ public:
             }();
 
             BEAST_EXPECT(
-                scaleFeeLoad(FeeUnit64{0}, l, fees, false) == XRPAmount{0});
+                scaleFeeLoad(FeeUnit64{0}, l, fees, false) == BRTAmount{0});
             BEAST_EXPECT(
                 scaleFeeLoad(FeeUnit64{10000}, l, fees, false) ==
-                XRPAmount{100000});
+                BRTAmount{100000});
             BEAST_EXPECT(
-                scaleFeeLoad(FeeUnit64{1}, l, fees, false) == XRPAmount{10});
+                scaleFeeLoad(FeeUnit64{1}, l, fees, false) == BRTAmount{10});
         }
         {
             Fees const fees = [&]() {
@@ -79,12 +79,12 @@ public:
             }();
 
             BEAST_EXPECT(
-                scaleFeeLoad(FeeUnit64{0}, l, fees, false) == XRPAmount{0});
+                scaleFeeLoad(FeeUnit64{0}, l, fees, false) == BRTAmount{0});
             BEAST_EXPECT(
                 scaleFeeLoad(FeeUnit64{10000}, l, fees, false) ==
-                XRPAmount{1000});
+                BRTAmount{1000});
             BEAST_EXPECT(
-                scaleFeeLoad(FeeUnit64{1}, l, fees, false) == XRPAmount{0});
+                scaleFeeLoad(FeeUnit64{1}, l, fees, false) == BRTAmount{0});
         }
     }
 };

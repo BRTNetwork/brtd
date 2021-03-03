@@ -608,7 +608,7 @@ public:
     void
     testConvertXRP()
     {
-        testcase("STAmount to XRPAmount conversions");
+        testcase("STAmount to BRTAmount conversions");
 
         Issue const usd{Currency(0x5553440000000000), AccountID(0x4985601)};
         Issue const xrp{xrpIssue()};
@@ -619,8 +619,8 @@ public:
             auto const t = amountFromString(xrp, std::to_string(drops));
             auto const s = t.xrp();
             BEAST_EXPECT(s.drops() == drops);
-            BEAST_EXPECT(t == STAmount(XRPAmount(drops)));
-            BEAST_EXPECT(s == XRPAmount(drops));
+            BEAST_EXPECT(t == STAmount(BRTAmount(drops)));
+            BEAST_EXPECT(s == BRTAmount(drops));
         }
 
         try

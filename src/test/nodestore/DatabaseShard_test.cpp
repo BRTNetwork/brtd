@@ -64,8 +64,8 @@ class DatabaseShard_test : public TestBase
          * number of accounts: source and destinations, which participate in
          * j-th payment on i-th ledger */
         std::vector<std::vector<std::pair<int, int>>> payAccounts_;
-        /* xrpAmount_[i] is the amount for all payments on i-th ledger */
-        std::vector<int> xrpAmount_;
+        /* brtAmount_[i] is the amount for all payments on i-th ledger */
+        std::vector<int> brtAmount_;
         /* ledgers_[i] is the i-th ledger which contains the above described
          * accounts and payments */
         std::vector<std::shared_ptr<const Ledger>> ledgers_;
@@ -81,7 +81,7 @@ class DatabaseShard_test : public TestBase
 
             nAccounts_.reserve(nLedgers);
             payAccounts_.reserve(nLedgers);
-            xrpAmount_.reserve(nLedgers);
+            brtAmount_.reserve(nLedgers);
 
             for (std::uint32_t i = 0; i < nLedgers; ++i)
             {
@@ -119,7 +119,7 @@ class DatabaseShard_test : public TestBase
 
                 nAccounts_.push_back(n);
                 payAccounts_.push_back(std::move(pay));
-                xrpAmount_.push_back(rand_int(rng_, 90) + 10);
+                brtAmount_.push_back(rand_int(rng_, 90) + 10);
             }
         }
 
@@ -142,7 +142,7 @@ class DatabaseShard_test : public TestBase
                 env_(
                     pay(accounts_[payAccounts_[seq][i].first],
                         accounts_[payAccounts_[seq][i].second],
-                        XRP(xrpAmount_[seq])));
+                        XRP(brtAmount_[seq])));
             }
         }
 
@@ -242,14 +242,14 @@ class DatabaseShard_test : public TestBase
         {
             if (tx.first->getTxnType() == ttPAYMENT)
             {
-                std::int64_t xrpAmount =
+                std::int64_t brtAmount =
                     tx.first->getFieldAmount(sfAmount).xrp().decimalXRP();
-                if (xrpAmount == iniAmount)
+                if (brtAmount == iniAmount)
                     ++iniCount;
                 else
                 {
                     ++payCount;
-                    BEAST_EXPECT(xrpAmount == data.xrpAmount_[seq]);
+                    BEAST_EXPECT(brtAmount == data.brtAmount_[seq]);
                 }
             }
             else if (tx.first->getTxnType() == ttACCOUNT_SET)

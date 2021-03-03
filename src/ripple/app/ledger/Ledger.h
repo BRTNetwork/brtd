@@ -227,7 +227,7 @@ public:
     rawReplace(std::shared_ptr<SLE> const& sle) override;
 
     void
-    rawDestroyXRP(XRPAmount const& fee) override
+    rawDestroyXRP(BRTAmount const& fee) override
     {
         info_.drops -= fee;
     }

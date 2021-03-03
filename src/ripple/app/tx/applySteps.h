@@ -60,9 +60,9 @@ private:
     /// transactions
     bool isBlocker_;
     /// Transaction fee
-    XRPAmount fee_;
+    BRTAmount fee_;
     /// Does NOT include the fee.
-    XRPAmount potentialSpend_;
+    BRTAmount potentialSpend_;
     /// SeqProxy of transaction.
     SeqProxy seqProx_;
     /// Number of sequences consumed.
@@ -80,7 +80,7 @@ public:
     TxConsequences(STTx const& tx, Category category);
 
     /// Constructor for an STTx that may consume more XRP than the fee.
-    TxConsequences(STTx const& tx, XRPAmount potentialSpend);
+    TxConsequences(STTx const& tx, BRTAmount potentialSpend);
 
     /// Constructor for an STTx that consumes more than the usual sequences.
     TxConsequences(STTx const& tx, std::uint32_t sequencesConsumed);
@@ -97,14 +97,14 @@ public:
     operator=(TxConsequences&&) = default;
 
     /// Fee
-    XRPAmount
+    BRTAmount
     fee() const
     {
         return fee_;
     }
 
     /// Potential Spend
-    XRPAmount const&
+    BRTAmount const&
     potentialSpend() const
     {
         return potentialSpend_;
@@ -312,9 +312,9 @@ calculateBaseFee(ReadView const& view, STTx const& tx);
     @param view The current open ledger.
     @param tx The transaction so the correct multisigner count is used.
 
-    @return The base fee in XRPAmount.
+    @return The base fee in BRTAmount.
 */
-XRPAmount
+BRTAmount
 calculateDefaultBaseFee(ReadView const& view, STTx const& tx);
 
 /** Apply a prechecked transaction to an OpenView.

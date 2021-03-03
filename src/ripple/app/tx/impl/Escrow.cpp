@@ -21,7 +21,7 @@
 
 #include <ripple/app/misc/HashRouter.h>
 #include <ripple/basics/Log.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/basics/chrono.h>
 #include <ripple/basics/safe_cast.h>
 #include <ripple/conditions/Condition.h>

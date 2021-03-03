@@ -275,7 +275,7 @@ STAmount::STAmount(IOUAmount const& amount, Issue const& issue)
     canonicalize();
 }
 
-STAmount::STAmount(XRPAmount const& amount)
+STAmount::STAmount(BRTAmount const& amount)
     : mOffset(0), mIsNative(true), mIsNegative(amount < beast::zero)
 {
     if (mIsNegative)
@@ -297,19 +297,19 @@ STAmount::construct(SerialIter& sit, SField const& name)
 // Conversion
 //
 //------------------------------------------------------------------------------
-XRPAmount
+BRTAmount
 STAmount::xrp() const
 {
     if (!mIsNative)
         Throw<std::logic_error>(
-            "Cannot return non-native STAmount as XRPAmount");
+            "Cannot return non-native STAmount as BRTAmount");
 
-    auto drops = static_cast<XRPAmount::value_type>(mValue);
+    auto drops = static_cast<BRTAmount::value_type>(mValue);
 
     if (mIsNegative)
         drops = -drops;
 
-    return XRPAmount{drops};
+    return BRTAmount{drops};
 }
 
 IOUAmount

@@ -119,16 +119,16 @@ accountFundsHelper(
         view, id, issue.currency, issue.account, freezeHandling, j));
 }
 
-static XRPAmount
+static BRTAmount
 accountFundsHelper(
     ReadView const& view,
     AccountID const& id,
-    XRPAmount const& amtDefault,
+    BRTAmount const& amtDefault,
     Issue const& issue,
     FreezeHandling freezeHandling,
     beast::Journal j)
 {
-    return toAmount<XRPAmount>(accountHolds(
+    return toAmount<BRTAmount>(accountHolds(
         view, id, issue.currency, issue.account, freezeHandling, j));
 }
 
@@ -246,11 +246,11 @@ FlowOfferStream<TIn, TOut>::permRmOffer(uint256 const& offerIndex)
 
 template class FlowOfferStream<STAmount, STAmount>;
 template class FlowOfferStream<IOUAmount, IOUAmount>;
-template class FlowOfferStream<XRPAmount, IOUAmount>;
-template class FlowOfferStream<IOUAmount, XRPAmount>;
+template class FlowOfferStream<BRTAmount, IOUAmount>;
+template class FlowOfferStream<IOUAmount, BRTAmount>;
 
 template class TOfferStreamBase<STAmount, STAmount>;
 template class TOfferStreamBase<IOUAmount, IOUAmount>;
-template class TOfferStreamBase<XRPAmount, IOUAmount>;
-template class TOfferStreamBase<IOUAmount, XRPAmount>;
+template class TOfferStreamBase<BRTAmount, IOUAmount>;
+template class TOfferStreamBase<IOUAmount, BRTAmount>;
 }  // namespace ripple

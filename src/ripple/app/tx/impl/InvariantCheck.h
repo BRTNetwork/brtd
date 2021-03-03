@@ -77,7 +77,7 @@ public:
     finalize(
         STTx const& tx,
         TER const tec,
-        XRPAmount const fee,
+        BRTAmount const fee,
         ReadView const& view,
         beast::Journal const& j);
 };
@@ -102,7 +102,7 @@ public:
     finalize(
         STTx const&,
         TER const,
-        XRPAmount const,
+        BRTAmount const,
         ReadView const&,
         beast::Journal const&);
 };
@@ -130,7 +130,7 @@ public:
     finalize(
         STTx const&,
         TER const,
-        XRPAmount const,
+        BRTAmount const,
         ReadView const&,
         beast::Journal const&);
 };
@@ -158,14 +158,14 @@ public:
     finalize(
         STTx const&,
         TER const,
-        XRPAmount const,
+        BRTAmount const,
         ReadView const&,
         beast::Journal const&);
 };
 
 /**
  * @brief Invariant: An account XRP balance must be in XRP and take a value
- *                   between 0 and INITIAL_XRP drops, inclusive.
+ *                   between 0 and INITIAL_BRT drops, inclusive.
  *
  * We iterate all account roots modified by the transaction and ensure that
  * their XRP balances are reasonable.
@@ -185,7 +185,7 @@ public:
     finalize(
         STTx const&,
         TER const,
-        XRPAmount const,
+        BRTAmount const,
         ReadView const&,
         beast::Journal const&);
 };
@@ -210,7 +210,7 @@ public:
     finalize(
         STTx const&,
         TER const,
-        XRPAmount const,
+        BRTAmount const,
         ReadView const&,
         beast::Journal const&);
 };
@@ -236,7 +236,7 @@ public:
     finalize(
         STTx const&,
         TER const,
-        XRPAmount const,
+        BRTAmount const,
         ReadView const&,
         beast::Journal const&);
 };
@@ -263,14 +263,14 @@ public:
     finalize(
         STTx const&,
         TER const,
-        XRPAmount const,
+        BRTAmount const,
         ReadView const&,
         beast::Journal const&);
 };
 
 /**
  * @brief Invariant: an escrow entry must take a value between 0 and
- *                   INITIAL_XRP drops exclusive.
+ *                   INITIAL_BRT drops exclusive.
  */
 class NoZeroEscrow
 {
@@ -287,7 +287,7 @@ public:
     finalize(
         STTx const&,
         TER const,
-        XRPAmount const,
+        BRTAmount const,
         ReadView const&,
         beast::Journal const&);
 };
@@ -313,7 +313,7 @@ public:
     finalize(
         STTx const&,
         TER const,
-        XRPAmount const,
+        BRTAmount const,
         ReadView const&,
         beast::Journal const&);
 };

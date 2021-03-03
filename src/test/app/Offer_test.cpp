@@ -29,7 +29,7 @@ namespace test {
 
 class Offer_test : public beast::unit_test::suite
 {
-    XRPAmount
+    BRTAmount
     reserve(jtx::Env& env, std::uint32_t count)
     {
         return env.current()->fees().accountReserve(count);
@@ -42,12 +42,12 @@ class Offer_test : public beast::unit_test::suite
     }
 
     static auto
-    xrpMinusFee(jtx::Env const& env, std::int64_t xrpAmount)
+    xrpMinusFee(jtx::Env const& env, std::int64_t brtAmount)
         -> jtx::PrettyAmount
     {
         using namespace jtx;
         auto feeDrops = env.current()->fees().base;
-        return drops(dropsPerXRP * xrpAmount - feeDrops);
+        return drops(dropsPerXRP * brtAmount - feeDrops);
     }
 
     static auto

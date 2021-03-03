@@ -32,7 +32,7 @@ namespace ripple {
 TxConsequences
 CreateOffer::makeTxConsequences(PreflightContext const& ctx)
 {
-    auto calculateMaxXRPSpend = [](STTx const& tx) -> XRPAmount {
+    auto calculateMaxXRPSpend = [](STTx const& tx) -> BRTAmount {
         auto const& amount{tx[sfTakerGets]};
         return amount.native() ? amount.xrp() : beast::zero;
     };
@@ -1353,7 +1353,7 @@ CreateOffer::applyGuts(Sandbox& sb, Sandbox& sbCancel)
         return {tefINTERNAL, false};
 
     {
-        XRPAmount reserve = ctx_.view().fees().accountReserve(
+        BRTAmount reserve = ctx_.view().fees().accountReserve(
             sleCreator->getFieldU32(sfOwnerCount) + 1);
 
         if (mPriorBalance < reserve)

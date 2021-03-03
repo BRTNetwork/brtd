@@ -32,7 +32,7 @@ namespace detail {
 class VotableValue
 {
 private:
-    using value_type = XRPAmount;
+    using value_type = BRTAmount;
     value_type const mCurrent;  // The current setting
     value_type const mTarget;   // The setting we want
     std::map<value_type, int> mVoteMap;
@@ -168,12 +168,12 @@ FeeVoteImpl::doVoting(
         {
             if (val->isFieldPresent(sfBaseFee))
             {
-                using xrptype = XRPAmount::value_type;
+                using xrptype = BRTAmount::value_type;
                 auto const vote = val->getFieldU64(sfBaseFee);
                 if (vote <= std::numeric_limits<xrptype>::max() &&
-                    isLegalAmount(XRPAmount{unsafe_cast<xrptype>(vote)}))
+                    isLegalAmount(BRTAmount{unsafe_cast<xrptype>(vote)}))
                     baseFeeVote.addVote(
-                        XRPAmount{unsafe_cast<XRPAmount::value_type>(vote)});
+                        BRTAmount{unsafe_cast<BRTAmount::value_type>(vote)});
                 else
                     // Invalid amounts will be treated as if they're
                     // not provided. Don't throw because this value is
@@ -188,7 +188,7 @@ FeeVoteImpl::doVoting(
             if (val->isFieldPresent(sfReserveBase))
             {
                 baseReserveVote.addVote(
-                    XRPAmount{val->getFieldU32(sfReserveBase)});
+                    BRTAmount{val->getFieldU32(sfReserveBase)});
             }
             else
             {
@@ -198,7 +198,7 @@ FeeVoteImpl::doVoting(
             if (val->isFieldPresent(sfReserveIncrement))
             {
                 incReserveVote.addVote(
-                    XRPAmount{val->getFieldU32(sfReserveIncrement)});
+                    BRTAmount{val->getFieldU32(sfReserveIncrement)});
             }
             else
             {
@@ -262,7 +262,7 @@ setup_FeeVote(Section const& section)
     {
         std::uint64_t temp;
         if (set(temp, "reference_fee", section) &&
-            temp <= std::numeric_limits<XRPAmount::value_type>::max())
+            temp <= std::numeric_limits<BRTAmount::value_type>::max())
             setup.reference_fee = temp;
     }
     {

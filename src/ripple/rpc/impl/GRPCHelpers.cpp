@@ -1761,7 +1761,7 @@ convert(
         boost::optional<std::uint32_t> lowestTicket;
         boost::optional<std::uint32_t> highestTicket;
         bool anyAuthChanged = false;
-        XRPAmount totalSpend(0);
+        BRTAmount totalSpend(0);
 
         for (auto const& tx : from)
         {

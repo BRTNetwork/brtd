@@ -199,7 +199,7 @@ public:
     std::map<std::tuple<AccountID, AccountID, Currency>, STAmount>
     balanceChanges(ReadView const& view) const;
 
-    XRPAmount
+    BRTAmount
     xrpDestroyed() const;
 
 private:

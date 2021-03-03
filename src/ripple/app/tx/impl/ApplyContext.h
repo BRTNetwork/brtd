@@ -21,7 +21,7 @@
 #define RIPPLE_TX_APPLYCONTEXT_H_INCLUDED
 
 #include <ripple/app/main/Application.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/beast/utility/Journal.h>
 #include <ripple/core/Config.h>
 #include <ripple/ledger/ApplyViewImpl.h>
@@ -96,7 +96,7 @@ public:
               std::shared_ptr<SLE const> const& after)> const& func);
 
     void
-    destroyXRP(XRPAmount const& fee)
+    destroyXRP(BRTAmount const& fee)
     {
         view_->rawDestroyXRP(fee);
     }
@@ -108,7 +108,7 @@ public:
         @return the result code that should be returned for this transaction.
      */
     TER
-    checkInvariants(TER const result, XRPAmount const fee);
+    checkInvariants(TER const result, BRTAmount const fee);
 
 private:
     TER
@@ -118,7 +118,7 @@ private:
     TER
     checkInvariantsHelper(
         TER const result,
-        XRPAmount const fee,
+        BRTAmount const fee,
         std::index_sequence<Is...>);
 
     OpenView& base_;

@@ -17,12 +17,12 @@
 */
 //==============================================================================
 
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/beast/unit_test.h>
 
 namespace ripple {
 
-class XRPAmount_test : public beast::unit_test::suite
+class BRTAmount_test : public beast::unit_test::suite
 {
 public:
     void
@@ -32,7 +32,7 @@ public:
 
         for (auto i : {-1, 0, 1})
         {
-            XRPAmount const x(i);
+            BRTAmount const x(i);
 
             if (i < 0)
                 BEAST_EXPECT(x.signum() < 0);
@@ -52,7 +52,7 @@ public:
 
         for (auto i : {-1, 0, 1})
         {
-            XRPAmount const x(i);
+            BRTAmount const x(i);
 
             BEAST_EXPECT((i == 0) == (x == zero));
             BEAST_EXPECT((i != 0) == (x != zero));
@@ -77,11 +77,11 @@ public:
 
         for (auto i : {-1, 0, 1})
         {
-            XRPAmount const x(i);
+            BRTAmount const x(i);
 
             for (auto j : {-1, 0, 1})
             {
-                XRPAmount const y(j);
+                BRTAmount const y(j);
 
                 BEAST_EXPECT((i == j) == (x == y));
                 BEAST_EXPECT((i != j) == (x != y));
@@ -100,14 +100,14 @@ public:
 
         for (auto i : {-1, 0, 1})
         {
-            XRPAmount const x(i);
+            BRTAmount const x(i);
 
             for (auto j : {-1, 0, 1})
             {
-                XRPAmount const y(j);
+                BRTAmount const y(j);
 
-                BEAST_EXPECT(XRPAmount(i + j) == (x + y));
-                BEAST_EXPECT(XRPAmount(i - j) == (x - y));
+                BEAST_EXPECT(BRTAmount(i + j) == (x + y));
+                BEAST_EXPECT(BRTAmount(i - j) == (x - y));
 
                 BEAST_EXPECT((x + y) == (y + x));  // addition is commutative
             }
@@ -120,7 +120,7 @@ public:
         // Tautology
         BEAST_EXPECT(DROPS_PER_XRP.decimalXRP() == 1);
 
-        XRPAmount test{1};
+        BRTAmount test{1};
         BEAST_EXPECT(test.decimalXRP() == 0.000001);
 
         test = -test;
@@ -136,13 +136,13 @@ public:
     void
     testFunctions()
     {
-        // Explicitly test every defined function for the XRPAmount class
+        // Explicitly test every defined function for the BRTAmount class
         // since some of them are templated, but not used anywhere else.
-        auto make = [&](auto x) -> XRPAmount { return XRPAmount{x}; };
+        auto make = [&](auto x) -> BRTAmount { return BRTAmount{x}; };
 
-        XRPAmount defaulted;
+        BRTAmount defaulted;
         (void)defaulted;
-        XRPAmount test{0};
+        BRTAmount test{0};
         BEAST_EXPECT(test.drops() == 0);
 
         test = make(beast::zero);
@@ -157,12 +157,12 @@ public:
         test = make(100u);
         BEAST_EXPECT(test.drops() == 100);
 
-        XRPAmount const targetSame{200u};
+        BRTAmount const targetSame{200u};
         test = make(targetSame);
         BEAST_EXPECT(test.drops() == 200);
         BEAST_EXPECT(test == targetSame);
-        BEAST_EXPECT(test < XRPAmount{1000});
-        BEAST_EXPECT(test > XRPAmount{100});
+        BEAST_EXPECT(test < BRTAmount{1000});
+        BEAST_EXPECT(test > BRTAmount{100});
 
         test = std::int64_t(200);
         BEAST_EXPECT(test.drops() == 200);
@@ -223,14 +223,14 @@ public:
 
         constexpr auto maxUInt32 = std::numeric_limits<std::uint32_t>::max();
         constexpr auto maxXRP =
-            std::numeric_limits<XRPAmount::value_type>::max();
+            std::numeric_limits<BRTAmount::value_type>::max();
         constexpr auto minXRP =
-            std::numeric_limits<XRPAmount::value_type>::min();
+            std::numeric_limits<BRTAmount::value_type>::min();
 
         {
             // multiply by a number that would overflow then divide by the same
             // number, and check we didn't lose any value
-            XRPAmount big(maxXRP);
+            BRTAmount big(maxXRP);
             BEAST_EXPECT(big == mulRatio(big, maxUInt32, maxUInt32, true));
             // rounding mode shouldn't matter as the result is exact
             BEAST_EXPECT(big == mulRatio(big, maxUInt32, maxUInt32, false));
@@ -247,7 +247,7 @@ public:
 
         {
             // Similar test as above, but for negative values
-            XRPAmount big(minXRP);
+            BRTAmount big(minXRP);
             BEAST_EXPECT(big == mulRatio(big, maxUInt32, maxUInt32, true));
             // rounding mode shouldn't matter as the result is exact
             BEAST_EXPECT(big == mulRatio(big, maxUInt32, maxUInt32, false));
@@ -263,7 +263,7 @@ public:
 
         {
             // small amounts
-            XRPAmount tiny(1);
+            BRTAmount tiny(1);
             // Round up should give the smallest allowable number
             BEAST_EXPECT(tiny == mulRatio(tiny, 1, maxUInt32, true));
             // rounding down should be zero
@@ -272,7 +272,7 @@ public:
                 beast::zero == mulRatio(tiny, maxUInt32 - 1, maxUInt32, false));
 
             // tiny negative numbers
-            XRPAmount tinyNeg(-1);
+            BRTAmount tinyNeg(-1);
             // Round up should give zero
             BEAST_EXPECT(beast::zero == mulRatio(tinyNeg, 1, maxUInt32, true));
             BEAST_EXPECT(
@@ -284,21 +284,21 @@ public:
         }
 
         {// rounding
-         {XRPAmount one(1);
+         {BRTAmount one(1);
         auto const rup = mulRatio(one, maxUInt32 - 1, maxUInt32, true);
         auto const rdown = mulRatio(one, maxUInt32 - 1, maxUInt32, false);
         BEAST_EXPECT(rup.drops() - rdown.drops() == 1);
     }
 
     {
-        XRPAmount big(maxXRP);
+        BRTAmount big(maxXRP);
         auto const rup = mulRatio(big, maxUInt32 - 1, maxUInt32, true);
         auto const rdown = mulRatio(big, maxUInt32 - 1, maxUInt32, false);
         BEAST_EXPECT(rup.drops() - rdown.drops() == 1);
     }
 
     {
-        XRPAmount negOne(-1);
+        BRTAmount negOne(-1);
         auto const rup = mulRatio(negOne, maxUInt32 - 1, maxUInt32, true);
         auto const rdown = mulRatio(negOne, maxUInt32 - 1, maxUInt32, false);
         BEAST_EXPECT(rup.drops() - rdown.drops() == 1);
@@ -307,19 +307,19 @@ public:
 
 {
     // division by zero
-    XRPAmount one(1);
+    BRTAmount one(1);
     except([&] { mulRatio(one, 1, 0, true); });
 }
 
 {
     // overflow
-    XRPAmount big(maxXRP);
+    BRTAmount big(maxXRP);
     except([&] { mulRatio(big, 2, 1, true); });
 }
 
 {
     // underflow
-    XRPAmount bigNegative(minXRP + 10);
+    BRTAmount bigNegative(minXRP + 10);
     BEAST_EXPECT(mulRatio(bigNegative, 2, 1, true) == minXRP);
 }
 }  // namespace ripple
@@ -340,6 +340,6 @@ run() override
 }
 ;
 
-BEAST_DEFINE_TESTSUITE(XRPAmount, protocol, ripple);
+BEAST_DEFINE_TESTSUITE(BRTAmount, protocol, ripple);
 
 }  // ripple

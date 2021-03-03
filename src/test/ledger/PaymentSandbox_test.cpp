@@ -340,12 +340,12 @@ class PaymentSandbox_test : public beast::unit_test::suite
 
         auto accountFundsXRP = [](ReadView const& view,
                                   AccountID const& id,
-                                  beast::Journal j) -> XRPAmount {
-            return toAmount<XRPAmount>(accountHolds(
+                                  beast::Journal j) -> BRTAmount {
+            return toAmount<BRTAmount>(accountHolds(
                 view, id, xrpCurrency(), xrpAccount(), fhZERO_IF_FROZEN, j));
         };
 
-        auto reserve = [](jtx::Env& env, std::uint32_t count) -> XRPAmount {
+        auto reserve = [](jtx::Env& env, std::uint32_t count) -> BRTAmount {
             return env.current()->fees().accountReserve(count);
         };
 

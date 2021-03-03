@@ -24,7 +24,7 @@
 #include <ripple/app/tx/impl/OfferStream.h>
 #include <ripple/basics/IOUAmount.h>
 #include <ripple/basics/Log.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/basics/contract.h>
 #include <ripple/ledger/Directory.h>
 #include <ripple/ledger/PaymentSandbox.h>
@@ -1127,19 +1127,19 @@ bookStepEqual(Step const& step, ripple::Book const& book)
     bool const outXRP = isXRP(book.out.currency);
     if (inXRP && outXRP)
         return equalHelper<
-            XRPAmount,
-            XRPAmount,
-            BookPaymentStep<XRPAmount, XRPAmount>>(step, book);
+            BRTAmount,
+            BRTAmount,
+            BookPaymentStep<BRTAmount, BRTAmount>>(step, book);
     if (inXRP && !outXRP)
         return equalHelper<
-            XRPAmount,
+            BRTAmount,
             IOUAmount,
-            BookPaymentStep<XRPAmount, IOUAmount>>(step, book);
+            BookPaymentStep<BRTAmount, IOUAmount>>(step, book);
     if (!inXRP && outXRP)
         return equalHelper<
             IOUAmount,
-            XRPAmount,
-            BookPaymentStep<IOUAmount, XRPAmount>>(step, book);
+            BRTAmount,
+            BookPaymentStep<IOUAmount, BRTAmount>>(step, book);
     if (!inXRP && !outXRP)
         return equalHelper<
             IOUAmount,
@@ -1186,13 +1186,13 @@ make_BookStepII(StrandContext const& ctx, Issue const& in, Issue const& out)
 std::pair<TER, std::unique_ptr<Step>>
 make_BookStepIX(StrandContext const& ctx, Issue const& in)
 {
-    return make_BookStepHelper<IOUAmount, XRPAmount>(ctx, in, xrpIssue());
+    return make_BookStepHelper<IOUAmount, BRTAmount>(ctx, in, xrpIssue());
 }
 
 std::pair<TER, std::unique_ptr<Step>>
 make_BookStepXI(StrandContext const& ctx, Issue const& out)
 {
-    return make_BookStepHelper<XRPAmount, IOUAmount>(ctx, xrpIssue(), out);
+    return make_BookStepHelper<BRTAmount, IOUAmount>(ctx, xrpIssue(), out);
 }
 
 }  // namespace ripple

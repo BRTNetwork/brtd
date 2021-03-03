@@ -24,7 +24,7 @@
 #include <ripple/app/paths/impl/StrandFlow.h>
 #include <ripple/basics/IOUAmount.h>
 #include <ripple/basics/Log.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 
 #include <boost/container/flat_set.hpp>
 
@@ -136,7 +136,7 @@ flow(
             sb,
             srcIssue,
             dstIssue,
-            flow<XRPAmount, XRPAmount>(
+            flow<BRTAmount, BRTAmount>(
                 sb,
                 strands,
                 asDeliver.xrp,
@@ -154,7 +154,7 @@ flow(
             sb,
             srcIssue,
             dstIssue,
-            flow<XRPAmount, IOUAmount>(
+            flow<BRTAmount, IOUAmount>(
                 sb,
                 strands,
                 asDeliver.iou,
@@ -172,7 +172,7 @@ flow(
             sb,
             srcIssue,
             dstIssue,
-            flow<IOUAmount, XRPAmount>(
+            flow<IOUAmount, BRTAmount>(
                 sb,
                 strands,
                 asDeliver.xrp,

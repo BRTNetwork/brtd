@@ -163,8 +163,8 @@ SetTrust::doApply()
     // well. A person with no intention of using the gateway
     // could use the extra XRP for their own purposes.
 
-    XRPAmount const reserveCreate(
-        (uOwnerCount < 2) ? XRPAmount(beast::zero)
+    BRTAmount const reserveCreate(
+        (uOwnerCount < 2) ? BRTAmount(beast::zero)
                           : view().fees().accountReserve(uOwnerCount + 1));
 
     std::uint32_t uQualityIn(bQualityIn ? ctx_.tx.getFieldU32(sfQualityIn) : 0);

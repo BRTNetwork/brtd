@@ -39,7 +39,7 @@ bool
 TransactionFeeCheck::finalize(
     STTx const& tx,
     TER const,
-    XRPAmount const fee,
+    BRTAmount const fee,
     ReadView const&,
     beast::Journal const& j)
 {
@@ -53,7 +53,7 @@ TransactionFeeCheck::finalize(
 
     // We should never charge a fee that's greater than or equal to the
     // entire XRP supply.
-    if (fee >= INITIAL_XRP)
+    if (fee >= INITIAL_BRT)
     {
         JLOG(j.fatal()) << "Invariant failed: fee paid exceeds system limit: "
                         << fee.drops();
@@ -133,7 +133,7 @@ bool
 XRPNotCreated::finalize(
     STTx const&,
     TER const,
-    XRPAmount const fee,
+    BRTAmount const fee,
     ReadView const&,
     beast::Journal const& j)
 {
@@ -173,11 +173,11 @@ XRPBalanceChecks::visitEntry(
 
         // Can't have more than the number of drops instantiated
         // in the genesis ledger.
-        if (drops > INITIAL_XRP)
+        if (drops > INITIAL_BRT)
             return true;
 
         // Can't have a negative balance (0 is OK)
-        if (drops < XRPAmount{0})
+        if (drops < BRTAmount{0})
             return true;
 
         return false;
@@ -194,7 +194,7 @@ bool
 XRPBalanceChecks::finalize(
     STTx const&,
     TER const,
-    XRPAmount const,
+    BRTAmount const,
     ReadView const&,
     beast::Journal const& j)
 {
@@ -238,7 +238,7 @@ bool
 NoBadOffers::finalize(
     STTx const&,
     TER const,
-    XRPAmount const,
+    BRTAmount const,
     ReadView const&,
     beast::Journal const& j)
 {
@@ -263,10 +263,10 @@ NoZeroEscrow::visitEntry(
         if (!amount.native())
             return true;
 
-        if (amount.xrp() <= XRPAmount{0})
+        if (amount.xrp() <= BRTAmount{0})
             return true;
 
-        if (amount.xrp() >= INITIAL_XRP)
+        if (amount.xrp() >= INITIAL_BRT)
             return true;
 
         return false;
@@ -283,7 +283,7 @@ bool
 NoZeroEscrow::finalize(
     STTx const&,
     TER const,
-    XRPAmount const,
+    BRTAmount const,
     ReadView const&,
     beast::Journal const& j)
 {
@@ -312,7 +312,7 @@ bool
 AccountRootsNotDeleted::finalize(
     STTx const& tx,
     TER const result,
-    XRPAmount const,
+    BRTAmount const,
     ReadView const&,
     beast::Journal const& j)
 {
@@ -378,7 +378,7 @@ bool
 LedgerEntryTypesMatch::finalize(
     STTx const&,
     TER const,
-    XRPAmount const,
+    BRTAmount const,
     ReadView const&,
     beast::Journal const& j)
 {
@@ -421,7 +421,7 @@ bool
 NoXRPTrustLines::finalize(
     STTx const&,
     TER const,
-    XRPAmount const,
+    BRTAmount const,
     ReadView const&,
     beast::Journal const& j)
 {
@@ -451,7 +451,7 @@ bool
 ValidNewAccountRoot::finalize(
     STTx const& tx,
     TER const result,
-    XRPAmount const,
+    BRTAmount const,
     ReadView const& view,
     beast::Journal const& j)
 {

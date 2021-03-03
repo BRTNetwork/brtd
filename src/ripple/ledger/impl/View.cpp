@@ -214,7 +214,7 @@ confineOwnerCount(
     return adjusted;
 }
 
-XRPAmount
+BRTAmount
 xrpLiquid(
     ReadView const& view,
     AccountID const& id,

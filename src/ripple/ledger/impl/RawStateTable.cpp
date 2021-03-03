@@ -320,7 +320,7 @@ RawStateTable::read(ReadView const& base, Keylet const& k) const
 }
 
 void
-RawStateTable::destroyXRP(XRPAmount const& fee)
+RawStateTable::destroyXRP(BRTAmount const& fee)
 {
     dropsDestroyed_ += fee;
 }

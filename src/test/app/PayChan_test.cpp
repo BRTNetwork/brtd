@@ -72,7 +72,7 @@ struct PayChan_test : public beast::unit_test::suite
     {
         auto const slep = view.read({ltPAYCHAN, chan});
         if (!slep)
-            return XRPAmount{-1};
+            return BRTAmount{-1};
         return (*slep)[sfBalance];
     }
 
@@ -88,7 +88,7 @@ struct PayChan_test : public beast::unit_test::suite
     {
         auto const slep = view.read({ltPAYCHAN, chan});
         if (!slep)
-            return XRPAmount{-1};
+            return BRTAmount{-1};
         return (*slep)[sfAmount];
     }
 

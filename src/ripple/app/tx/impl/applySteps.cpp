@@ -309,7 +309,7 @@ TxConsequences::TxConsequences(STTx const& tx, Category category)
     isBlocker_ = (category == blocker);
 }
 
-TxConsequences::TxConsequences(STTx const& tx, XRPAmount potentialSpend)
+TxConsequences::TxConsequences(STTx const& tx, BRTAmount potentialSpend)
     : TxConsequences(tx)
 {
     potentialSpend_ = potentialSpend;
@@ -486,7 +486,7 @@ calculateBaseFee(ReadView const& view, STTx const& tx)
     return invoke_calculateBaseFee(view, tx);
 }
 
-XRPAmount
+BRTAmount
 calculateDefaultBaseFee(ReadView const& view, STTx const& tx)
 {
     return view.fees().toDrops(Transactor::calculateBaseFee(view, tx));

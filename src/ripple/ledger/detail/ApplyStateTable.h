@@ -20,7 +20,7 @@
 #ifndef RIPPLE_LEDGER_APPLYSTATETABLE_H_INCLUDED
 #define RIPPLE_LEDGER_APPLYSTATETABLE_H_INCLUDED
 
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/beast/utility/Journal.h>
 #include <ripple/ledger/OpenView.h>
 #include <ripple/ledger/RawView.h>
@@ -49,7 +49,7 @@ private:
     using items_t = std::map<key_type, std::pair<Action, std::shared_ptr<SLE>>>;
 
     items_t items_;
-    XRPAmount dropsDestroyed_{0};
+    BRTAmount dropsDestroyed_{0};
 
 public:
     ApplyStateTable() = default;
@@ -115,10 +115,10 @@ public:
     replace(ReadView const& base, std::shared_ptr<SLE> const& sle);
 
     void
-    destroyXRP(XRPAmount const& fee);
+    destroyXRP(BRTAmount const& fee);
 
     // For debugging
-    XRPAmount const&
+    BRTAmount const&
     dropsDestroyed() const
     {
         return dropsDestroyed_;

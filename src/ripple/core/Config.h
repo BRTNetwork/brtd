@@ -168,9 +168,9 @@ public:
     boost::optional<std::size_t>
         VALIDATION_QUORUM;  // validations to consider ledger authoritative
 
-    XRPAmount FEE_DEFAULT{1};
-    XRPAmount FEE_ACCOUNT_RESERVE{1000};
-    XRPAmount FEE_OWNER_RESERVE{250};
+    BRTAmount FEE_DEFAULT{1};
+    BRTAmount FEE_ACCOUNT_RESERVE{1000};
+    BRTAmount FEE_OWNER_RESERVE{250};
 
     // Node storage configuration
     std::uint32_t LEDGER_HISTORY = 256;

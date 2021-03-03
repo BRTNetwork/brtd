@@ -64,7 +64,7 @@ struct None
 // This value is also defined in SystemParameters.h. It's
 // duplicated here to catch any possible future errors that
 // could change that value (however unlikely).
-constexpr XRPAmount dropsPerXRP{1'000'000};
+constexpr BRTAmount dropsPerXRP{1'000'000};
 
 /** Represents an XRP or IOU quantity
     This customizes the string conversion and supports
@@ -110,7 +110,7 @@ public:
     }
 
     /** drops */
-    PrettyAmount(XRPAmount v) : amount_(v)
+    PrettyAmount(BRTAmount v) : amount_(v)
     {
     }
 
@@ -249,7 +249,7 @@ Example:
 drops(view->fee().basefee)   Returns PrettyAmount of 10 drops
 */
 inline PrettyAmount
-drops(XRPAmount i)
+drops(BRTAmount i)
 {
     return {i};
 }

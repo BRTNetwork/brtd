@@ -87,7 +87,7 @@ public:
     read(ReadView const& base, Keylet const& k) const;
 
     void
-    destroyXRP(XRPAmount const& fee);
+    destroyXRP(BRTAmount const& fee);
 
     std::unique_ptr<ReadView::sles_type::iter_base>
     slesBegin(ReadView const& base) const;
@@ -133,7 +133,7 @@ private:
         monotonic_resource_;
     items_t items_;
 
-    XRPAmount dropsDestroyed_{0};
+    BRTAmount dropsDestroyed_{0};
 };
 
 }  // namespace detail

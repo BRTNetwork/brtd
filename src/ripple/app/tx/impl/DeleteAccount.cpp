@@ -331,7 +331,7 @@ DeleteAccount::doApply()
     (*src)[sfBalance] = (*src)[sfBalance] - mSourceBalance;
     ctx_.deliver(mSourceBalance);
 
-    assert((*src)[sfBalance] == XRPAmount(0));
+    assert((*src)[sfBalance] == BRTAmount(0));
 
     // If there's still an owner directory associated with the source account
     // delete it.
@@ -343,7 +343,7 @@ DeleteAccount::doApply()
     }
 
     // Re-arm the password change fee if we can and need to.
-    if (mSourceBalance > XRPAmount(0) && dst->isFlag(lsfPasswordSpent))
+    if (mSourceBalance > BRTAmount(0) && dst->isFlag(lsfPasswordSpent))
         dst->clearFlag(lsfPasswordSpent);
 
     view().update(dst);

@@ -156,7 +156,7 @@ private:
 //------------------------------------------------------------------------------
 
 // Scale using load as well as base rate
-XRPAmount
+BRTAmount
 scaleFeeLoad(
     FeeUnit64 fee,
     LoadFeeTrack const& feeTrack,

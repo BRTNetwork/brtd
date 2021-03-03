@@ -39,12 +39,12 @@ static FeeLevel64
 getFeeLevelPaid(ReadView const& view, STTx const& tx)
 {
     auto const [baseFee, effectiveFeePaid] = [&view, &tx]() {
-        XRPAmount baseFee = view.fees().toDrops(calculateBaseFee(view, tx));
-        XRPAmount feePaid = tx[sfFee].xrp();
+        BRTAmount baseFee = view.fees().toDrops(calculateBaseFee(view, tx));
+        BRTAmount feePaid = tx[sfFee].xrp();
 
         // If baseFee is 0 then the cost of a basic transaction is free.
-        XRPAmount const ref = baseFee.signum() > 0
-            ? XRPAmount{0}
+        BRTAmount const ref = baseFee.signum() > 0
+            ? BRTAmount{0}
             : calculateDefaultBaseFee(view, tx);
         return std::pair{baseFee + ref, feePaid + ref};
     }();
@@ -1037,8 +1037,8 @@ TxQ::apply(
             // Sum fees and spending for all of the queued transactions
             // so we know how much to remove from the account balance
             // for the trial preclaim.
-            XRPAmount potentialSpend = beast::zero;
-            XRPAmount totalFee = beast::zero;
+            BRTAmount potentialSpend = beast::zero;
+            BRTAmount totalFee = beast::zero;
             for (auto iter = txIter->first; iter != txIter->end; ++iter)
             {
                 // If we're replacing this transaction don't include
@@ -1122,7 +1122,7 @@ TxQ::apply(
             // inserted in the middle from fouling up later transactions.
             auto const potentialTotalSpend = totalFee +
                 std::min(balance - std::min(balance, reserve), potentialSpend);
-            assert(potentialTotalSpend > XRPAmount{0});
+            assert(potentialTotalSpend > BRTAmount{0});
             sleBump->setFieldAmount(sfBalance, balance - potentialTotalSpend);
             // The transaction's sequence/ticket will be valid when the other
             // transactions in the queue have been processed. If the tx has a

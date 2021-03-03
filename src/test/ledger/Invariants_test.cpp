@@ -42,7 +42,7 @@ class Invariants_test : public beast::unit_test::suite
     doInvariantCheck(
         std::vector<std::string> const& expect_logs,
         Precheck const& precheck,
-        XRPAmount fee = XRPAmount{},
+        BRTAmount fee = BRTAmount{},
         STTx tx = STTx{ttACCOUNT_SET, [](STObject&) {}},
         std::initializer_list<TER> ters = {
             tecINVARIANT_FAILED,
@@ -141,7 +141,7 @@ class Invariants_test : public beast::unit_test::suite
             [](Account const&, Account const&, ApplyContext& ac) {
                 return true;
             },
-            XRPAmount{},
+            BRTAmount{},
             STTx{ttACCOUNT_DELETE, [](STObject& tx) {}},
             {tecINVARIANT_FAILED, tecINVARIANT_FAILED});
 
@@ -158,7 +158,7 @@ class Invariants_test : public beast::unit_test::suite
                 ac.view().erase(sleA2);
                 return true;
             },
-            XRPAmount{},
+            BRTAmount{},
             STTx{ttACCOUNT_DELETE, [](STObject& tx) {}});
     }
 
@@ -225,7 +225,7 @@ class Invariants_test : public beast::unit_test::suite
         testcase << "XRP balance checks";
 
         doInvariantCheck(
-            {{"Cannot return non-native STAmount as XRPAmount"}},
+            {{"Cannot return non-native STAmount as BRTAmount"}},
             [](Account const& A1, Account const& A2, ApplyContext& ac) {
                 // non-native balance
                 auto const sle = ac.view().peek(keylet::account(A1.id()));
@@ -247,7 +247,7 @@ class Invariants_test : public beast::unit_test::suite
                     return false;
                 // Use `drops(1)` to bypass a call to STAmount::canonicalize
                 // with an invalid value
-                sle->setFieldAmount(sfBalance, INITIAL_XRP + drops(1));
+                sle->setFieldAmount(sfBalance, INITIAL_BRT + drops(1));
                 BEAST_EXPECT(!sle->getFieldAmount(sfBalance).negative());
                 ac.view().update(sle);
                 return true;
@@ -279,22 +279,22 @@ class Invariants_test : public beast::unit_test::suite
             {{"fee paid was negative: -1"},
              {"XRP net change of 0 doesn't match fee -1"}},
             [](Account const&, Account const&, ApplyContext&) { return true; },
-            XRPAmount{-1});
+            BRTAmount{-1});
 
         doInvariantCheck(
-            {{"fee paid exceeds system limit: "s + to_string(INITIAL_XRP)},
+            {{"fee paid exceeds system limit: "s + to_string(INITIAL_BRT)},
              {"XRP net change of 0 doesn't match fee "s +
-              to_string(INITIAL_XRP)}},
+              to_string(INITIAL_BRT)}},
             [](Account const&, Account const&, ApplyContext&) { return true; },
-            XRPAmount{INITIAL_XRP});
+            BRTAmount{INITIAL_BRT});
 
         doInvariantCheck(
             {{"fee paid is 20 exceeds fee specified in transaction."},
              {"XRP net change of 0 doesn't match fee 20"}},
             [](Account const&, Account const&, ApplyContext&) { return true; },
-            XRPAmount{20},
+            BRTAmount{20},
             STTx{ttACCOUNT_SET, [](STObject& tx) {
-                     tx.setFieldAmount(sfFee, XRPAmount{10});
+                     tx.setFieldAmount(sfFee, BRTAmount{10});
                  }});
     }
 
@@ -362,7 +362,7 @@ class Invariants_test : public beast::unit_test::suite
         testcase << "no zero escrow";
 
         doInvariantCheck(
-            {{"Cannot return non-native STAmount as XRPAmount"}},
+            {{"Cannot return non-native STAmount as BRTAmount"}},
             [](Account const& A1, Account const& A2, ApplyContext& ac) {
                 // escrow with nonnative amount
                 auto const sle = ac.view().peek(keylet::account(A1.id()));
@@ -403,7 +403,7 @@ class Invariants_test : public beast::unit_test::suite
                     keylet::escrow(A1, (*sle)[sfSequence] + 2));
                 // Use `drops(1)` to bypass a call to STAmount::canonicalize
                 // with an invalid value
-                sleNew->setFieldAmount(sfAmount, INITIAL_XRP + drops(1));
+                sleNew->setFieldAmount(sfAmount, INITIAL_BRT + drops(1));
                 ac.view().insert(sleNew);
                 return true;
             });
@@ -457,7 +457,7 @@ class Invariants_test : public beast::unit_test::suite
                 ac.view().insert(sleNew);
                 return true;
             },
-            XRPAmount{},
+            BRTAmount{},
             STTx{ttPAYMENT, [](STObject& tx) {}});
     }
 

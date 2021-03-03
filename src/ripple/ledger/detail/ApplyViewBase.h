@@ -20,7 +20,7 @@
 #ifndef RIPPLE_LEDGER_APPLYVIEWBASE_H_INCLUDED
 #define RIPPLE_LEDGER_APPLYVIEWBASE_H_INCLUDED
 
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/ledger/ApplyView.h>
 #include <ripple/ledger/CashDiff.h>
 #include <ripple/ledger/OpenView.h>
@@ -118,7 +118,7 @@ public:
     rawReplace(std::shared_ptr<SLE> const& sle) override;
 
     void
-    rawDestroyXRP(XRPAmount const& feeDrops) override;
+    rawDestroyXRP(BRTAmount const& feeDrops) override;
 
     friend CashDiff
     cashFlowDiff(

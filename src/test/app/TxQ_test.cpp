@@ -156,10 +156,10 @@ class TxQ1_test : public beast::unit_test::suite
         env.close(env.now() + 5s, 10000ms);
         checkMetrics(env, 0, flagMaxQueue, 0, expectedPerLedger, 256);
         auto const fees = env.current()->fees();
-        BEAST_EXPECT(fees.base == XRPAmount{base});
+        BEAST_EXPECT(fees.base == BRTAmount{base});
         BEAST_EXPECT(fees.units == FeeUnit64{units});
-        BEAST_EXPECT(fees.reserve == XRPAmount{reserve});
-        BEAST_EXPECT(fees.increment == XRPAmount{increment});
+        BEAST_EXPECT(fees.reserve == BRTAmount{reserve});
+        BEAST_EXPECT(fees.increment == BRTAmount{increment});
 
         return flagMaxQueue;
     }
@@ -1106,7 +1106,7 @@ public:
         {
             auto& txQ = env.app().getTxQ();
             auto aliceStat = txQ.getAccountTxs(alice.id(), *env.current());
-            constexpr XRPAmount fee{20};
+            constexpr BRTAmount fee{20};
             auto const& baseFee = env.current()->fees().base;
             auto seq = env.seq(alice);
             BEAST_EXPECT(aliceStat.size() == 7);

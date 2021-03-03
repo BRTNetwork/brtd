@@ -17,8 +17,8 @@
 */
 //==============================================================================
 
-#ifndef RIPPLE_BASICS_XRPAMOUNT_H_INCLUDED
-#define RIPPLE_BASICS_XRPAMOUNT_H_INCLUDED
+#ifndef RIPPLE_BASICS_BRTAMOUNT_H_INCLUDED
+#define RIPPLE_BASICS_BRTAMOUNT_H_INCLUDED
 
 #include <ripple/basics/contract.h>
 #include <ripple/basics/safe_cast.h>
@@ -43,10 +43,10 @@ struct dropTag;
 
 }  // namespace feeunit
 
-class XRPAmount : private boost::totally_ordered<XRPAmount>,
-                  private boost::additive<XRPAmount>,
-                  private boost::equality_comparable<XRPAmount, std::int64_t>,
-                  private boost::additive<XRPAmount, std::int64_t>
+class BRTAmount : private boost::totally_ordered<BRTAmount>,
+                  private boost::additive<BRTAmount>,
+                  private boost::equality_comparable<BRTAmount, std::int64_t>,
+                  private boost::additive<BRTAmount, std::int64_t>
 {
 public:
     using unit_type = feeunit::dropTag;
@@ -56,88 +56,88 @@ private:
     value_type drops_;
 
 public:
-    XRPAmount() = default;
-    constexpr XRPAmount(XRPAmount const& other) = default;
-    constexpr XRPAmount&
-    operator=(XRPAmount const& other) = default;
+    BRTAmount() = default;
+    constexpr BRTAmount(BRTAmount const& other) = default;
+    constexpr BRTAmount&
+    operator=(BRTAmount const& other) = default;
 
-    constexpr XRPAmount(beast::Zero) : drops_(0)
+    constexpr BRTAmount(beast::Zero) : drops_(0)
     {
     }
 
-    constexpr XRPAmount& operator=(beast::Zero)
+    constexpr BRTAmount& operator=(beast::Zero)
     {
         drops_ = 0;
         return *this;
     }
 
-    constexpr explicit XRPAmount(value_type drops) : drops_(drops)
+    constexpr explicit BRTAmount(value_type drops) : drops_(drops)
     {
     }
 
-    XRPAmount&
+    BRTAmount&
     operator=(value_type drops)
     {
         drops_ = drops;
         return *this;
     }
 
-    constexpr XRPAmount
+    constexpr BRTAmount
     operator*(value_type const& rhs) const
     {
-        return XRPAmount{drops_ * rhs};
+        return BRTAmount{drops_ * rhs};
     }
 
-    friend constexpr XRPAmount
-    operator*(value_type lhs, XRPAmount const& rhs)
+    friend constexpr BRTAmount
+    operator*(value_type lhs, BRTAmount const& rhs)
     {
         // multiplication is commutative
         return rhs * lhs;
     }
 
-    XRPAmount&
-    operator+=(XRPAmount const& other)
+    BRTAmount&
+    operator+=(BRTAmount const& other)
     {
         drops_ += other.drops();
         return *this;
     }
 
-    XRPAmount&
-    operator-=(XRPAmount const& other)
+    BRTAmount&
+    operator-=(BRTAmount const& other)
     {
         drops_ -= other.drops();
         return *this;
     }
 
-    XRPAmount&
+    BRTAmount&
     operator+=(value_type const& rhs)
     {
         drops_ += rhs;
         return *this;
     }
 
-    XRPAmount&
+    BRTAmount&
     operator-=(value_type const& rhs)
     {
         drops_ -= rhs;
         return *this;
     }
 
-    XRPAmount&
+    BRTAmount&
     operator*=(value_type const& rhs)
     {
         drops_ *= rhs;
         return *this;
     }
 
-    XRPAmount
+    BRTAmount
     operator-() const
     {
-        return XRPAmount{-drops_};
+        return BRTAmount{-drops_};
     }
 
     bool
-    operator==(XRPAmount const& other) const
+    operator==(BRTAmount const& other) const
     {
         return drops_ == other.drops_;
     }
@@ -149,7 +149,7 @@ public:
     }
 
     bool
-    operator<(XRPAmount const& other) const
+    operator<(BRTAmount const& other) const
     {
         return drops_ < other.drops_;
     }
@@ -200,7 +200,7 @@ public:
 
     template <class Dest>
     Dest
-    dropsAs(XRPAmount defaultValue) const
+    dropsAs(BRTAmount defaultValue) const
     {
         return dropsAs<Dest>().value_or(defaultValue.drops());
     }
@@ -210,7 +210,7 @@ public:
     {
         static_assert(
             std::is_signed_v<value_type> && std::is_integral_v<value_type>,
-            "Expected XRPAmount to be a signed integral type");
+            "Expected BRTAmount to be a signed integral type");
 
         constexpr auto min = std::numeric_limits<Json::Int>::min();
         constexpr auto max = std::numeric_limits<Json::Int>::max();
@@ -233,7 +233,7 @@ public:
     }
 
     friend std::istream&
-    operator>>(std::istream& s, XRPAmount& val)
+    operator>>(std::istream& s, BRTAmount& val)
     {
         s >> val.drops_;
         return s;
@@ -241,31 +241,31 @@ public:
 };
 
 /** Number of drops per 1 XRP */
-constexpr XRPAmount DROPS_PER_XRP{1'000'000};
+constexpr BRTAmount DROPS_PER_XRP{1'000'000};
 
 constexpr double
-XRPAmount::decimalXRP() const
+BRTAmount::decimalXRP() const
 {
     return static_cast<double>(drops_) / DROPS_PER_XRP.drops();
 }
 
-// Output XRPAmount as just the drops value.
+// Output BRTAmount as just the drops value.
 template <class Char, class Traits>
 std::basic_ostream<Char, Traits>&
-operator<<(std::basic_ostream<Char, Traits>& os, const XRPAmount& q)
+operator<<(std::basic_ostream<Char, Traits>& os, const BRTAmount& q)
 {
     return os << q.drops();
 }
 
 inline std::string
-to_string(XRPAmount const& amount)
+to_string(BRTAmount const& amount)
 {
     return std::to_string(amount.drops());
 }
 
-inline XRPAmount
+inline BRTAmount
 mulRatio(
-    XRPAmount const& amt,
+    BRTAmount const& amt,
     std::uint32_t num,
     std::uint32_t den,
     bool roundUp)
@@ -286,11 +286,11 @@ mulRatio(
         if (neg && !roundUp)
             r -= 1;
     }
-    if (r > std::numeric_limits<XRPAmount::value_type>::max())
+    if (r > std::numeric_limits<BRTAmount::value_type>::max())
         Throw<std::overflow_error>("XRP mulRatio overflow");
-    return XRPAmount(r.convert_to<XRPAmount::value_type>());
+    return BRTAmount(r.convert_to<BRTAmount::value_type>());
 }
 
 }  // namespace ripple
 
-#endif  // RIPPLE_BASICS_XRPAMOUNT_H_INCLUDED
+#endif  // RIPPLE_BASICS_BRTAMOUNT_H_INCLUDED

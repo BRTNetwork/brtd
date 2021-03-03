@@ -488,7 +488,7 @@ public:
 bool
 checkNear(IOUAmount const& expected, IOUAmount const& actual);
 bool
-checkNear(XRPAmount const& expected, XRPAmount const& actual);
+checkNear(BRTAmount const& expected, BRTAmount const& actual);
 /// @endcond
 
 /**

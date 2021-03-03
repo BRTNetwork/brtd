@@ -77,7 +77,7 @@ class FeeVote_test : public beast::unit_test::suite
         {
             const auto big64 = std::to_string(
                 static_cast<std::uint64_t>(
-                    std::numeric_limits<XRPAmount::value_type>::max()) +
+                    std::numeric_limits<BRTAmount::value_type>::max()) +
                 1);
             Section config;
             config.append(

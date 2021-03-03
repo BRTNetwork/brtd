@@ -20,7 +20,7 @@
 #ifndef RIPPLE_PROTOCOL_SYSTEMPARAMETERS_H_INCLUDED
 #define RIPPLE_PROTOCOL_SYSTEMPARAMETERS_H_INCLUDED
 
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/basics/chrono.h>
 #include <cstdint>
 #include <string>
@@ -40,13 +40,13 @@ systemName()
 /** Configure the native currency. */
 
 /** Number of drops in the genesis account. */
-constexpr XRPAmount INITIAL_XRP{21'000'000 * DROPS_PER_XRP};
+constexpr BRTAmount INITIAL_BRT{21'000'000 * DROPS_PER_XRP};
 
 /** Returns true if the amount does not exceed the initial XRP in existence. */
 inline bool
-isLegalAmount(XRPAmount const& amount)
+isLegalAmount(BRTAmount const& amount)
 {
-    return amount <= INITIAL_XRP;
+    return amount <= INITIAL_BRT;
 }
 
 /* The currency code for the native currency. */

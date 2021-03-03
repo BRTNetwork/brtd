@@ -25,7 +25,7 @@ namespace test {
 
 // Helper function that returns the reserve on an account based on
 // the passed in number of owners.
-static XRPAmount
+static BRTAmount
 reserve(jtx::Env& env, std::uint32_t count)
 {
     return env.current()->fees().accountReserve(count);
@@ -141,7 +141,7 @@ struct DepositAuth_test : public beast::unit_test::suite
 
         {
             STAmount const bobPaysXRP{env.balance(bob, XRP) - reserve(env, 1)};
-            XRPAmount const bobPaysFee{reserve(env, 1) - reserve(env, 0)};
+            BRTAmount const bobPaysFee{reserve(env, 1) - reserve(env, 0)};
             env(pay(bob, alice, bobPaysXRP), fee(bobPaysFee));
             env.close();
         }
@@ -200,7 +200,7 @@ struct DepositAuth_test : public beast::unit_test::suite
         // Change bob's XRP balance to exactly the base reserve.
         {
             STAmount const bobPaysXRP{env.balance(bob, XRP) - reserve(env, 1)};
-            XRPAmount const bobPaysFee{reserve(env, 1) - reserve(env, 0)};
+            BRTAmount const bobPaysFee{reserve(env, 1) - reserve(env, 0)};
             env(pay(bob, alice, bobPaysXRP), fee(bobPaysFee));
             env.close();
         }

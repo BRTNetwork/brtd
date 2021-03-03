@@ -33,7 +33,7 @@ namespace ripple {
 TxConsequences
 Payment::makeTxConsequences(PreflightContext const& ctx)
 {
-    auto calculateMaxXRPSpend = [](STTx const& tx) -> XRPAmount {
+    auto calculateMaxXRPSpend = [](STTx const& tx) -> BRTAmount {
         STAmount const maxAmount =
             tx.isFieldPresent(sfSendMax) ? tx[sfSendMax] : tx[sfAmount];
 
@@ -496,7 +496,7 @@ Payment::doApply()
             if (!view().exists(keylet::depositPreauth(uDstAccountID, account_)))
             {
                 // Get the base reserve.
-                XRPAmount const dstReserve{view().fees().accountReserve(0)};
+                BRTAmount const dstReserve{view().fees().accountReserve(0)};
 
                 if (saDstAmount > dstReserve ||
                     sleDst->getFieldAmount(sfBalance) > dstReserve)

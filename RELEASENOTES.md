@@ -1250,7 +1250,7 @@ While it may be possible to compile brtd on (virtual) machines with 4GB of RAM, 
 **Development-Related Updates**
 
 -   Add uptime to crawl data ([RIPD-997](https://ripplelabs.atlassian.net/browse/RIPD-997)).
--   Add IOUAmount and XRPAmount: these numeric types replace the monolithic functionality found in STAmount ([RIPD-976](https://ripplelabs.atlassian.net/browse/RIPD-976)).
+-   Add IOUAmount and BRTAmount: these numeric types replace the monolithic functionality found in STAmount ([RIPD-976](https://ripplelabs.atlassian.net/browse/RIPD-976)).
 -   Log metadata differences on built ledger mismatch.
 -   Add enableTesting flag to applyTransactions.
 

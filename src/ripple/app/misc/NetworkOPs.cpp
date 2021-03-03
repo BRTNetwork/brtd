@@ -196,7 +196,7 @@ class NetworkOPsImp final : public NetworkOPs
         ServerFeeSummary() = default;
 
         ServerFeeSummary(
-            XRPAmount fee,
+            BRTAmount fee,
             TxQ::Metrics&& escalationMetrics,
             LoadFeeTrack const& loadFeeTrack);
         bool
@@ -210,7 +210,7 @@ class NetworkOPsImp final : public NetworkOPs
 
         std::uint32_t loadFactorServer = 256;
         std::uint32_t loadBaseServer = 256;
-        XRPAmount baseFee{10};
+        BRTAmount baseFee{10};
         boost::optional<TxQ::Metrics> em = boost::none;
     };
 
@@ -1943,7 +1943,7 @@ NetworkOPsImp::pubManifest(Manifest const& mo)
 }
 
 NetworkOPsImp::ServerFeeSummary::ServerFeeSummary(
-    XRPAmount fee,
+    BRTAmount fee,
     TxQ::Metrics&& escalationMetrics,
     LoadFeeTrack const& loadFeeTrack)
     : loadFactorServer{loadFeeTrack.getLoadFactor()}
@@ -2791,7 +2791,7 @@ NetworkOPsImp::getServerInfo(bool human, bool admin, bool counters)
 
     if (lpClosed)
     {
-        XRPAmount const baseFee = lpClosed->fees().base;
+        BRTAmount const baseFee = lpClosed->fees().base;
         Json::Value l(Json::objectValue);
         l[jss::seq] = Json::UInt(lpClosed->info().seq);
         l[jss::hash] = to_string(lpClosed->info().hash);

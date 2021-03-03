@@ -20,7 +20,7 @@
 #ifndef RIPPLE_LEDGER_OPENVIEW_H_INCLUDED
 #define RIPPLE_LEDGER_OPENVIEW_H_INCLUDED
 
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/ledger/RawView.h>
 #include <ripple/ledger/ReadView.h>
 #include <ripple/ledger/detail/RawStateTable.h>
@@ -244,7 +244,7 @@ public:
     rawReplace(std::shared_ptr<SLE> const& sle) override;
 
     void
-    rawDestroyXRP(XRPAmount const& fee) override;
+    rawDestroyXRP(BRTAmount const& fee) override;
 
     // TxsRawView
 

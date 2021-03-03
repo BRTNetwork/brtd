@@ -22,7 +22,7 @@
 
 #include <ripple/app/tx/applySteps.h>
 #include <ripple/app/tx/impl/ApplyContext.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/beast/utility/Journal.h>
 #include <boost/optional.hpp>
 
@@ -90,8 +90,8 @@ protected:
     beast::Journal const j_;
 
     AccountID const account_;
-    XRPAmount mPriorBalance;   // Balance before fees.
-    XRPAmount mSourceBalance;  // Balance after fees.
+    BRTAmount mPriorBalance;   // Balance before fees.
+    BRTAmount mSourceBalance;  // Balance after fees.
 
     virtual ~Transactor() = default;
     Transactor(Transactor const&) = delete;
@@ -180,7 +180,7 @@ protected:
         @param fees Fee settings from the current ledger
         @param flags Transaction processing fees
      */
-    static XRPAmount
+    static BRTAmount
     minimumFee(
         Application& app,
         FeeUnit64 baseFee,
@@ -188,8 +188,8 @@ protected:
         ApplyFlags flags);
 
 private:
-    std::pair<TER, XRPAmount>
-    reset(XRPAmount fee);
+    std::pair<TER, BRTAmount>
+    reset(BRTAmount fee);
 
     TER
     consumeSeqProxy(SLE::pointer const& sleAccount);

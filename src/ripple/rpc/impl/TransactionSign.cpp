@@ -724,9 +724,9 @@ checkFee(
 
     auto ledger = app.openLedger().current();
     // Administrative and identified endpoints are exempt from local fees.
-    XRPAmount const loadFee =
+    BRTAmount const loadFee =
         scaleFeeLoad(feeDefault, feeTrack, ledger->fees(), isUnlimited(role));
-    XRPAmount fee = loadFee;
+    BRTAmount fee = loadFee;
     {
         auto const metrics = txQ.getMetrics(*ledger);
         auto const baseFee = ledger->fees().base;

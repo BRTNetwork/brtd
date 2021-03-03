@@ -313,7 +313,7 @@ public:
 
     struct FeeAndSeq
     {
-        XRPAmount fee;
+        BRTAmount fee;
         std::uint32_t accountSeq;
         std::uint32_t availableSeq;
     };
@@ -822,17 +822,17 @@ TxQ::Setup
 setup_TxQ(Config const&);
 
 template <class T>
-XRPAmount
-toDrops(FeeLevel<T> const& level, XRPAmount const& baseFee)
+BRTAmount
+toDrops(FeeLevel<T> const& level, BRTAmount const& baseFee)
 {
     if (auto const drops = mulDiv(level, baseFee, TxQ::baseLevel); drops.first)
         return drops.second;
 
-    return XRPAmount(STAmount::cMaxNativeN);
+    return BRTAmount(STAmount::cMaxNativeN);
 }
 
 inline FeeLevel64
-toFeeLevel(XRPAmount const& drops, XRPAmount const& baseFee)
+toFeeLevel(BRTAmount const& drops, BRTAmount const& baseFee)
 {
     if (auto const feeLevel = mulDiv(drops, TxQ::baseLevel, baseFee);
         feeLevel.first)

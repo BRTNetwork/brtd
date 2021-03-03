@@ -170,7 +170,7 @@ ApplyViewBase::rawReplace(std::shared_ptr<SLE> const& sle)
 }
 
 void
-ApplyViewBase::rawDestroyXRP(XRPAmount const& fee)
+ApplyViewBase::rawDestroyXRP(BRTAmount const& fee)
 {
     items_.destroyXRP(fee);
 }

@@ -22,7 +22,7 @@
 
 #include <ripple/basics/FeeUnits.h>
 #include <ripple/basics/IOUAmount.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/basics/chrono.h>
 #include <ripple/beast/hash/uhash.h>
 #include <ripple/beast/utility/Journal.h>
@@ -47,10 +47,10 @@ namespace ripple {
 */
 struct Fees
 {
-    XRPAmount base{0};       // Reference tx cost (drops)
+    BRTAmount base{0};       // Reference tx cost (drops)
     FeeUnit32 units{0};      // Reference fee units
-    XRPAmount reserve{0};    // Reserve base (drops)
-    XRPAmount increment{0};  // Reserve increment (drops)
+    BRTAmount reserve{0};    // Reserve base (drops)
+    BRTAmount increment{0};  // Reserve increment (drops)
 
     explicit Fees() = default;
     Fees(Fees const&) = default;
@@ -62,19 +62,19 @@ struct Fees
         The reserve is calculated as the reserve base plus
         the reserve increment times the number of increments.
     */
-    XRPAmount
+    BRTAmount
     accountReserve(std::size_t ownerCount) const
     {
         return reserve + ownerCount * increment;
     }
 
-    XRPAmount
+    BRTAmount
     toDrops(FeeUnit64 const& fee) const
     {
         if (auto const resultPair = mulDiv(base, fee, units); resultPair.first)
             return resultPair.second;
 
-        return XRPAmount(STAmount::cMaxNativeN);
+        return BRTAmount(STAmount::cMaxNativeN);
     }
 };
 
@@ -102,7 +102,7 @@ struct LedgerInfo
     uint256 accountHash = beast::zero;
     uint256 parentHash = beast::zero;
 
-    XRPAmount drops = beast::zero;
+    BRTAmount drops = beast::zero;
 
     // If validated is false, it means "not yet validated."
     // Once validated is true, it will never be set false at a later time.

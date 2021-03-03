@@ -61,7 +61,7 @@ struct Regression_test : public beast::unit_test::suite
             env.app().config(),
             std::vector<uint256>{},
             env.app().getNodeFamily());
-        auto expectedDrops = INITIAL_XRP;
+        auto expectedDrops = INITIAL_BRT;
         BEAST_EXPECT(closed->info().drops == expectedDrops);
 
         auto const aliceXRP = 400;

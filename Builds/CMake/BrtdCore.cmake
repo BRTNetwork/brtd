@@ -162,7 +162,7 @@ install (
     src/ripple/basics/StringUtilities.h
     src/ripple/basics/ToString.h
     src/ripple/basics/UnorderedContainers.h
-    src/ripple/basics/XRPAmount.h
+    src/ripple/basics/BRTAmount.h
     src/ripple/basics/algorithm.h
     src/ripple/basics/base_uint.h
     src/ripple/basics/chrono.h
@@ -716,7 +716,7 @@ target_sources (brtd PRIVATE
 #  src/test/basics/Slice_test.cpp
 #  src/test/basics/StringUtilities_test.cpp
 #  src/test/basics/TaggedCache_test.cpp
-#  src/test/basics/XRPAmount_test.cpp
+#  src/test/basics/BRTAmount_test.cpp
 #  src/test/basics/base64_test.cpp
 #  src/test/basics/base_uint_test.cpp
 #  src/test/basics/contract_test.cpp

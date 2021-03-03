@@ -273,7 +273,7 @@ public:
             info.txHash = ripple::sha512Half(i + 1);
             info.accountHash = ripple::sha512Half(i + 2);
             info.parentHash = parentHash;
-            info.drops = XRPAmount(10);
+            info.drops = BRTAmount(10);
             info.closeTimeResolution = tk->now().time_since_epoch();
             info.closeTime = tk->now();
             parentHash = ledgerHash(info);

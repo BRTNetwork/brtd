@@ -22,7 +22,7 @@
 
 #include <ripple/app/paths/impl/AmountSpec.h>
 #include <ripple/basics/IOUAmount.h>
-#include <ripple/basics/XRPAmount.h>
+#include <ripple/basics/BRTAmount.h>
 #include <ripple/ledger/PaymentSandbox.h>
 
 #include <boost/container/flat_map.hpp>
@@ -348,7 +348,7 @@ writeDiffs(std::ostringstream& ostr, Iter begin, Iter end)
 
 using BalanceDiffs = std::pair<
     std::map<std::tuple<AccountID, AccountID, Currency>, STAmount>,
-    XRPAmount>;
+    BRTAmount>;
 
 inline BalanceDiffs
 balanceDiffs(PaymentSandbox const& sb, ReadView const& rv)
