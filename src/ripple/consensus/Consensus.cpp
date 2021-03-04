@@ -61,7 +61,8 @@ shouldCloseLedger(
         {
             // No transactions and not the idle interval yet
             // check if others have closed anyway ....
-            if ((proposersClosed + proposersValidated) > (prevProposers / 2))
+            // if ((proposersClosed + proposersValidated) > (prevProposers / 2))
+            if (proposersClosed > (prevProposers / 2))
             {
                 // If more than half of the network has closed, we close
                 JLOG(j.trace()) << "Others have closed";
