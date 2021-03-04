@@ -90,7 +90,7 @@ struct ConsensusParms
     std::chrono::milliseconds ledgerMAX_CONSENSUS = std::chrono::seconds{10};
 
     //! Minimum number of seconds to wait to ensure others have computed the LCL
-    std::chrono::milliseconds ledgerMIN_CLOSE = std::chrono::seconds{2};
+    std::chrono::milliseconds ledgerMIN_CLOSE = std::chrono::seconds{5};
 
     //! How often we check state or change positions
     std::chrono::milliseconds ledgerGRANULARITY = std::chrono::seconds{1};
