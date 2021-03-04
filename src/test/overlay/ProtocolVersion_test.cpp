@@ -51,10 +51,10 @@ public:
     {
         testcase("Convert protocol version to string");
         BEAST_EXPECT(to_string(make_protocol(1, 2)) == "RTXP/1.2");
-        BEAST_EXPECT(to_string(make_protocol(1, 3)) == "XRPL/1.3");
-        BEAST_EXPECT(to_string(make_protocol(2, 0)) == "XRPL/2.0");
-        BEAST_EXPECT(to_string(make_protocol(2, 1)) == "XRPL/2.1");
-        BEAST_EXPECT(to_string(make_protocol(10, 10)) == "XRPL/10.10");
+        BEAST_EXPECT(to_string(make_protocol(1, 3)) == "BRTL/1.3");
+        BEAST_EXPECT(to_string(make_protocol(2, 0)) == "BRTL/2.0");
+        BEAST_EXPECT(to_string(make_protocol(2, 1)) == "BRTL/2.1");
+        BEAST_EXPECT(to_string(make_protocol(10, 10)) == "BRTL/10.10");
 
         {
             testcase("Convert strings to protocol versions");
@@ -62,19 +62,19 @@ public:
             // Empty string
             check("", "");
             check(
-                "RTXP/1.1,RTXP/1.3,XRPL/2.1,RTXP/1.2,XRPL/2.0",
-                "RTXP/1.2,XRPL/2.0,XRPL/2.1");
+                "RTXP/1.1,RTXP/1.3,BRTL/2.1,RTXP/1.2,BRTL/2.0",
+                "RTXP/1.2,BRTL/2.0,BRTL/2.1");
             check(
-                "RTXP/0.9,RTXP/1.01,XRPL/0.3,XRPL/2.01,XRPL/19.04,Oscar/"
+                "RTXP/0.9,RTXP/1.01,BRTL/0.3,BRTL/2.01,BRTL/19.04,Oscar/"
                 "123,NIKB",
                 "");
             check(
-                "RTXP/1.2,XRPL/2.0,RTXP/1.2,XRPL/2.0,XRPL/19.4,XRPL/7.89,XRPL/"
-                "A.1,XRPL/2.01",
-                "RTXP/1.2,XRPL/2.0,XRPL/7.89,XRPL/19.4");
+                "RTXP/1.2,BRTL/2.0,RTXP/1.2,BRTL/2.0,BRTL/19.4,BRTL/7.89,BRTL/"
+                "A.1,BRTL/2.01",
+                "RTXP/1.2,BRTL/2.0,BRTL/7.89,BRTL/19.4");
             check(
-                "XRPL/2.0,XRPL/3.0,XRPL/4,XRPL/,XRPL,OPT XRPL/2.2,XRPL/5.67",
-                "XRPL/2.0,XRPL/3.0,XRPL/5.67");
+                "BRTL/2.0,BRTL/3.0,BRTL/4,BRTL/,BRTL,OPT BRTL/2.2,BRTL/5.67",
+                "BRTL/2.0,BRTL/3.0,BRTL/5.67");
         }
 
         {
@@ -83,15 +83,15 @@ public:
             BEAST_EXPECT(
                 negotiateProtocolVersion("RTXP/1.2") == make_protocol(1, 2));
             BEAST_EXPECT(
-                negotiateProtocolVersion("RTXP/1.2, XRPL/2.0") ==
+                negotiateProtocolVersion("RTXP/1.2, BRTL/2.0") ==
                 make_protocol(2, 0));
             BEAST_EXPECT(
-                negotiateProtocolVersion("XRPL/2.0") == make_protocol(2, 0));
+                negotiateProtocolVersion("BRTL/2.0") == make_protocol(2, 0));
             BEAST_EXPECT(
-                negotiateProtocolVersion("RTXP/1.2, XRPL/2.0, XRPL/999.999") ==
+                negotiateProtocolVersion("RTXP/1.2, BRTL/2.0, BRTL/999.999") ==
                 make_protocol(2, 0));
             BEAST_EXPECT(
-                negotiateProtocolVersion("XRPL/999.999, WebSocket/1.0") ==
+                negotiateProtocolVersion("BRTL/999.999, WebSocket/1.0") ==
                 boost::none);
             BEAST_EXPECT(negotiateProtocolVersion("") == boost::none);
         }
