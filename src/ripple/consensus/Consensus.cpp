@@ -49,19 +49,28 @@ shouldCloseLedger(
         return true;
     }
 
-    if ((proposersClosed + proposersValidated) > (prevProposers / 2))
-    {
-        // If more than half of the network has closed, we close
-        JLOG(j.trace()) << "Others have closed";
-        return true;
-    }
-
     if (!anyTransactions)
     {
+        bool closeLedger = false;
         // Only close at the end of the idle interval
-        return timeSincePrevClose >= idleInterval;  // normal idle
+        if(timeSincePrevClose >= idleInterval)
+        {
+            closeLedger = true;
+        }
+        else 
+        {
+            // No transactions and not the idle interval yet
+            // check if others have closed anyway ....
+            if ((proposersClosed + proposersValidated) > (prevProposers / 2))
+            {
+                // If more than half of the network has closed, we close
+                JLOG(j.trace()) << "Others have closed";
+                closeLedger = true;
+            }
+        }
+        // Only close at the end of the idle interval
+        return closeLedger; //timeSincePrevClose >= idleInterval;  // normal idle
     }
-
     // Preserve minimum ledger open time
     if (openTime < parms.ledgerMIN_CLOSE)
     {
