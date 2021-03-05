@@ -33,7 +33,7 @@ namespace ripple {
 static inline std::string const&
 systemName()
 {
-    static std::string const name = "brtd";
+    static std::string const name = "brt";
     return name;
 }
 
