@@ -37,8 +37,8 @@ public:
                 Fees f;
                 f.base = d.FEE_DEFAULT;
                 f.units = d.TRANSACTION_FEE_BASE;
-                f.reserve = 200 * DROPS_PER_XRP;
-                f.increment = 50 * DROPS_PER_XRP;
+                f.reserve = 200 * DROPS_PER_BRT;
+                f.increment = 50 * DROPS_PER_BRT;
                 return f;
             }();
 
@@ -55,8 +55,8 @@ public:
                 Fees f;
                 f.base = d.FEE_DEFAULT * 10;
                 f.units = d.TRANSACTION_FEE_BASE;
-                f.reserve = 200 * DROPS_PER_XRP;
-                f.increment = 50 * DROPS_PER_XRP;
+                f.reserve = 200 * DROPS_PER_BRT;
+                f.increment = 50 * DROPS_PER_BRT;
                 return f;
             }();
 
@@ -73,8 +73,8 @@ public:
                 Fees f;
                 f.base = d.FEE_DEFAULT;
                 f.units = d.TRANSACTION_FEE_BASE * 10;
-                f.reserve = 200 * DROPS_PER_XRP;
-                f.increment = 50 * DROPS_PER_XRP;
+                f.reserve = 200 * DROPS_PER_BRT;
+                f.increment = 50 * DROPS_PER_BRT;
                 return f;
             }();
 

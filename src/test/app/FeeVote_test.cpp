@@ -34,8 +34,8 @@ class FeeVote_test : public beast::unit_test::suite
             Section config;
             auto setup = setup_FeeVote(config);
             BEAST_EXPECT(setup.reference_fee == 1);
-            BEAST_EXPECT(setup.account_reserve == DROPS_PER_XRP / 1000);
-            BEAST_EXPECT(setup.owner_reserve == DROPS_PER_XRP / 5000);
+            BEAST_EXPECT(setup.account_reserve == DROPS_PER_BRT / 1000);
+            BEAST_EXPECT(setup.owner_reserve == DROPS_PER_BRT / 5000);
         }
         {
             Section config;
@@ -57,8 +57,8 @@ class FeeVote_test : public beast::unit_test::suite
             // Illegal values are ignored, and the defaults left unchanged
             auto setup = setup_FeeVote(config);
             BEAST_EXPECT(setup.reference_fee == 1);
-            BEAST_EXPECT(setup.account_reserve == DROPS_PER_XRP / 1000);
-            BEAST_EXPECT(setup.owner_reserve == DROPS_PER_XRP / 5000);
+            BEAST_EXPECT(setup.account_reserve == DROPS_PER_BRT / 1000);
+            BEAST_EXPECT(setup.owner_reserve == DROPS_PER_BRT / 5000);
         }
         {
             Section config;
@@ -87,8 +87,8 @@ class FeeVote_test : public beast::unit_test::suite
             // Illegal values are ignored, and the defaults left unchanged
             auto setup = setup_FeeVote(config);
             BEAST_EXPECT(setup.reference_fee == 1);
-            BEAST_EXPECT(setup.account_reserve == DROPS_PER_XRP / 1000);
-            BEAST_EXPECT(setup.owner_reserve == DROPS_PER_XRP / 5000);
+            BEAST_EXPECT(setup.account_reserve == DROPS_PER_BRT / 1000);
+            BEAST_EXPECT(setup.owner_reserve == DROPS_PER_BRT / 5000);
         }
     }
 

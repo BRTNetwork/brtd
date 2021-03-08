@@ -241,12 +241,12 @@ public:
 };
 
 /** Number of drops per 1 XRP */
-constexpr BRTAmount DROPS_PER_XRP{1'000'000};
+constexpr BRTAmount DROPS_PER_BRT{1'000'000};
 
 constexpr double
 BRTAmount::decimalXRP() const
 {
-    return static_cast<double>(drops_) / DROPS_PER_XRP.drops();
+    return static_cast<double>(drops_) / DROPS_PER_BRT.drops();
 }
 
 // Output BRTAmount as just the drops value.

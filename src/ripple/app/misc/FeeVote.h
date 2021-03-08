@@ -46,10 +46,10 @@ public:
         static constexpr FeeUnit32 reference_fee_units{1};
 
         /** The account reserve requirement in drops. */
-        BRTAmount account_reserve{DROPS_PER_XRP / 1000};
+        BRTAmount account_reserve{DROPS_PER_BRT / 1000};
 
         /** The per-owned item reserve requirement in drops. */
-        BRTAmount owner_reserve{DROPS_PER_XRP / 5000};
+        BRTAmount owner_reserve{DROPS_PER_BRT / 5000};
     };
 
     virtual ~FeeVote() = default;

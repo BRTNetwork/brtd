@@ -118,7 +118,7 @@ public:
     testDecimal()
     {
         // Tautology
-        BEAST_EXPECT(DROPS_PER_XRP.decimalXRP() == 1);
+        BEAST_EXPECT(DROPS_PER_BRT.decimalXRP() == 1);
 
         BRTAmount test{1};
         BEAST_EXPECT(test.decimalXRP() == 0.000001);

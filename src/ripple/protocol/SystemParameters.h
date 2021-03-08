@@ -40,7 +40,7 @@ systemName()
 /** Configure the native currency. */
 
 /** Number of drops in the genesis account. */
-constexpr BRTAmount INITIAL_BRT{21'000'000 * DROPS_PER_XRP};
+constexpr BRTAmount INITIAL_BRT{21'000'000 * DROPS_PER_BRT};
 
 /** Returns true if the amount does not exceed the initial XRP in existence. */
 inline bool
