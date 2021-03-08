@@ -240,8 +240,10 @@ public:
     }
 };
 
-/** Number of drops per 1 XRP */
+/** Number of drops per 1 BRT */
 constexpr BRTAmount DROPS_PER_BRT{1'000'000};
+constexpr BRTAmount DROPS_ACCOUNT_RESERVE{1'000};
+constexpr BRTAmount DROPS_OWNER_RESERVE{200};
 
 constexpr double
 BRTAmount::decimalXRP() const

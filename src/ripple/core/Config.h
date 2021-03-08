@@ -170,7 +170,7 @@ public:
 
     BRTAmount FEE_DEFAULT{1};
     BRTAmount FEE_ACCOUNT_RESERVE{1000};
-    BRTAmount FEE_OWNER_RESERVE{250};
+    BRTAmount FEE_OWNER_RESERVE{200};
 
     // Node storage configuration
     std::uint32_t LEDGER_HISTORY = 256;
