@@ -210,7 +210,7 @@ class NetworkOPsImp final : public NetworkOPs
 
         std::uint32_t loadFactorServer = 256;
         std::uint32_t loadBaseServer = 256;
-        BRTAmount baseFee{10};
+        BRTAmount baseFee{1};
         boost::optional<TxQ::Metrics> em = boost::none;
     };
 

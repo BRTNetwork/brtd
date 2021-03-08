@@ -40,16 +40,16 @@ public:
     struct Setup
     {
         /** The cost of a reference transaction in drops. */
-        BRTAmount reference_fee{10};
+        BRTAmount reference_fee{1};
 
         /** The cost of a reference transaction in fee units. */
-        static constexpr FeeUnit32 reference_fee_units{10};
+        static constexpr FeeUnit32 reference_fee_units{1};
 
         /** The account reserve requirement in drops. */
-        BRTAmount account_reserve{20 * DROPS_PER_XRP};
+        BRTAmount account_reserve{DROPS_PER_XRP / 1000};
 
         /** The per-owned item reserve requirement in drops. */
-        BRTAmount owner_reserve{5 * DROPS_PER_XRP};
+        BRTAmount owner_reserve{DROPS_PER_XRP / 5000};
     };
 
     virtual ~FeeVote() = default;
