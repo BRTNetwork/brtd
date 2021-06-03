@@ -239,10 +239,10 @@ public:
         return s;
     }
 
-    static XRPAmount
+    static BRTAmount
     minPositiveAmount()
     {
-        return XRPAmount{1};
+        return BRTAmount{1};
     }
 };
 

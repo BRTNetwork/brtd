@@ -140,17 +140,17 @@ TOfferStreamBase<TIn, TOut>::shouldRmSmallIncreasedQOffer() const
 {
     static_assert(
         std::is_same_v<TTakerPays, IOUAmount> ||
-            std::is_same_v<TTakerPays, XRPAmount>,
+            std::is_same_v<TTakerPays, BRTAmount>,
         "STAmount is not supported");
 
     static_assert(
         std::is_same_v<TTakerGets, IOUAmount> ||
-            std::is_same_v<TTakerGets, XRPAmount>,
+            std::is_same_v<TTakerGets, BRTAmount>,
         "STAmount is not supported");
 
     static_assert(
-        !std::is_same_v<TTakerPays, XRPAmount> ||
-            !std::is_same_v<TTakerGets, XRPAmount>,
+        !std::is_same_v<TTakerPays, BRTAmount> ||
+            !std::is_same_v<TTakerGets, BRTAmount>,
         "Cannot have XRP/XRP offers");
 
     if (!view_.rules().enabled(fixRmSmallIncreasedQOffers))
@@ -159,8 +159,8 @@ TOfferStreamBase<TIn, TOut>::shouldRmSmallIncreasedQOffer() const
     // Consider removing the offer if:
     //  o `TakerPays` is XRP (because of XRP drops granularity) or
     //  o `TakerPays` and `TakerGets` are both IOU and `TakerPays`<`TakerGets`
-    constexpr bool const inIsXRP = std::is_same_v<TTakerPays, XRPAmount>;
-    constexpr bool const outIsXRP = std::is_same_v<TTakerGets, XRPAmount>;
+    constexpr bool const inIsXRP = std::is_same_v<TTakerPays, BRTAmount>;
+    constexpr bool const outIsXRP = std::is_same_v<TTakerGets, BRTAmount>;
 
     if constexpr (outIsXRP)
     {
@@ -303,24 +303,24 @@ TOfferStreamBase<TIn, TOut>::step()
                 // `shouldRmSmallIncreasedQOffer` template will be instantiated
                 // even if it is never used. This can cause compiler errors in
                 // some cases, hence the `if constexpr` guard.
-                // Note that TIn can be XRPAmount or STAmount, and TOut can be
+                // Note that TIn can be BRTAmount or STAmount, and TOut can be
                 // IOUAmount or STAmount.
                 if constexpr (!(std::is_same_v<TIn, IOUAmount> ||
-                                std::is_same_v<TOut, XRPAmount>))
-                    return shouldRmSmallIncreasedQOffer<XRPAmount, IOUAmount>();
+                                std::is_same_v<TOut, BRTAmount>))
+                    return shouldRmSmallIncreasedQOffer<BRTAmount, IOUAmount>();
             }
             if (!inIsXRP && outIsXRP)
             {
                 // See comment above for `if constexpr` rationale
-                if constexpr (!(std::is_same_v<TIn, XRPAmount> ||
+                if constexpr (!(std::is_same_v<TIn, BRTAmount> ||
                                 std::is_same_v<TOut, IOUAmount>))
-                    return shouldRmSmallIncreasedQOffer<IOUAmount, XRPAmount>();
+                    return shouldRmSmallIncreasedQOffer<IOUAmount, BRTAmount>();
             }
             if (!inIsXRP && !outIsXRP)
             {
                 // See comment above for `if constexpr` rationale
-                if constexpr (!(std::is_same_v<TIn, XRPAmount> ||
-                                std::is_same_v<TOut, XRPAmount>))
+                if constexpr (!(std::is_same_v<TIn, BRTAmount> ||
+                                std::is_same_v<TOut, BRTAmount>))
                     return shouldRmSmallIncreasedQOffer<IOUAmount, IOUAmount>();
             }
             assert(0);  // xrp/xrp offer!?! should never happen

@@ -111,11 +111,11 @@ toAmount<IOUAmount>(IOUAmount const& amt)
 
 template <class T>
 T
-toAmount(XRPAmount const& amt) = delete;
+toAmount(BRTAmount const& amt) = delete;
 
 template <>
-inline XRPAmount
-toAmount<XRPAmount>(XRPAmount const& amt)
+inline BRTAmount
+toAmount<BRTAmount>(BRTAmount const& amt)
 {
     return amt;
 }
